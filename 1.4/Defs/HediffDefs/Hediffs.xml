@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+
+
+	<HediffDef>
+		<defName>VRE_Sensitivity_Dangerous_Hediff</defName>
+		<label>dangerous UV sensitivity</label>
+		<description>This is a hidden hediff that modifies the pawn's Sight depending on sunlight.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>		
+		<comps>
+			<li Class="AnimalBehaviours.HediffCompProperties_StageBySunlight">
+
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<setMax>0.5</setMax>
+					</li>
+				</capMods>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+
+				<minSeverity>1</minSeverity>					
+				<becomeVisible>false</becomeVisible>
+
+			</li>
+		</stages>
+	</HediffDef>
+
+
+
+
+</Defs>

@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Sanguophage\1.4\Assemblies\VanillaRacesExpanded-Sanguophage.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Sanguophage\1.4\Source\VanillaRacesExpanded-Sanguophage\VanillaRacesExpanded-Sanguophage\obj\Debug\VanillaRacesExpanded-Sanguophage.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Sanguophage\1.4\Source\VanillaRacesExpanded-Sanguophage\VanillaRacesExpanded-Sanguophage\obj\Debug\VanillaRacesExpanded-Sanguophage.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaRacesExpanded-Sanguophage\1.4\Source\VanillaRacesExpanded-Sanguophage\VanillaRacesExpanded-Sanguophage\obj\Debug\VanillaRacesExpanded-Sanguophage.dll
