@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XenotypeDef>
+		<defName>VRE_Strigoi</defName>
+		<label>strigoi</label>
+		<description>Strigoi are ageless, deathless super-humans powered by archotech-created archites in the bloodstream. They are viscous and resemble a half-human half-bat hybrid. They can heal any injury, and never suffer from disease or poison. In combat, they use their huge talons to rip their prey to pieces. The price is that strigoi sanguophages must consume hemogen derived from either human blood or animal blood to survive, and they must periodically deathrest for long periods. They lose their hemogen supply quickly due to high entropy, and need to replenish it regularly to sustain themselves. They're easily destroyed by fire, and suffer extreme penalties in UV light.</description>
+		<descriptionShort>Ageless, deathless super-humans powered by archotech-created archites in the bloodstream. They resemble a half-human half-bat hybrid.</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Strigoi</iconPath>
+		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
+		<generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
+		<xenogermReplicatingDurationLeftDaysRange>0.1~140</xenogermReplicatingDurationLeftDaysRange>
+		<combatPowerFactor>2.5</combatPowerFactor>
+		<displayPriority>-1000</displayPriority>
+		<genes>
+			<li>Deathless</li>
+			<li>TotalHealing</li>
+			<li>PerfectImmunity</li>
+			<li>DiseaseFree</li>
+			<li>Ageless</li> 
+			<li>XenogermReimplanter</li>
+			<li>ToxResist_Total</li>
+			<li>PsychicAbility_Enhanced</li>
+			<li>Hemogenic</li>
+			<li>VRE_ExtremeHemogenDrain</li>
+			<li>Bloodfeeder</li>
+			<li>VRE_AnimalFeeder</li>
+			<li>VRE_Sensitivity_Dangerous</li>
+			<li>FireWeakness</li>
+			<li>FireTerror</li>
+			<li>LowSleep</li>
+			<li>Pain_Reduced</li>
+			<li>Beauty_VeryUgly</li>
+			<li>MoveSpeed_Quick</li>
+			<li>MeleeDamage_Strong</li>
+			<li>DarkVision</li>       
+			<li>WoundHealing_SuperFast</li>
+			<li>AptitudeStrong_Melee</li>
+			<li>VRE_BatEars</li>
+			<li>VRE_BatNose</li>
+			<li>VRE_Talons</li>
+			<li>Skin_LightGray</li>
+			<li>Beard_NoBeardOnly</li>
+
+
+		</genes>
+	</XenotypeDef>
+
+	<XenotypeDef>
+		<defName>VRE_Ekkimian</defName>
+		<label>ekkimian</label>
+		<description>Ekkimian are ageless, deathless super-humans powered by archotech-created archites in the bloodstream. They are extremely ugly and resemble dessicated corpses more than humans. They can heal any injury, and never suffer from disease or poison. In combat, they can excrete toxic clouds around themselves, and rapidly regenerate any wounds at the cost of hemogen. The price is that ekkimian sanguophages must consume hemogen derived from human corpses and only corpses, and they must periodically deathrest for long periods. They're easily destroyed by fire, and slowed down by UV light.</description>
+		<descriptionShort>Ageless, deathless super-humans powered by archotech-created archites in the bloodstream. Extremely ugly and resembling dessicated corpses more than humans, they can excrete toxic clouds around themselves and are known to feast on the blood of corpses.</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Ekkimian</iconPath>
+		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
+		<generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
+		<xenogermReplicatingDurationLeftDaysRange>0.1~140</xenogermReplicatingDurationLeftDaysRange>
+		<combatPowerFactor>2.5</combatPowerFactor>
+		<displayPriority>-1000</displayPriority>
+		<genes>
+			<li>Hemogenic</li>
+			<li>HemogenDrain</li>
+			<li>Bloodfeeder</li>
+			<li>Coagulate</li>
+			<li>XenogermReimplanter</li>
+			<li>LongjumpLegs</li>
+			<li>Ageless</li>
+			<li>Deathless</li>
+			<li>Deathrest</li>
+			<li>PiercingSpine</li>
+			<li>PsychicAbility_Enhanced</li>
+			<li>LowSleep</li>
+			<li>Beauty_Pretty</li>
+			<li>MoveSpeed_Quick</li>
+			<li>MeleeDamage_Strong</li>
+			<li>DarkVision</li>
+			<li>TotalHealing</li>
+			<li>PerfectImmunity</li>
+			<li>DiseaseFree</li>
+			<li>ToxResist_Total</li>
+			<li>WoundHealing_SuperFast</li>
+			<li>AptitudeStrong_Melee</li>
+			<li>AptitudeStrong_Social</li>
+			<li>AptitudeStrong_Intellectual</li>
+			<li>UVSensitivity_Mild</li>
+			<li>FireWeakness</li>
+			<li>FireTerror</li>
+			<li>ArchiteMetabolism</li>
+			<li>Aggression_Aggressive</li>
+			<li>Robust</li>
+
+
+
+		</genes>
+	</XenotypeDef>
+	
+	<XenotypeDef>
+		<defName>VRE_Bruxa</defName>
+		<label>bruxa</label>
+		<description>todo</description>
+		<descriptionShort>todo</descriptionShort>
+		<iconPath>UI/XenotypeIcons/Bruxa</iconPath>
+		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
+		<generateWithXenogermReplicatingHediffChance>0.5</generateWithXenogermReplicatingHediffChance>
+		<xenogermReplicatingDurationLeftDaysRange>0.1~140</xenogermReplicatingDurationLeftDaysRange>
+		<combatPowerFactor>2.5</combatPowerFactor>
+		<displayPriority>-1000</displayPriority>
+		<genes>
+			<li>Hemogenic</li>
+			<li>HemogenDrain</li>
+			<li>Bloodfeeder</li>
+			<li>Coagulate</li>
+			<li>XenogermReimplanter</li>
+			<li>LongjumpLegs</li>
+			<li>Ageless</li>
+			<li>Deathless</li>
+			<li>Deathrest</li>
+			<li>PiercingSpine</li>
+			<li>PsychicAbility_Enhanced</li>
+			<li>LowSleep</li>
+			<li>Beauty_Pretty</li>
+			<li>MoveSpeed_Quick</li>
+			<li>MeleeDamage_Strong</li>
+			<li>DarkVision</li>
+			<li>TotalHealing</li>
+			<li>PerfectImmunity</li>
+			<li>DiseaseFree</li>
+			<li>ToxResist_Total</li>
+			<li>WoundHealing_SuperFast</li>
+			<li>AptitudeStrong_Melee</li>
+			<li>AptitudeStrong_Social</li>
+			<li>AptitudeStrong_Intellectual</li>
+			<li>UVSensitivity_Mild</li>
+			<li>FireWeakness</li>
+			<li>FireTerror</li>
+			<li>ArchiteMetabolism</li>
+			<li>Aggression_Aggressive</li>
+			<li>Robust</li>
+
+
+
+		</genes>
+	</XenotypeDef>
+
+</Defs>

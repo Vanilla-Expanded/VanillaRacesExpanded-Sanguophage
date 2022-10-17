@@ -37,6 +37,55 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef>
+		<defName>VRE_AnimalFed</defName>
+		<label>fed on animal</label>
+		<description>This is a hidden hediff that changes the hemogen bar colour.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>		
+		
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				
+				<becomeVisible>false</becomeVisible>
+			</li>
+			
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VRE_SharpTalons</defName>
+		<label>sharp talons</label>
+		<description>Sharp talons which can be used in melee combat.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>		
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>talons</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<power>16</power>
+						<cooldownTime>2</cooldownTime>
+
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<addedPartProps>
+     
+      <betterThanNatural>true</betterThanNatural>
+    </addedPartProps>
+
+	</HediffDef>
 
 
 

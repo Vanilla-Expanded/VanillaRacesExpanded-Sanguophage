@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>VRE_AnimalFeed</defName>
+    <label>animalfeed</label>
+    <description>Bite the target animal and extract hemogen directly from their blood. The animal will lose blood and will be horrified by the interaction, which can result in it lashing out. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target animals.</description>
+    <iconPath>UI/Icons/Genes/VRE_AnimalFeeder</iconPath>
+    <category>Sanguophage</category>
+    <displayOrder>100</displayOrder>
+    <warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+    <warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>false</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityAnimalfeederBite">
+        <hemogenGain>0.2</hemogenGain>
+        <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+      
+        <resistanceGain>1</resistanceGain>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>BloodSplash</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityRequiresCapacity">
+        <capacity>Eating</capacity>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  
+</Defs>
