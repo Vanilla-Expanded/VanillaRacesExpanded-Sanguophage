@@ -295,6 +295,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_AnimalfeederBite.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_Ecstasy.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilityEcstasy.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityBloodfeederBite.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />

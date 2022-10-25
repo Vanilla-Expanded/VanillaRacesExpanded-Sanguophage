@@ -12,7 +12,8 @@ namespace VanillaRacesExpandedSanguophage
     public static class InternalDefOf
     {
         public static HediffDef VRE_AnimalFed;
+        public static ThoughtDef VRE_Ecstasy;
 
-       
+
     }
 }

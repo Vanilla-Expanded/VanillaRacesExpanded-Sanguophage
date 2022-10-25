@@ -1,44 +1,109 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
- 
-
-  <AbilityDef ParentName="AbilityTouchBase">
-    <defName>VRE_AnimalFeed</defName>
-    <label>animalfeed</label>
-    <description>Bite the target animal and extract hemogen directly from their blood. The animal will lose blood and will be horrified by the interaction, which can result in it lashing out. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target animals.</description>
-    <iconPath>UI/Icons/Genes/VRE_AnimalFeeder</iconPath>
-    <category>Sanguophage</category>
-    <displayOrder>100</displayOrder>
-    <warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
-    <warmupStartSound>Bloodfeed_Cast</warmupStartSound>
-    <verbProperties>
-      <verbClass>Verb_CastAbilityTouch</verbClass>
-      <drawAimPie>false</drawAimPie>
-      <range>-1</range>
-      <warmupTime>2</warmupTime>
-      <targetParams>
-        <canTargetSelf>false</canTargetSelf>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetMechs>false</canTargetMechs>
-        <canTargetBloodfeeders>false</canTargetBloodfeeders>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityAnimalfeederBite">
-        <hemogenGain>0.2</hemogenGain>
-        <bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
-      
-        <resistanceGain>1</resistanceGain>
+	<AbilityDef Abstract="True" Name="VRE_NoTargetAbilities">
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<hotKey>Misc12</hotKey>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>2</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_AnimalFeed</defName>
+		<label>animalfeed</label>
+		<description>Bite the target animal and extract hemogen directly from their blood. The animal will lose blood and will be horrified by the interaction, which can result in it lashing out. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target animals.</description>
+		<iconPath>UI/Icons/Genes/VRE_AnimalFeeder</iconPath>
+		<category>Sanguophage</category>
+		<displayOrder>100</displayOrder>
+		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>false</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityAnimalfeederBite">
+				<hemogenGain>0.2</hemogenGain>
+				<bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+				<resistanceGain>1</resistanceGain>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BloodSplash</fleckDef>
+			</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+				<capacity>Eating</capacity>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Ecstasy</defName>
+		<label>ecstasy</label>
+		<description>Grant a target a feeling of extreme ecstasy for a brief duration, which makes them fall head over heels with the caster.</description>
+		<iconPath>UI/Abilities/SanguophageEcstasy</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.1</hemogenCost>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityEcstasy">
+       
       </li>
-      <li Class="CompProperties_AbilityFleckOnTarget">
-        <fleckDef>BloodSplash</fleckDef>
-      </li>
-      <li Class="CompProperties_AbilityRequiresCapacity">
-        <capacity>Eating</capacity>
-      </li>
-    </comps>
-  </AbilityDef>
+		</comps>
+	</AbilityDef>
+	
+	<AbilityDef  ParentName="AG_NoTargetAbilities">
+		<defName>VRE_Hemosmosis</defName>
+		<label>hemosmosis</label>
+		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
+		<iconPath>UI/Abilities/SanguophageHemosmosis</iconPath>
+		<cooldownTicksRange>7200</cooldownTicksRange>
+		<verbProperties>
+			<range>5.9</range>
+			
+		</verbProperties>
+		<comps>
+			
+		</comps>
 
-  
+	</AbilityDef>
 </Defs>

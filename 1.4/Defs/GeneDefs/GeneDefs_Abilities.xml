@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef>
+    <defName>VRE_Ecstasy</defName>
+    <label>ecstasy</label>
+	<labelShortAdj>ecstator</labelShortAdj>
+    <description>Carriers of this gene can psychically connect with the target briefly, granting them a sense of ecstasy and making them fall in love with the caster.</description>
+    <iconPath>UI/Icons/Genes/Gene_SanguophageEcstasy</iconPath>
+	 <prerequisite>Hemogenic</prerequisite>
+    <displayCategory>Ability</displayCategory>
+   
+    <abilities>
+      <li>VRE_Ecstasy</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>VRE_Ecstasy</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+    
+      <prefixSymbols>
+        <li><symbol>ecsta</symbol></li>
+        <li><symbol>sedu</symbol></li>
+        <li><symbol>sexy</symbol></li>
+      
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>seducer</symbol></li>
+        <li><symbol>ecstator</symbol></li>
+        <li><symbol>pleasurer</symbol></li>
+       
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+  
+   <GeneDef>
+    <defName>VRE_Hemosmosis</defName>
+    <label>hemosmosis</label>
+	<labelShortAdj>hemosmoser</labelShortAdj>
+    <description>Carriers of this gene are able to drain blood from their environment, provided there is blood to be drained there.</description>
+    <iconPath>UI/Icons/Genes/Gene_SanguophageHemosmosis</iconPath>
+	<prerequisite>Hemogenic</prerequisite>
+    <displayCategory>Ability</displayCategory>
+   
+    <abilities>
+      <li>VRE_Hemosmosis</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>VRE_Hemosmosis</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+    
+      <prefixSymbols>
+        <li><symbol>sucker</symbol></li>
+    
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>sucker</symbol></li>
+        <li><symbol>drainer</symbol></li>
+        <li><symbol>osmoser</symbol></li>
+       
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  
+
+</Defs>
