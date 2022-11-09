@@ -162,6 +162,38 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_FilterInfection</defName>
+		<label>filter infection</label>
+		<description>Lay hands on a target and help the target battle their infections. Works on animals or humans.</description>
+		<iconPath>UI/Abilities/SanguophageFilterInfection</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.2</hemogenCost>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityFilterInfection">
+
+			</li>
+		</comps>
+	</AbilityDef>
 
 	<AbilityDef  ParentName="AG_NoTargetAbilities">
 		<defName>VRE_Hemosmosis</defName>
@@ -178,4 +210,35 @@
 		</comps>
 
 	</AbilityDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+    <defName>VRE_Resurrect</defName>
+    <label>resurrect</label>
+    <description>Use archites in the bloodstream to infuse a corpse's body with new life, repairing degenerated cell structures and kickstarting vital functions. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability seems to exhaust the archites somehow, so it can only be used very rarely.</description>
+    <iconPath>UI/Abilities/Resurrect</iconPath>
+    <cooldownTicksRange>6840000~7560000</cooldownTicksRange> <!-- 1.9~2.1 years -->
+    <warmupMote>Mote_ResurrectAbility</warmupMote>
+    <warmupStartSound>Resurrect_Cast</warmupStartSound>
+    <category>Sanguophage</category>
+    <displayOrder>600</displayOrder>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <soundCast>Resurrect_Resolve</soundCast>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_Resurrect" />
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.90</hemogenCost>
+      </li>
+    </comps>
+  </AbilityDef>
 </Defs>
