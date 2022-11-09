@@ -39,9 +39,9 @@
 	</HediffDef>
 	
 	<HediffDef>
-		<defName>VRE_AnimalFed</defName>
-		<label>fed on animal</label>
-		<description>This is a hidden hediff that changes the hemogen bar colour.</description>
+		<defName>VRE_ConsumedAnimalHemogen</defName>
+		<label>consumed animal hemogen</label>
+		<description>Animal hemogen increases regeneration and combat capabilities of the user, but greatly decreases the capability to communicate with others.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -50,8 +50,136 @@
 		<stages>
 			<li>
 				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<InjuryHealingFactor>0.1</InjuryHealingFactor>
+					
+				</statOffsets>	
+				<statFactors>
+					
+					<MeleeDPS>1.1</MeleeDPS>
+
+				</statFactors>						
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.2</setMax>
+					</li>
+				</capMods>				
 				
-				<becomeVisible>false</becomeVisible>
+			</li>
+			
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VRE_ConsumedCorpseHemogen</defName>
+		<label>consumed corpse hemogen</label>
+		<description>Corpse hemogen greatly weakens the carrier of this hemogen type, but increases the blood filtration significantly.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>		
+		
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+								
+				<capMods>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.4</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<setMax>0.8</setMax>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<setMax>0.8</setMax>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<setMax>0.8</setMax>
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<setMax>0.8</setMax>
+					</li>
+				</capMods>				
+				
+			</li>
+			
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VRE_ConsumedSanguophageHemogen</defName>
+		<label>consumed sanguophage hemogen</label>
+		<description>Sanguophage hemogen gives the carrier a powerful boost to all capacities.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>		
+		
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<painOffset>-0.2</painOffset>				
+				<capMods>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Eating</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>				
+				
 			</li>
 			
 		</stages>

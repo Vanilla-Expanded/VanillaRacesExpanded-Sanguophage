@@ -295,13 +295,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_AnimalfeederBite.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_CorpsefeederBite.cs" />
     <Compile Include="Abilities\CompAbilityEffect_Ecstasy.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_SanguofeederBite.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilityCorpsefeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityEcstasy.cs" />
-    <Compile Include="Abilities\Properties\CompProperties_AbilityBloodfeederBite.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilityAnimalfeederBite.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilitySanguofeederBite.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenAnimal.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenSanguophage.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
+    <Compile Include="Harmony\CompAbilityEffect_BloodfeederBite_Apply.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
+    <Compile Include="Harmony\Thing_GetFloatmenuOptions.cs" />
+    <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveHediffs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>VRE_ExtractHemogenAnimal</defName>
+		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_ExtractHemogenAnimal</driverClass>
+		<reportString>extracting hemogen (animal) from TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>VRE_ExtractHemogenCorpse</defName>
+		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_ExtractHemogenCorpse</driverClass>
+		<reportString>extracting hemogen (corpse) from TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+	<JobDef>
+		<defName>VRE_ExtractHemogenSanguophage</defName>
+		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_ExtractHemogenSanguophage</driverClass>
+		<reportString>extracting hemogen (sanguophage) from TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
+</Defs>

@@ -2,6 +2,13 @@
 <LanguageData>
 
 <VRE_Animal>Animal</VRE_Animal>
+<VRE_Corpse>Corpse</VRE_Corpse>
+<VRE_Sanguophage>Sanguophage</VRE_Sanguophage>
 
+<VRE_ExtractHemogenAnimal>Extract hemogen (animal) from {0}</VRE_ExtractHemogenAnimal>
+<VRE_ExtractHemogenCorpse>Extract hemogen (corpse) from {0}</VRE_ExtractHemogenCorpse>
+<VRE_ExtractHemogenSanguophage>Extract hemogen (sanguophage) from {0}</VRE_ExtractHemogenSanguophage>
+
+<VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
 
 </LanguageData>

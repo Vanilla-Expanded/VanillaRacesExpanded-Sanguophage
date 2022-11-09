@@ -25,7 +25,7 @@ namespace VanillaRacesExpandedSanguophage
         public static bool ChangeLabel(Rect labelRect,Gene_Resource ___gene)
         {
 
-            if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_AnimalFed) != null)
+            if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedAnimalHemogen) != null)
             {
                 string text = ___gene.ResourceLabel.CapitalizeFirst();
                 text += " ("+"VRE_Animal".Translate() + ")";
@@ -34,6 +34,31 @@ namespace VanillaRacesExpandedSanguophage
                     text = text + " (" + ___gene.pawn.LabelShort + ")";
                 }
                 text = text.Truncate(labelRect.width);
+                Widgets.Label(labelRect, text);
+                return false;
+            } else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedCorpseHemogen) != null)
+            {
+                string text = ___gene.ResourceLabel.CapitalizeFirst();
+                text += " (" + "VRE_Corpse".Translate() + ")";
+                if (Find.Selector.SelectedPawns.Count != 1)
+                {
+                    text = text + " (" + ___gene.pawn.LabelShort + ")";
+                }
+                text = text.Truncate(labelRect.width);
+               
+                Widgets.Label(labelRect, text);
+                return false;
+            }
+            else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedSanguophageHemogen) != null)
+            {
+                string text = ___gene.ResourceLabel.CapitalizeFirst();
+                text += " (" + "VRE_Sanguophage".Translate() + ")";
+                if (Find.Selector.SelectedPawns.Count != 1)
+                {
+                    text = text + " (" + ___gene.pawn.LabelShort + ")";
+                }
+                text = text.Truncate(labelRect.width);
+
                 Widgets.Label(labelRect, text);
                 return false;
             }
