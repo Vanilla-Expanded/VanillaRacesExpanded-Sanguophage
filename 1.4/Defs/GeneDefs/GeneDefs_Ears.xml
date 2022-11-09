@@ -10,6 +10,7 @@
 		<iconPath>UI/Icons/Genes/VRE_BatEars</iconPath>
 		<graphicData>
 			<graphicPath>Pawn/BatEars/BatEars</graphicPath>
+			<colorType>Skin</colorType>
 		</graphicData>
 		<symbolPack>
 			<prefixSymbols>
