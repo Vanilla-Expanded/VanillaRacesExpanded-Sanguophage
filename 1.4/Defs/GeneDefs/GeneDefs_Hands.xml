@@ -11,7 +11,7 @@
 		<displayOrderInCategory>320</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
-		<geneClass>VanillaGenesExpanded.Gene_AddsHediff</geneClass>
+	
 		<capMods>
 			<li>
 				<capacity>Manipulation</capacity>

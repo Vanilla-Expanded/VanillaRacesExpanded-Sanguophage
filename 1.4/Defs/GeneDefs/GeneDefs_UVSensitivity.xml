@@ -12,7 +12,7 @@
 		<iconPath>UI/Icons/Genes/VRE_DangerousUVSensitivity</iconPath>
 		<displayOrderInCategory>59</displayOrderInCategory>
 		<customEffectDescriptions><li>Sight capacity capped at 50% during sunlight hours</li></customEffectDescriptions>
-		<geneClass>VanillaGenesExpanded.Gene_AddsHediff</geneClass>
+	
 		<conditionalStatAffecters>
 			<li Class="ConditionalStatAffecter_InSunlight">
 				<statFactors>
