@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<EffecterDef>
+		<defName>VRE_Ecstasy</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<chancePerTick>0.01</chancePerTick>
+				<scale>0.9~1.3</scale>
+				<rotationRate>-30~30</rotationRate>
+				<speed>0.6~1.8</speed>
+				<fleckDef>Heart</fleckDef>
+			</li>
+		</children>
+	</EffecterDef>
+	<EffecterDef>
+		<defName>VRE_BloodEvaporation</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<chancePerTick>0.01</chancePerTick>
+				<scale>0.9~1.3</scale>
+				<rotationRate>-30~30</rotationRate>
+				<speed>0.6~1.8</speed>
+				<fleckDef>VRE_BloodPuff</fleckDef>
+			</li>
+		</children>
+	</EffecterDef>
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>VRE_BloodPuff</defName>
+		<graphicData>
+			<texPath>Things/Mote/DustPuff</texPath>
+			<color>(255,140,140)</color>
+			<renderInstanced>true</renderInstanced>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.04</fadeInTime>
+		<solidTime>0.03</solidTime>
+		<fadeOutTime>1</fadeOutTime>
+	</FleckDef>
+</Defs>

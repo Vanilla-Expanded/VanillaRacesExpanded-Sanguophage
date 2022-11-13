@@ -298,11 +298,13 @@
     <Compile Include="Abilities\CompAbilityEffect_CorpsefeederBite.cs" />
     <Compile Include="Abilities\CompAbilityEffect_Ecstasy.cs" />
     <Compile Include="Abilities\CompAbilityEffect_FilterInfection.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_Hemosmosis.cs" />
     <Compile Include="Abilities\CompAbilityEffect_SanguofeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityCorpsefeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityEcstasy.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityAnimalfeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityFilterInfection.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilityHemosmosis.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilitySanguofeederBite.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenAnimal.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
