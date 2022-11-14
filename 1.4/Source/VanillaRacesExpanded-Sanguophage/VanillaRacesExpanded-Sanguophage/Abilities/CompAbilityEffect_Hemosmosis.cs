@@ -1,8 +1,9 @@
-﻿
-using RimWorld;
+﻿using RimWorld;
 using System;
 using System.Collections.Generic;
 using Verse;
+using UnityEngine;
+
 namespace VanillaRacesExpandedSanguophage
 {
     public class CompAbilityEffect_Hemosmosis : CompAbilityEffect
@@ -12,7 +13,7 @@ namespace VanillaRacesExpandedSanguophage
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
-
+            FleckMaker.AttachedOverlay(this.parent.pawn, InternalDefOf.VRE_BloodMist, Vector3.zero, 1f, -1f);
             int num = GenRadial.NumCellsInRadius(5.9f);
             for (int i = 0; i < num; i++)
             {

@@ -28,8 +28,9 @@ namespace VanillaRacesExpandedSanguophage
         public static ThingDef VRE_HemogenPack_Animal;
         public static ThingDef VRE_HemogenPack_Corpse;
         public static ThingDef VRE_HemogenPack_Sanguophage;
+        public static ThingDef Filth_BloodInsect;
 
-        public static EffecterDef VRE_BloodEvaporation;
+        public static FleckDef VRE_BloodMist;
 
     }
 }

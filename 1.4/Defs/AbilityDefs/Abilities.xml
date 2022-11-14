@@ -164,6 +164,37 @@
 		</comps>
 	</AbilityDef>
 	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_HeartCrush</defName>
+		<label>heart crush</label>
+		<description>Rip out the heart of an enemy in close proximity, instantly killing them and covering the area in blood.</description>
+		<iconPath>UI/Abilities/SanguophageHeartCrush</iconPath>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>		
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>		
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>VRE_Meat</soundCast>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BloodSplash</fleckDef>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHeartCrush">
+
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_FilterInfection</defName>
 		<label>filter infection</label>
 		<description>Lay hands on a target and help the target battle their infections. Works on animals or humans.</description>
@@ -203,6 +234,11 @@
 		<verbProperties>
 			<range>5.9</range>
 			<soundCast>VRE_Hemosmosis</soundCast>
+			<targetParams>
+			
+				<canTargetSelf>true</canTargetSelf>
+				
+			</targetParams>
 		</verbProperties>
 		<statBases>
 			<Ability_EffectRadius>5.9</Ability_EffectRadius>
@@ -211,9 +247,7 @@
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHemosmosis">
 
 			</li>
-			<li Class="CompProperties_AbilityEffecterOnTarget">
-				<effecterDef>VRE_BloodEvaporation</effecterDef>
-			</li>
+			
 		</comps>
 	</AbilityDef>
 	<AbilityDef ParentName="AbilityTouchBase">
@@ -244,6 +278,59 @@
 			<li Class="CompProperties_Resurrect"/>
 			<li Class="CompProperties_AbilityHemogenCost">
 				<hemogenCost>0.90</hemogenCost>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>VRE_ToxicCloud</defName>
+		<label>toxic cloud</label>
+		<description>Excrete a thick toxic smoke from special organic reservoirs in the lungs. Tox gas is deadly to almost every creature.</description>
+		<iconPath>UI/Abilities/SanguophageToxicCloud</iconPath>
+		<cooldownTicksRange>360</cooldownTicksRange>
+		<targetRequired>false</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<range>5.9</range>
+			<drawAimPie>false</drawAimPie>    
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityToxicCloud">
+				<cloudRadius>5.9</cloudRadius>
+				<clamorType>Ability</clamorType>
+				<clamorRadius>15</clamorRadius>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>VRE_ViscuousGoo</defName>
+		<label>viscuous goo</label>
+		<description>Eject a projectile that explodes on impact and creates a large amount of filth that greatly slows down people trying to move through it.</description>
+		<iconPath>UI/Abilities/SanguophageViscousGoo</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>300</displayOrder>
+		<category>Sanguophage</category>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>9.9</range>
+			<warmupTime>1.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilitySprayLiquid">
+				<projectileDef>VRE_Proj_Goo</projectileDef>
+				<numCellsToHit>12</numCellsToHit>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
 			</li>
 		</comps>
 	</AbilityDef>

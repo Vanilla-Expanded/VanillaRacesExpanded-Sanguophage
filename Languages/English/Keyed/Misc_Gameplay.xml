@@ -10,5 +10,6 @@
 <VRE_ExtractHemogenSanguophage>Extract hemogen (sanguophage) from {0}</VRE_ExtractHemogenSanguophage>
 
 <VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
+<VRE_NoHeart>Can only be used on targets with a heart</VRE_NoHeart>
 
 </LanguageData>
