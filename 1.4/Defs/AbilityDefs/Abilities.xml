@@ -225,7 +225,7 @@
 			</li>
 		</comps>
 	</AbilityDef>
-	<AbilityDef ParentName="AG_NoTargetAbilities">
+	<AbilityDef ParentName="VRE_NoTargetAbilities">
 		<defName>VRE_Hemosmosis</defName>
 		<label>hemosmosis</label>
 		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
