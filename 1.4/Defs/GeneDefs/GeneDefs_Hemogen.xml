@@ -17,7 +17,7 @@
 		<displayOrderInCategory>-2</displayOrderInCategory>
 		<minAgeActive>3</minAgeActive>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>8</biostatMet>
+		<biostatMet>3</biostatMet>
 		<exclusionTags>
 			<li>HemogenDrain</li>
 		</exclusionTags>
