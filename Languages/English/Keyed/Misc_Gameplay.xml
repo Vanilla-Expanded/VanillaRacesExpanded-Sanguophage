@@ -12,4 +12,9 @@
 <VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
 <VRE_NoHeart>Can only be used on targets with a heart</VRE_NoHeart>
 
+
+  
+  <VRE_HemogenValve>Switches hemogen flow on/off.</VRE_HemogenValve>
+  <VRE_HemogenValveDesc>Switches hemogen flow on/off. A pawn will come open/close the valve.</VRE_HemogenValveDesc>
+
 </LanguageData>

@@ -30,7 +30,7 @@ namespace VanillaRacesExpandedSanguophage
 
 
 
-                    for (int i = 0; i < 20; i++)
+                    for (int i = 0; i < 40; i++)
                     {
                         IntVec3 c;
                         CellFinder.TryFindRandomReachableCellNear(pawn.Position, pawn.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);

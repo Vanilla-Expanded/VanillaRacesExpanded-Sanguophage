@@ -32,5 +32,8 @@ namespace VanillaRacesExpandedSanguophage
 
         public static FleckDef VRE_BloodMist;
 
+        public static IncidentDef VRE_BloodMoon;
+        public static GameConditionDef VRE_BloodMoonCondition;
+
     }
 }

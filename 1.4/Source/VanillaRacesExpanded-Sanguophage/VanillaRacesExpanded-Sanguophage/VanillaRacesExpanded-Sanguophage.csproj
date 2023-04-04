@@ -314,12 +314,15 @@
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenSanguophage.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
+    <Compile Include="GameConditions\GameCondition_BloodMoon.cs" />
     <Compile Include="Harmony\CompAbilityEffect_BloodfeederBite_Apply.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
+    <Compile Include="Harmony\GeneResourceDrainUtility_OffsetResource.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\Thing_GetFloatmenuOptions.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveHediffs.cs" />
+    <Compile Include="MapComponents\BloodMoon_MapComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
