@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Coagulate_SingleUse</defName>
+		<label>coagulate</label>
+		<description>Use special glands in the wrists to quickly tend someone's wounds.</description>
+		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupMote>Mote_CoagulateStencil</warmupMote>
+		<warmupEffecter>Coagulate</warmupEffecter>
+		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.2</hemogenCost>
+			</li>
+			<li Class="CompProperties_AbilityCoagulate">
+				<tendQualityRange>0.4~0.8</tendQualityRange>
+			</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+				<capacity>Manipulation</capacity>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilitySingleUse">
+				
+			</li>
+		</comps>
+	</AbilityDef>
+</Defs>

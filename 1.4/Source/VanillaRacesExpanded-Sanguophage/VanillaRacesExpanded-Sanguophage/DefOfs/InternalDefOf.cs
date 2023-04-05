@@ -38,5 +38,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public static MentalStateDef VRE_Hemohunter;
 
+        public static AbilityDef VRE_Coagulate_SingleUse;
+
     }
 }

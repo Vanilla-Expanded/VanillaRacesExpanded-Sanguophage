@@ -301,6 +301,7 @@
     <Compile Include="Abilities\CompAbilityEffect_HeartCrush.cs" />
     <Compile Include="Abilities\CompAbilityEffect_Hemosmosis.cs" />
     <Compile Include="Abilities\CompAbilityEffect_SanguofeederBite.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_SingleUse.cs" />
     <Compile Include="Abilities\CompAbilityEffect_ToxicCloud.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityCorpsefeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityEcstasy.cs" />
@@ -309,13 +310,18 @@
     <Compile Include="Abilities\Properties\CompProperties_AbilityHeartCrush.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityHemosmosis.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilitySanguofeederBite.cs" />
+    <Compile Include="Abilities\Properties\CompProperties_AbilitySingleUse.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityToxicCloud.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenAnimal.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenSanguophage.cs" />
+    <Compile Include="DefExtensions\DeathrestExtension.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="GameConditions\GameCondition_BloodMoon.cs" />
+    <Compile Include="GraphicsCache\GraphicsCache.cs" />
+    <Compile Include="Harmony\Command_Ability_BGTexture.cs" />
     <Compile Include="Harmony\CompAbilityEffect_BloodfeederBite_Apply.cs" />
+    <Compile Include="Harmony\CompDeathrestBindable_Apply.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
     <Compile Include="Harmony\GeneResourceDrainUtility_OffsetResource.cs" />
