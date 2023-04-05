@@ -38,7 +38,7 @@ namespace VanillaRacesExpandedSanguophage
 						Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
 						if(gene_Hemogen.Value < 0.45f)
                         {
-							pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
+							pawn.mindState.mentalStateHandler.TryStartMentalState(InternalDefOf.VRE_Hemohunter);
                         }
 					}
 

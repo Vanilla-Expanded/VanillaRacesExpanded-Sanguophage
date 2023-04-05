@@ -24,6 +24,7 @@ namespace VanillaRacesExpandedSanguophage
         public static JobDef VRE_ExtractHemogenAnimal;
         public static JobDef VRE_ExtractHemogenCorpse;
         public static JobDef VRE_ExtractHemogenSanguophage;
+        public static JobDef VRE_HemohunterJob;
 
         public static ThingDef VRE_HemogenPack_Animal;
         public static ThingDef VRE_HemogenPack_Corpse;
@@ -34,6 +35,8 @@ namespace VanillaRacesExpandedSanguophage
 
         public static IncidentDef VRE_BloodMoon;
         public static GameConditionDef VRE_BloodMoonCondition;
+
+        public static MentalStateDef VRE_Hemohunter;
 
     }
 }

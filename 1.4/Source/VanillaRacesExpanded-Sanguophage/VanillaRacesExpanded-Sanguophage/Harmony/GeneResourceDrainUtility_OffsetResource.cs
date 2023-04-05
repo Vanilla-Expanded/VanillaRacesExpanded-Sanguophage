@@ -24,10 +24,12 @@ namespace VanillaRacesExpandedSanguophage
         public static void DoubleHemogenLoss(IGeneResourceDrain drain, float amnt)
         {
             if (Current.Game.CurrentMap.GameConditionManager.ConditionIsActive(InternalDefOf.VRE_BloodMoonCondition)) {
-                
+                if (amnt < 0) {
                     float value = drain.Resource.Value;
                     drain.Resource.Value += amnt;
                     GeneResourceDrainUtility.PostResourceOffset(drain, value);
+                }
+                    
                 
 
             }

@@ -322,7 +322,10 @@
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\Thing_GetFloatmenuOptions.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveHediffs.cs" />
+    <Compile Include="JobDrivers\JobDriver_Hemohunter.cs" />
+    <Compile Include="JobGivers\JobGiver_Hemohunter.cs" />
     <Compile Include="MapComponents\BloodMoon_MapComponent.cs" />
+    <Compile Include="MentalStateWorkers\MentalState_Hemohunter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

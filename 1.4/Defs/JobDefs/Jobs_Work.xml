@@ -22,4 +22,11 @@
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
 	
+	<JobDef>
+		<defName>VRE_HemohunterJob</defName>
+		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_Hemohunter</driverClass>
+		<reportString>forcefully extracting hemogen from TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	
 </Defs>
