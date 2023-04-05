@@ -3,6 +3,7 @@
 	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
 		<defName>VRE_InvocationMatrix</defName>
 		<label>invocation matrix</label>
+		<thingClass>VanillaRacesExpandedSanguophage.Building_Deathrest_Extender</thingClass>
 		<description>A sophisticated device that infuses deathresting people with rare and potent sanguophage abilities, tapping into the very essence of their vampiric nature. Employing a complex system of blood conduits and essence resonators, the matrix connects to a deathrest casket and channels the life force of its occupant to unlock hidden potential within their bloodline. As the person slumbers in their deathrest state, the Invocation Matrix bestows upon them a selected, unique power. This building requires a constant supply of hemogen to operate.</description>
 		<graphicData>
 			<texPath>Building/InvocationMatrix/InvocationMatrix</texPath>
@@ -17,6 +18,7 @@
 		</graphicData>
 		<castEdgeShadows>true</castEdgeShadows>
 		<rotatable>false</rotatable>
+		<defaultPlacingRot>North</defaultPlacingRot>
 		<statBases>
 			<MaxHitPoints>200</MaxHitPoints>
 			<WorkToBuild>5000</WorkToBuild>
@@ -31,6 +33,12 @@
 		</costList>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+				<idlePowerDraw>0</idlePowerDraw>
+				<alwaysDisplayAsUsingPower>true</alwaysDisplayAsUsingPower>
+			</li>
 			<li Class="CompProperties_DeathrestBindable">
 				<soundStart>PsychofluidPump_Start</soundStart>
 				<soundEnd>PsychofluidPump_Stop</soundEnd>

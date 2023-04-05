@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+
+
+
+	<VanillaRacesExpandedSanguophage.SingleUseAbilityDef>
+		<defName>VRE_SingleUseAbilities</defName>
+		<singleUseAbilities>			
+			
+			<li>VRE_Coagulate_SingleUse</li>
+			<li>VRE_Ecstasy_SingleUse</li>
+			
+			
+		</singleUseAbilities>							
+	</VanillaRacesExpandedSanguophage.SingleUseAbilityDef>
+
+
+
+
+
+</Defs>

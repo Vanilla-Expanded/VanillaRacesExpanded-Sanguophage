@@ -43,4 +43,41 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Ecstasy_SingleUse</defName>
+		<label>ecstasy</label>
+		<description>Grant a target a feeling of extreme ecstasy for a brief duration, which makes them fall head over heels with the caster.</description>
+		<iconPath>UI/Abilities/SanguophageEcstasy</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<warmupEffecter>VRE_Ecstasy</warmupEffecter>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>VRE_Ecstasy</soundCast>
+			<targetParams>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.1</hemogenCost>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityEcstasy">
+
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilitySingleUse">
+				
+			</li>
+		</comps>
+	</AbilityDef>
 </Defs>

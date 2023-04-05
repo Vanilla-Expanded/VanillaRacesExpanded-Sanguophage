@@ -23,7 +23,7 @@ namespace VanillaRacesExpandedSanguophage
         [HarmonyPostfix]
         public static void ChangeBG(Command_Ability __instance, ref Texture2D __result)
         {
-            if (__instance.Ability.def==InternalDefOf.VRE_Coagulate_SingleUse)
+            if (StaticCollectionsClass.allowedSingleUseAbilities.Contains(__instance.Ability.def))
             {
                 __result = GraphicsCache.BGTex_Red;
             }
@@ -41,7 +41,7 @@ namespace VanillaRacesExpandedSanguophage
         [HarmonyPostfix]
         public static void ChangeBGShrunk(Command_Ability __instance, ref Texture2D __result)
         {
-            if (__instance.Ability.def == InternalDefOf.VRE_Coagulate_SingleUse)
+            if (StaticCollectionsClass.allowedSingleUseAbilities.Contains(__instance.Ability.def))
             {
                 __result = GraphicsCache.BGTexShrunk_Red;
             }

@@ -31,6 +31,12 @@ namespace VanillaRacesExpandedSanguophage
                     __instance.BoundPawn.abilities.GainAbility(extension.abilityToAdd);
                 }
             }
+
+            Building_Deathrest_Extender building_Deathrest_Extender = __instance.parent as Building_Deathrest_Extender;
+            if (building_Deathrest_Extender != null)
+            {
+                __instance.BoundPawn.abilities.GainAbility(building_Deathrest_Extender.abilitySelected);
+            }
         }
 
 

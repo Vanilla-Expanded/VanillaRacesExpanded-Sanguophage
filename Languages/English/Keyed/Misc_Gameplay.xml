@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-
-<VRE_Animal>Animal</VRE_Animal>
-<VRE_Corpse>Corpse</VRE_Corpse>
-<VRE_Sanguophage>Sanguophage</VRE_Sanguophage>
-
-<VRE_ExtractHemogenAnimal>Extract hemogen (animal) from {0}</VRE_ExtractHemogenAnimal>
-<VRE_ExtractHemogenCorpse>Extract hemogen (corpse) from {0}</VRE_ExtractHemogenCorpse>
-<VRE_ExtractHemogenSanguophage>Extract hemogen (sanguophage) from {0}</VRE_ExtractHemogenSanguophage>
-
-<VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
-<VRE_NoHeart>Can only be used on targets with a heart</VRE_NoHeart>
-
-
-  
-  <VRE_HemogenValve>Switches hemogen flow on/off.</VRE_HemogenValve>
-  <VRE_HemogenValveDesc>Switches hemogen flow on/off. A pawn will come open/close the valve.</VRE_HemogenValveDesc>
-
+	<VRE_Animal>Animal</VRE_Animal>
+	<VRE_Corpse>Corpse</VRE_Corpse>
+	<VRE_Sanguophage>Sanguophage</VRE_Sanguophage>
+	<VRE_ExtractHemogenAnimal>Extract hemogen (animal) from {0}</VRE_ExtractHemogenAnimal>
+	<VRE_ExtractHemogenCorpse>Extract hemogen (corpse) from {0}</VRE_ExtractHemogenCorpse>
+	<VRE_ExtractHemogenSanguophage>Extract hemogen (sanguophage) from {0}</VRE_ExtractHemogenSanguophage>
+	<VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
+	<VRE_NoHeart>Can only be used on targets with a heart</VRE_NoHeart>
+	<VRE_HemogenValve>Switches hemogen flow on/off.</VRE_HemogenValve>
+	<VRE_HemogenValveDesc>Switches hemogen flow on/off. A pawn will come open/close the valve.</VRE_HemogenValveDesc>
+	<VRE_Ability>Ability: {0}</VRE_Ability>
 </LanguageData>
