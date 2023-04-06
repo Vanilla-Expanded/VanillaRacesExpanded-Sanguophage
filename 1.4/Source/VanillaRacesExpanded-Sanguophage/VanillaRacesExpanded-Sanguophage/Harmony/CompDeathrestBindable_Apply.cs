@@ -21,7 +21,7 @@ namespace VanillaRacesExpandedSanguophage
     {
 
         [HarmonyPostfix]
-        public static void ChangeBG(CompDeathrestBindable __instance)
+        public static void DeathRestExtensions(CompDeathrestBindable __instance)
         {
             DeathrestExtension extension = __instance.parent.def.GetModExtension<DeathrestExtension>();
             if (extension!=null)
@@ -42,7 +42,38 @@ namespace VanillaRacesExpandedSanguophage
 
     }
 
-    
+    [HarmonyPatch(typeof(CompDeathrestBindable))]
+    [HarmonyPatch("CompTickRare")]
+
+    static class VanillaRacesExpandedSanguophage_CompDeathrestBindable_CompTickRare_Patch
+    {
+
+        [HarmonyPostfix]
+        public static void DeathRestExtensions(CompDeathrestBindable __instance)
+        {
+
+            if (__instance.parent.IsHashIntervalTick(2500))
+            {
+                DeathrestExtension extension = __instance.parent.def.GetModExtension<DeathrestExtension>();
+                if (extension != null)
+                {
+                    if (extension.psyfocusPercentPerHour != 0f)
+                    {
+                        if (__instance.BoundPawn?.HasPsylink==true)
+                        {
+                            __instance.BoundPawn?.psychicEntropy.OffsetPsyfocusDirectly(extension.psyfocusPercentPerHour);
+                        }
+                    }
+                }
+            }
+            
+
+        }
+
+
+    }
+
+
 
 
 }

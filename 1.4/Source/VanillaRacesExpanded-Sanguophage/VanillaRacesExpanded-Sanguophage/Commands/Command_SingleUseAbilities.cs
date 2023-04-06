@@ -34,6 +34,7 @@ namespace VanillaRacesExpandedSanguophage
                 if (building_Deathrest_Extender != null)
                 {
                     building_Deathrest_Extender.abilitySelected = abilitydef;
+                    this.defaultDesc = "VRE_Ability".Translate(abilitydef.LabelCap);
                 }
 
             }, MenuOptionPriority.Default, null, null, 29f, null, null));

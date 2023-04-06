@@ -9,6 +9,7 @@ namespace VanillaRacesExpandedSanguophage
     {
 
         public AbilityDef abilityToAdd;
+        public float psyfocusPercentPerHour =0f;
 
     }
 

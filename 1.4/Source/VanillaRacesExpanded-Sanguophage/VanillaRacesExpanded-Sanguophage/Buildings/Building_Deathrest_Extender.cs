@@ -29,6 +29,7 @@ namespace VanillaRacesExpandedSanguophage
             yield return new Command_SingleUseAbilities(this)
             {
                 icon = ContentFinder<Texture2D>.Get(abilitySelected.iconPath, false),
+                defaultDesc="VRE_DefaultAbility",
                 hotKey = KeyBindingDefOf.Misc1,
                 building = this
 
