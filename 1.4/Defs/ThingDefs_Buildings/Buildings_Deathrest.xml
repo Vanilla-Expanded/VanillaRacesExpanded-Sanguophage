@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_InvocationMatrix</defName>
 		<label>invocation matrix</label>
 		<thingClass>VanillaRacesExpandedSanguophage.Building_Deathrest_Extender</thingClass>
@@ -45,9 +45,24 @@
 				<soundEnd>PsychofluidPump_Stop</soundEnd>
 				<soundWorking>PsychofluidPump_Ambience</soundWorking>
 			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_HemodynamicAccelerator</defName>
 		<label>hemodynamic accelerator</label>
 		<description>An advanced device designed to expedite the deathrest process at the cost of blood consumption. By connecting with a deathresting person, this apparatus employs intricate blood analysis and potent sanguine stimulants to maximize the efficiency of the deathrest casket. As it hastens the character's recovery, the Hemodynamic Accelerator demands a continuous supply of hemogen to fuel its powerful operation. To function, it must be connected to a deathrest casket, ensuring the swift rejuvenation of its occupant.</description>
@@ -106,7 +121,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_HemogenSolidifier</defName>
 		<label>hemogen solidifier</label>
 		<description>A device specifically engineered to enhance the durability of deathresting characters by manipulating the molecular structure of their skin. Utilizing an array of bioresonant projectors and blood-based nano-agents, the solidifier targets the hemogen within the character's body, fortifying and thickening skin molecules. As the deathresting individual slumbers, the Hemogen Solidifier weaves a dense, protective layer around them, rendering their skin more resilient and damage-resistant. The device must be connected to a deathrest casket to operate, ensuring its occupant emerges from their rest with an augmented defensive capacity.</description>
@@ -152,9 +167,24 @@
 				<basePowerConsumption>1000</basePowerConsumption>
 				<idlePowerDraw>0</idlePowerDraw>
 			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_SmallHemogenAmplifier</defName>
 		<label>small hemogen amplifier</label>
 		<description>This device leaves a deathrester in a hemogen-amplified state so they gain slightly more hemogen from any hemogen source. Using a gland probe and blood analyzer, it links with a deathresting person, stimulating hemogen glands into a more active state. It must be connected to a deathrest casket to function. This building needs to consume hemogen to function.</description>
@@ -201,9 +231,24 @@
 				<basePowerConsumption>50</basePowerConsumption>
 				<idlePowerDraw>0</idlePowerDraw>
 			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_SmallHemopump</defName>
 		<label>small hemopump</label>
 		<description>This small, blood-refining pump increases the amount of hemogen a deathresting person can store in their body. It must be connected to a deathrest casket to function. This building needs to consume hemogen to function.</description>
@@ -246,6 +291,21 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>50</basePowerConsumption>
 				<idlePowerDraw>0</idlePowerDraw>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
 			</li>
 		</comps>
 	</ThingDef>
