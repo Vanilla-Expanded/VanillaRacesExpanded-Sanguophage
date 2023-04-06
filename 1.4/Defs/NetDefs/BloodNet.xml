@@ -15,7 +15,7 @@
 		</pipeDefs>
 		<designator>
 			<deconstructIconPath>UI/Gizmos/VRE_BloodPipesDeconstruct</deconstructIconPath>
-			<designationCategoryDef>VRE_HemogenPipeNetwork</designationCategoryDef>
+			<designationCategoryDef>Biotech</designationCategoryDef>
 		</designator>
 		<overlayOptions>
 			<overlayColor>(109, 37, 39)</overlayColor>
@@ -27,7 +27,6 @@
 			</li>
 		</linkToRefuelables>
 	</PipeSystem.PipeNetDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_HemogenPipe</defName>
 		<label>hemogen pipe</label>
@@ -91,14 +90,13 @@
 		<neverMultiSelect>true</neverMultiSelect>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<clearBuildingArea>false</clearBuildingArea>
 		<researchPrerequisites>
 			<li>Deathrest</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_UndergroundHemogenPipe</defName>
 		<label>subterranean hemogen pipe</label>
@@ -162,14 +160,13 @@
 		<neverMultiSelect>true</neverMultiSelect>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<clearBuildingArea>false</clearBuildingArea>
 		<researchPrerequisites>
 			<li>Deathrest</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_HemogenValve</defName>
 		<label>hemogen valve</label>
@@ -200,7 +197,6 @@
 		<placingDraggableDimensions>0</placingDraggableDimensions>
 		<costList>
 			<Steel>5</Steel>
-
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_PipeValve">
@@ -217,13 +213,12 @@
 		<selectable>true</selectable>
 		<neverMultiSelect>false</neverMultiSelect>
 		<tickerType>Normal</tickerType>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
 			<li>Deathrest</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_HemogenVat</defName>
 		<label>hemogen vat</label>
@@ -244,7 +239,6 @@
 		<passability>Impassable</passability>
 		<pathCost>50</pathCost>
 		<blockWind>true</blockWind>
-	
 		<fillPercent>0.40</fillPercent>
 		<tickerType>Normal</tickerType>
 		<statBases>
@@ -265,20 +259,16 @@
 				<barSize>(1.3, 0.25)</barSize>
 				<margin>0.1</margin>
 				<centerOffset>(0, 0, 0.35)</centerOffset>
-
 			</li>
-
 		</comps>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
-	
+		<designationCategory>Biotech</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<canOverlapZones>false</canOverlapZones>
 		<researchPrerequisites>
 			<li>Deathrest</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VRE_HemogenTap</defName>
 		<label>hemogen tap</label>
@@ -338,7 +328,7 @@
 		<inspectorTabs>
 			<li>ITab_Storage</li>
 		</inspectorTabs>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
 		<canOverlapZones>false</canOverlapZones>
@@ -353,7 +343,6 @@
 			<li>Deathrest</li>
 		</researchPrerequisites>
 	</ThingDef>
-
 	<ThingDef ParentName="FurnitureBase">
 		<defName>VRE_HemogenDrain</defName>
 		<label>hemogen drain</label>
@@ -415,7 +404,7 @@
 		<inspectorTabs>
 			<li>ITab_Storage</li>
 		</inspectorTabs>
-		<designationCategory>VRE_HemogenPipeNetwork</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
 		<canOverlapZones>false</canOverlapZones>
@@ -428,5 +417,61 @@
 		<researchPrerequisites>
 			<li>Deathrest</li>
 		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VRE_Draincasket</defName>
+		<label>draincasket</label>
+		<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.</description>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Building/Draincasket/Draincasket</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>4000</WorkToBuild>
+			<Flammability>1.0</Flammability>			
+			<Mass>50</Mass>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2,2)</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<costList>
+			<Steel>180</Steel>
+			<Gold>3</Gold>
+			<ComponentIndustrial>4</ComponentIndustrial>
+			
+		</costList>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsPower</li>
+		</thingCategories>
+		<designationCategory>Biotech</designationCategory>
+		<researchPrerequisites>
+			<li>Deathrest</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="PipeSystem.CompProperties_Resource">
+				<pipeNet>VRE_HemogenNet</pipeNet>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
+				
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 	</ThingDef>
 </Defs>

@@ -25,6 +25,8 @@ namespace VanillaRacesExpandedSanguophage
         public static JobDef VRE_ExtractHemogenCorpse;
         public static JobDef VRE_ExtractHemogenSanguophage;
         public static JobDef VRE_HemohunterJob;
+        public static JobDef VRE_CarryToDraincasket;
+        public static JobDef VRE_EnterDraincasket;
 
         public static ThingDef VRE_HemogenPack_Animal;
         public static ThingDef VRE_HemogenPack_Corpse;

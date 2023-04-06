@@ -12,4 +12,6 @@
 	<VRE_HemogenValveDesc>Switches hemogen flow on/off. A pawn will come open/close the valve.</VRE_HemogenValveDesc>
 	<VRE_Ability>Ability: {0}</VRE_Ability>
 	<VRE_DefaultAbility>Choose ability</VRE_DefaultAbility>
+	<VRE_CarryToDraincasket>Carry {0} to draincasket</VRE_CarryToDraincasket>
+	<VRE_EnterDraincasket>Enter draincasket</VRE_EnterDraincasket>
 </LanguageData>

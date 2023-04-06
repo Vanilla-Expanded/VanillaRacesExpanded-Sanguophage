@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
-	<ThingDef ParentName="DeathrestBuildingHemogenFueled">
+	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_PsychofluidWell</defName>
 		<label>psychofluid well</label>
 		<description>A specialized apparatus designed to rejuvenate the psyfocus of deathresting psycasters by delicately nurturing their psychic centers. Employing a meticulous balance of sanguine infusions and harmonic neural stimulation, the well works in concert with the psycaster's innate psychic energies. As the individual rests within the deathrest casket, the Psychofluid Well revitalizes their psychic reservoirs, preparing them for future psychic exertions. To operate effectively, the device must be connected to a deathrest casket and requires a steady supply of hemogen to fuel its subtle yet powerful restorative functions.</description>
@@ -41,12 +40,24 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_DeathrestBindable">
 				<stackLimit>2</stackLimit>
-				
-				 <soundStart>PsychofluidPump_Start</soundStart>
-        <soundEnd>PsychofluidPump_Stop</soundEnd>
-        <soundWorking>PsychofluidPump_Ambience</soundWorking>
+				<soundStart>PsychofluidPump_Start</soundStart>
+				<soundEnd>PsychofluidPump_Stop</soundEnd>
+				<soundWorking>PsychofluidPump_Ambience</soundWorking>
 			</li>
-			
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
 		</comps>
 		<modExtensions>
 			<li Class="VanillaRacesExpandedSanguophage.DeathrestExtension">
@@ -54,5 +65,4 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-	
 </Defs>

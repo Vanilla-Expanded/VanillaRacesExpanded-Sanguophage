@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -312,11 +313,15 @@
     <Compile Include="Abilities\Properties\CompProperties_AbilitySanguofeederBite.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilitySingleUse.cs" />
     <Compile Include="Abilities\Properties\CompProperties_AbilityToxicCloud.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_CarryToDraincasket.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_EnterDraincasket.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenAnimal.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenSanguophage.cs" />
     <Compile Include="Buildings\Building_Deathrest_Extender.cs" />
     <Compile Include="Commands\Command_SingleUseAbilities.cs" />
+    <Compile Include="Comps\CompDraincasket.cs" />
+    <Compile Include="Comps\Properties\CompProperties_Draincasket.cs" />
     <Compile Include="DefExtensions\DeathrestExtension.cs" />
     <Compile Include="DefOfs\InternalDefOf.cs" />
     <Compile Include="Defs\SingleUseAbilityDef.cs" />
@@ -325,18 +330,20 @@
     <Compile Include="Harmony\Command_Ability_BGTexture.cs" />
     <Compile Include="Harmony\CompAbilityEffect_BloodfeederBite_Apply.cs" />
     <Compile Include="Harmony\CompDeathrestBindable_Apply.cs" />
+    <Compile Include="Harmony\FloatMenuMakerMap_AddHumanlikeOrders.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
     <Compile Include="Harmony\GeneResourceDrainUtility_OffsetResource.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\Thing_GetFloatmenuOptions.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveHediffs.cs" />
-    <Compile Include="JobDrivers\JobDriver_Hemohunter.cs" />
-    <Compile Include="JobGivers\JobGiver_Hemohunter.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_Hemohunter.cs" />
+    <Compile Include="AI\JobGivers\JobGiver_Hemohunter.cs" />
     <Compile Include="MapComponents\BloodMoon_MapComponent.cs" />
     <Compile Include="MentalStateWorkers\MentalState_Hemohunter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticCollectionsClass\StaticCollectionsClass.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
