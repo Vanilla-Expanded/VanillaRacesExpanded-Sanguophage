@@ -9,6 +9,7 @@
 			<onlyShowStored>True</onlyShowStored>
 			<offTexPath>Things/Item/Resource/HemogenPack/HemogenPack_c</offTexPath>
 		</resource>
+		<noStorageAlert>true</noStorageAlert>
 		<pipeDefs>
 			<li>VRE_HemogenPipe</li>
 			<li>VRE_UndergroundHemogenPipe</li>
@@ -428,7 +429,6 @@
 			<texPath>Building/Draincasket/Draincasket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,2)</drawSize>
-			
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
@@ -439,25 +439,65 @@
 		<statBases>
 			<MaxHitPoints>300</MaxHitPoints>
 			<WorkToBuild>4000</WorkToBuild>
-			<Flammability>1.0</Flammability>			
+			<Flammability>1.0</Flammability>
 			<Mass>50</Mass>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
 		<size>(2,2)</size>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
 		<building>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+			<haulToContainerDuration>120</haulToContainerDuration>
+			<uninstallWork>1800</uninstallWork>
+			<fixedStorageSettings>
+				<filter>
+					<categories>
+						<li>Foods</li>
+					</categories>
+					<specialFiltersToDisallow>
+						<li>AllowPlantFood</li>
+					</specialFiltersToDisallow>
+					<disallowedThingDefs>
+						<li>Hay</li>
+					</disallowedThingDefs>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<filter>
+					<categories>
+						<li>Foods</li>
+					</categories>
+					<disallowedCategories>
+						<li>EggsFertilized</li>
+					</disallowedCategories>
+					<disallowedThingDefs>
+						<li>InsectJelly</li>
+						<li>MealLavish</li>
+						<li>MealLavish_Veg</li>
+						<li>MealLavish_Meat</li>
+						<li>Chocolate</li>
+						<li>HemogenPack</li>
+						<li>VRE_HemogenPack_Animal</li>
+						<li>VRE_HemogenPack_Corpse</li>
+						<li>VRE_HemogenPack_Sanguophage</li>
+					</disallowedThingDefs>
+				</filter>
+			</defaultStorageSettings>
 		</building>
 		<costList>
 			<Steel>180</Steel>
 			<Gold>3</Gold>
 			<ComponentIndustrial>4</ComponentIndustrial>
-			
 		</costList>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<thingCategories>
 			<li>BuildingsPower</li>
 		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_BiosculpterNutritionStorage</li>
+		</inspectorTabs>
 		<designationCategory>Biotech</designationCategory>
 		<researchPrerequisites>
 			<li>Deathrest</li>
@@ -467,7 +507,19 @@
 				<pipeNet>VRE_HemogenNet</pipeNet>
 			</li>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
-				
+				<fuelConsumptionRate>8.0</fuelConsumptionRate>
+				<fuelCapacity>50.0</fuelCapacity>
+				<fuelFilter>
+					<categories>
+						<li>Foods</li>
+					</categories>
+					<specialFiltersToDisallow>
+						<li>AllowPlantFood</li>
+					</specialFiltersToDisallow>
+					<disallowedThingDefs>
+						<li>Hay</li>
+					</disallowedThingDefs>
+				</fuelFilter>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

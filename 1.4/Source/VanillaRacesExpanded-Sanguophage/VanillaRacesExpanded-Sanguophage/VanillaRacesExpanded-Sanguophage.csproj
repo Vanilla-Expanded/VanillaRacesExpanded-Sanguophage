@@ -42,6 +42,10 @@
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PipeSystem">
+      <HintPath>References\PipeSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
@@ -318,6 +322,9 @@
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenAnimal.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenCorpse.cs" />
     <Compile Include="AI\JobDrivers\JobDriver_ExtractHemogenSanguophage.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_RefuelDraincasket.cs" />
+    <Compile Include="AI\JobDrivers\JobDriver_RefuelDraincasketAtomic.cs" />
+    <Compile Include="AI\WorkGivers\WorkGiver_DraincasketRefuel.cs" />
     <Compile Include="Buildings\Building_Deathrest_Extender.cs" />
     <Compile Include="Commands\Command_SingleUseAbilities.cs" />
     <Compile Include="Comps\CompDraincasket.cs" />
@@ -340,10 +347,12 @@
     <Compile Include="AI\JobDrivers\JobDriver_Hemohunter.cs" />
     <Compile Include="AI\JobGivers\JobGiver_Hemohunter.cs" />
     <Compile Include="MapComponents\BloodMoon_MapComponent.cs" />
+    <Compile Include="MapComponents\Draincaskets_MapComponent.cs" />
     <Compile Include="MentalStateWorkers\MentalState_Hemohunter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticCollectionsClass\StaticCollectionsClass.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Utils\DraincasketRefuelWorkGiverUtility.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -11,15 +11,25 @@ namespace VanillaRacesExpandedSanguophage
     {
         private const TargetIndex CasketInd = TargetIndex.A;
 
-        private CompDraincasket Pod => job.GetTarget(CasketInd).Thing.TryGetComp<CompDraincasket>();
+        public CompDraincasket Pod => job.targetA.Thing.TryGetComp<CompDraincasket>();
 
         public override bool TryMakePreToilReservations(bool errorOnFailed) =>
             pawn.Reserve(Pod.parent, job, 1, -1, null, errorOnFailed);
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            AddFinishAction(delegate
+            {
+                if (Pod != null)
+                {
+                    if (Pod.queuedEnterJob == job)
+                    {
+                        Pod.ClearQueuedInformation();
+                    }
+                    
+                }
+            });
 
-           
             this.FailOnDestroyedOrNull(CasketInd);
            
             var goToThing = Toils_Goto.GotoThing(CasketInd, PathEndMode.InteractionCell);
@@ -30,18 +40,8 @@ namespace VanillaRacesExpandedSanguophage
             Toil enter = ToilMaker.MakeToil("MakeNewToils");
             enter.initAction = delegate
             {
-                Pawn actor = enter.actor;
-                bool flag = actor.DeSpawnOrDeselect();
+                Pod.TryAcceptPawn(enter.actor);
 
-                if (Pod == null)
-                {
-                    Log.Message("pod is null");
-                }
-
-                if (Pod.TryAcceptThing(actor) && flag)
-                {
-                    Find.Selector.Select(actor, playSound: false, forceDesignatorDeselect: false);
-                }
             };
 
             enter.defaultCompleteMode = ToilCompleteMode.Instant;
@@ -51,7 +51,7 @@ namespace VanillaRacesExpandedSanguophage
         }
         public static Toil PrepareToEnterToil(TargetIndex podIndex)
         {
-            var prepare = Toils_General.Wait(JobDriver_EnterBiosculpterPod.EnterPodDelay);
+            var prepare = Toils_General.Wait(70);
             prepare.FailOnCannotTouch(podIndex, PathEndMode.InteractionCell);
             prepare.WithProgressBarToilDelay(podIndex);
             return prepare;

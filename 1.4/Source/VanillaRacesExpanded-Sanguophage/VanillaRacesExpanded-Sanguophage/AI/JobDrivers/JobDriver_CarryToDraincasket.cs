@@ -20,7 +20,17 @@ namespace VanillaRacesExpandedSanguophage
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-          
+            AddFinishAction(delegate
+            {
+                if (Pod != null)
+                {
+                    if (Pod.queuedEnterJob == job)
+                    {
+                        Pod.ClearQueuedInformation();
+                    }
+                    
+                }
+            });
             this.FailOnDestroyedOrNull(TakeeInd);
             this.FailOnDestroyedOrNull(CasketInd);
             this.FailOnAggroMentalState(TakeeInd);

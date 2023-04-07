@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using PipeSystem;
 using RimWorld;
+using Unity.Jobs;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -10,13 +13,24 @@ using Verse.Sound;
 namespace VanillaRacesExpandedSanguophage
 {
     [StaticConstructorOnStartup]
-    public class CompDraincasket : ThingComp,IThingHolderWithDrawnPawn, ISuspendableThingHolder
+    public class CompDraincasket : CompRefuelable, IThingHolderWithDrawnPawn, ISuspendableThingHolder, IStoreSettingsParent
     {
-       
-        private ThingOwner innerContainer;
+
 
         protected bool contentsKnown;
-        public CompDraincasket() => innerContainer = new ThingOwner<Thing>(this);
+
+
+        public CompDraincasket()
+        {
+            innerContainer = new ThingOwner<Thing>(this);
+        }
+
+        public Job queuedEnterJob;
+        public Pawn queuedPawn;
+
+        public CompFlickable flickComp;
+
+        public ThingOwner innerContainer;
 
         public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
         public bool IsContentsSuspended => true;
@@ -35,14 +49,90 @@ namespace VanillaRacesExpandedSanguophage
         public override void CompTick()
         {
             base.CompTick();
-           
+            if (!Props.consumeFuelOnlyWhenUsed && (this.flickComp == null || this.flickComp.SwitchIsOn) && (this.Occupant != null))
+            {
+                ConsumeFuel(ConsumptionRatePerTick);
+            }
+            if (parent.IsHashIntervalTick(60000))
+            {
+                if(Occupant != null && Fuel>0)  
+                {
+                    CompResource comp = this.parent.TryGetComp<CompResource>();
+                    if (comp != null)
+                    {
+                        comp.PipeNet.DistributeAmongStorage(1);
+                    }
+                }
+            }
         }
+        private float ConsumptionRatePerTick
+        {
+            get
+            {
+                return Props.fuelConsumptionRate / 60000f;
+            }
+        }
+        public ThingFilter FuelFilter
+        {
+            get
+            {
+                return GetStoreSettings().filter;
+            }
+        }
+
+
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+            flickComp = parent.GetComp<CompFlickable>();
+            allowedNutritionSettings = new StorageSettings(this);
+            if (parent.def.building.defaultStorageSettings != null)
+            {
+                allowedNutritionSettings.CopyFrom(parent.def.building.defaultStorageSettings);
+            }
+        }
+
+        public StorageSettings GetStoreSettings()
+        {
+            return allowedNutritionSettings;
+        }
+        public StorageSettings GetParentStoreSettings()
+        {
+            return parent.def.building.fixedStorageSettings;
+        }
+
+        public void Notify_SettingsChanged()
+        {
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            Draincaskets_MapComponent mapComponent = parent.Map.GetComponent<Draincaskets_MapComponent>();
+            if (mapComponent != null)
+            {
+                mapComponent.comps.Add(this);
+            }
+            
+            base.PostSpawnSetup(respawningAfterLoad);
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+           
+            Draincaskets_MapComponent mapComponent = parent.Map.GetComponent<Draincaskets_MapComponent>();
+            if (mapComponent != null)
+            {
+                mapComponent.comps.Remove(this);
+            }
+            base.PostDeSpawn(map);
+        }
+
 
         public bool InsertPawn(Pawn pawn)
         {
             return innerContainer.TryAddOrTransfer(pawn, false);
-        
-           
+
+
         }
 
         public bool Accepts(Thing thing)
@@ -51,31 +141,29 @@ namespace VanillaRacesExpandedSanguophage
         }
 
 
-        public bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
+
+
+        public bool TryAcceptPawn(Pawn pawn)
         {
-            if (!Accepts(thing))
+            
+            innerContainer.ClearAndDestroyContents();
+            
+            bool num = pawn.DeSpawnOrDeselect();
+            if (pawn.holdingOwner != null)
             {
-                return false;
-            }
-            bool flag = false;
-            if (thing.holdingOwner != null)
-            {
-                thing.holdingOwner.TryTransferToContainer(thing, innerContainer, thing.stackCount);
-                flag = true;
+                pawn.holdingOwner.TryTransferToContainer(pawn, innerContainer);
             }
             else
             {
-                flag = innerContainer.TryAdd(thing);
+                innerContainer.TryAdd(pawn);
             }
-            if (flag)
+            if (num)
             {
-                if (thing.Faction != null && thing.Faction.IsPlayer)
-                {
-                    contentsKnown = true;
-                }
-                return true;
+                Find.Selector.Select(pawn, playSound: false, forceDesignatorDeselect: false);
             }
-            return false;
+            
+            ClearQueuedInformation();
+            return true;
         }
 
         public virtual bool CanAcceptPawn(Pawn pawn) => Occupant is null;
@@ -97,13 +185,14 @@ namespace VanillaRacesExpandedSanguophage
                     label += " (" + "CryptosleepCasketOccupied".Translate() + ")";
                 else
                 {
-                    
+
                     var pod = thing;
                     action = () =>
                     {
                         var job = JobMaker.MakeJob(InternalDefOf.VRE_CarryToDraincasket, target, pod);
                         job.count = 1;
                         pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                        pod.TryGetComp<CompDraincasket>().SetQueuedInformation(job, target);
                     };
                     break;
                 }
@@ -117,6 +206,8 @@ namespace VanillaRacesExpandedSanguophage
             base.PostExposeData();
             Scribe_Values.Look(ref contentsKnown, "contentsKnown", defaultValue: false);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+            Scribe_References.Look(ref queuedEnterJob, "queuedEnterJob");
+            Scribe_References.Look(ref queuedPawn, "queuedPawn");
         }
 
         public override string CompInspectStringExtra() => base.CompInspectStringExtra();
@@ -133,7 +224,7 @@ namespace VanillaRacesExpandedSanguophage
             var s = new Vector3(parent.def.graphicData.drawSize.x, 1f, parent.def.graphicData.drawSize.y);
             var drawPos = parent.DrawPos;
             drawPos.y += Altitudes.AltInc * 2;
-           
+
             if (Occupant is null) return;
             var drawLoc = parent.DrawPos;
             Occupant.Drawer.renderer.RenderPawnAt(drawLoc, Rot4.South, true);
@@ -165,9 +256,12 @@ namespace VanillaRacesExpandedSanguophage
             string label = "VRE_EnterDraincasket".Translate();
             Action action = delegate
             {
+                Job job = JobMaker.MakeJob(jobDef, this.parent);
+                if (selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc))
+                {
+                    SetQueuedInformation(job, selPawn);
+                }
 
-                selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(jobDef, this.parent), JobTag.Misc);
-                
             };
             yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), selPawn, this.parent);
 
@@ -176,10 +270,10 @@ namespace VanillaRacesExpandedSanguophage
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            /*foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
             {
                 yield return gizmo;
-            }*/
+            }
 
             if (innerContainer.Count > 0)
             {
@@ -214,10 +308,25 @@ namespace VanillaRacesExpandedSanguophage
                     }
                 }
             }
-           
+            innerContainer.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
+            contentsKnown = true;
+
+        }
+
+        public void ClearQueuedInformation()
+        {
+            SetQueuedInformation(null, null);
+        }
+
+        public void SetQueuedInformation(Job job, Pawn pawn)
+        {
+            queuedEnterJob = job;
+            queuedPawn = pawn;
         }
 
 
-
+        public bool StorageTabVisible => true;
+        private StorageSettings allowedNutritionSettings;
+       
     }
 }
