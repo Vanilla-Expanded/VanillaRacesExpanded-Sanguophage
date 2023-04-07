@@ -227,7 +227,8 @@ namespace VanillaRacesExpandedSanguophage
 
             if (Occupant is null) return;
             var drawLoc = parent.DrawPos;
-            Occupant.Drawer.renderer.RenderPawnAt(drawLoc, Rot4.South, true);
+            var drawRot = parent.Rotation;
+            Occupant.Drawer.renderer.RenderPawnAt(drawLoc, drawRot, true);
         }
 
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
@@ -279,14 +280,14 @@ namespace VanillaRacesExpandedSanguophage
             {
                 Command_Action command_Action = new Command_Action();
                 command_Action.action = EjectContents;
-                command_Action.defaultLabel = "CommandPodEject".Translate();
-                command_Action.defaultDesc = "CommandPodEjectDesc".Translate();
+                command_Action.defaultLabel = "VRE_CommandDraincasketEject".Translate();
+                command_Action.defaultDesc = "VRE_CommandDraincasketEjectDesc".Translate();
                 if (innerContainer.Count == 0)
                 {
-                    command_Action.Disable("CommandPodEjectFailEmpty".Translate());
+                    command_Action.Disable("VRE_CommandDraincasketEjectFailEmpty".Translate());
                 }
                 command_Action.hotKey = KeyBindingDefOf.Misc8;
-                command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/PodEject");
+                command_Action.icon = ContentFinder<Texture2D>.Get("UI/Widgets/EjectFromDraincasket");
                 yield return command_Action;
             }
 

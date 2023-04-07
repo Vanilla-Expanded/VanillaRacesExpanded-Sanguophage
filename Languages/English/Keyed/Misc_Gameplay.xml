@@ -14,4 +14,7 @@
 	<VRE_DefaultAbility>Choose ability</VRE_DefaultAbility>
 	<VRE_CarryToDraincasket>Carry {0} to draincasket</VRE_CarryToDraincasket>
 	<VRE_EnterDraincasket>Enter draincasket</VRE_EnterDraincasket>
+	<VRE_CommandDraincasketEject>Eject occupant</VRE_CommandDraincasketEject>
+	<VRE_CommandDraincasketEjectDesc>Eject occupant from this draincasket. This will interrupt the hemogen extraction and leave the occupant dizzy due to the bloodloss.</VRE_CommandDraincasketEjectDesc>
+	<VRE_CommandDraincasketEjectFailEmpty>Can't eject occupant, since draincasket is empty</VRE_CommandDraincasketEjectFailEmpty>
 </LanguageData>
