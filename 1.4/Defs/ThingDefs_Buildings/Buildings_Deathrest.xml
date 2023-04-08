@@ -28,7 +28,7 @@
 		<size>(2,2)</size>
 		<costList>
 			<Steel>120</Steel>
-			<Gold>4</Gold>
+			<Gold>40</Gold>
 			<HemogenPack>5</HemogenPack>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
@@ -210,7 +210,7 @@
 		</statBases>
 		<size>(1,1)</size>
 		<costList>
-			<Steel>100</Steel>
+			<Steel>75</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 			<HemogenPack>5</HemogenPack>
 		</costList>
@@ -274,7 +274,7 @@
 		</statBases>
 		<size>(1,1)</size>
 		<costList>
-			<Steel>50</Steel>
+			<Steel>40</Steel>
 			<ComponentIndustrial>2</ComponentIndustrial>
 			<HemogenPack>5</HemogenPack>
 		</costList>

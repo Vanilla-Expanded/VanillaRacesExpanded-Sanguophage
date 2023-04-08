@@ -67,7 +67,8 @@
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<costList>
-			<Steel>2</Steel>
+			<Steel>3</Steel>
+			<Gold>1</Gold>
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_Resource">
@@ -137,7 +138,8 @@
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<costList>
-			<Steel>4</Steel>
+			<Steel>5</Steel>
+			<Gold>1</Gold>
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_Resource">
@@ -198,6 +200,7 @@
 		<placingDraggableDimensions>0</placingDraggableDimensions>
 		<costList>
 			<Steel>5</Steel>
+			<Gold>1</Gold>
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_PipeValve">
@@ -241,6 +244,7 @@
 		<pathCost>50</pathCost>
 		<blockWind>true</blockWind>
 		<fillPercent>0.40</fillPercent>
+		<rotatable>false</rotatable>
 		<tickerType>Normal</tickerType>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
@@ -251,7 +255,7 @@
 		<size>(3,3)</size>
 		<costList>
 			<Steel>180</Steel>
-			<Gold>2</Gold>
+			<Gold>20</Gold>
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_ResourceStorage">
@@ -303,7 +307,7 @@
 		<size>(1,1)</size>
 		<costList>
 			<Steel>50</Steel>
-			<Gold>1</Gold>
+			<Gold>10</Gold>
 		</costList>
 		<building>
 			<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
@@ -379,7 +383,7 @@
 		<size>(1,1)</size>
 		<costList>
 			<Steel>45</Steel>
-			<Gold>1</Gold>
+			<Gold>10</Gold>
 		</costList>
 		<building>
 			<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
@@ -422,7 +426,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_Draincasket</defName>
 		<label>draincasket</label>
-		<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.</description>
+		<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.\n\nProduces 1 hemogen pack a day as long as the occupant has food and the casket is connected to a hemogen nerwork. If deprived of food, the casket will kill its occupant in around 2 days.</description>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -488,7 +492,7 @@
 		</building>
 		<costList>
 			<Steel>180</Steel>
-			<Gold>3</Gold>
+			<Gold>30</Gold>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
 		<minifiedDef>MinifiedThing</minifiedDef>
