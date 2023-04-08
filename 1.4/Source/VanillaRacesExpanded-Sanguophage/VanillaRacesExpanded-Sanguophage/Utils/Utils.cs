@@ -17,6 +17,15 @@ namespace VanillaRacesExpandedSanguophage
             return comp != null;
         }
 
-       
+        public static TargetingParameters ForColonistAndPrisoner()
+        {
+            return new TargetingParameters
+            {
+                canTargetPawns = true,
+                validator = (TargetInfo x) => (x.Thing as Pawn).IsPrisonerOfColony || (x.Thing as Pawn).IsColonist
+            };
+        }
+
+
     }
 }

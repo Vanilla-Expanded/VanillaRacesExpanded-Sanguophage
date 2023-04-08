@@ -3,7 +3,7 @@
 	<ThingDef ParentName="DeathrestBuildingBase">
 		<defName>VRE_PsychofluidWell</defName>
 		<label>psychofluid well</label>
-		<description>A specialized apparatus designed to rejuvenate the psyfocus of deathresting psycasters by delicately nurturing their psychic centers. Employing a meticulous balance of sanguine infusions and harmonic neural stimulation, the well works in concert with the psycaster's innate psychic energies. As the individual rests within the deathrest casket, the Psychofluid Well revitalizes their psychic reservoirs, preparing them for future psychic exertions. To operate effectively, the device must be connected to a deathrest casket and requires a steady supply of hemogen to fuel its subtle yet powerful restorative functions.</description>
+		<description>A specialized apparatus designed to rejuvenate the psyfocus of deathresting psycasters by delicately nurturing their psychic centers. Employing a meticulous balance of sanguine infusions and harmonic neural stimulation, the well works in concert with the psycaster's innate psychic energies. As the individual rests within the deathrest casket, the Psychofluid Well revitalizes their psychic reservoirs, preparing them for future psychic exertions. To operate effectively, the device must be connected to a deathrest casket and requires a steady supply of hemogen to fuel its subtle yet powerful restorative functions.\n\nContrary to other deathrest machines, the psychofluid well regenerates 5% of total Psyfocus to the deathresting occupant every 1 hour, instead of acting all at once when the deathrest ends.</description>
 		<graphicData>
 			<texPath>Building/PsychofluidWell/PsychofluidWell</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
