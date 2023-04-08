@@ -14,6 +14,7 @@ namespace VanillaRacesExpandedSanguophage
         public static HediffDef VRE_ConsumedAnimalHemogen;
         public static HediffDef VRE_ConsumedCorpseHemogen;
         public static HediffDef VRE_ConsumedSanguophageHemogen;
+        public static HediffDef VRE_DraincasketSickness;
 
         public static ThoughtDef VRE_Ecstasy;
 

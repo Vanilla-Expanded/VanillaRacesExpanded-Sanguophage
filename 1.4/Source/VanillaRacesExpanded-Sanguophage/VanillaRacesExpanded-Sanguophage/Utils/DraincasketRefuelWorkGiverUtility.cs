@@ -36,13 +36,13 @@ namespace VanillaRacesExpandedSanguophage
             
             if (FindBestFuel(pawn, t) == null)
             {
-                ThingFilter fuelFilter = t.TryGetComp<CompDraincasket>().Props.fuelFilter;
+                ThingFilter fuelFilter = t.TryGetComp<CompDraincasket>().FuelFilter;
                 JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter.Summary));
                 return false;
             }
             if (t.TryGetComp<CompDraincasket>().Props.atomicFueling && FindAllFuel(pawn, t) == null)
             {
-                ThingFilter fuelFilter2 = t.TryGetComp<CompDraincasket>().Props.fuelFilter;
+                ThingFilter fuelFilter2 = t.TryGetComp<CompDraincasket>().FuelFilter;
                 JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter2.Summary));
                 return false;
             }
@@ -64,7 +64,7 @@ namespace VanillaRacesExpandedSanguophage
 
         private static Thing FindBestFuel(Pawn pawn, Thing refuelable)
         {
-            ThingFilter filter = refuelable.TryGetComp<CompDraincasket>().Props.fuelFilter;
+            ThingFilter filter = refuelable.TryGetComp<CompDraincasket>().FuelFilter;
             Predicate<Thing> validator = delegate (Thing x)
             {
                 if (x.IsForbidden(pawn) || !pawn.CanReserve(x))
@@ -79,7 +79,7 @@ namespace VanillaRacesExpandedSanguophage
         private static List<Thing> FindAllFuel(Pawn pawn, Thing refuelable)
         {
             int fuelCountToFullyRefuel = refuelable.TryGetComp<CompDraincasket>().GetFuelCountToFullyRefuel();
-            ThingFilter filter = refuelable.TryGetComp<CompDraincasket>().Props.fuelFilter;
+            ThingFilter filter = refuelable.TryGetComp<CompDraincasket>().FuelFilter;
             return FindEnoughReservableThings(pawn, refuelable.Position, new IntRange(fuelCountToFullyRefuel, fuelCountToFullyRefuel), (Thing t) => filter.Allows(t));
         }
 

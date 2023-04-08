@@ -1,10 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
-
-
-
 	<HediffDef>
 		<defName>VRE_Sensitivity_Dangerous_Hediff</defName>
 		<label>dangerous UV sensitivity</label>
@@ -12,7 +7,7 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>		
+		<isBad>false</isBad>
 		<comps>
 			<li Class="AnimalBehaviours.HediffCompProperties_StageBySunlight">
 
@@ -30,14 +25,11 @@
 				<becomeVisible>false</becomeVisible>
 			</li>
 			<li>
-
-				<minSeverity>1</minSeverity>					
+				<minSeverity>1</minSeverity>
 				<becomeVisible>false</becomeVisible>
-
 			</li>
 		</stages>
 	</HediffDef>
-	
 	<HediffDef>
 		<defName>VRE_ConsumedAnimalHemogen</defName>
 		<label>consumed animal hemogen</label>
@@ -45,20 +37,16 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>		
-		
+		<isBad>false</isBad>
 		<stages>
 			<li>
 				<minSeverity>0</minSeverity>
 				<statOffsets>
 					<InjuryHealingFactor>0.1</InjuryHealingFactor>
-					
-				</statOffsets>	
+				</statOffsets>
 				<statFactors>
-					
 					<MeleeDPS>1.1</MeleeDPS>
-
-				</statFactors>						
+				</statFactors>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -72,13 +60,10 @@
 						<capacity>Talking</capacity>
 						<setMax>0.2</setMax>
 					</li>
-				</capMods>				
-				
+				</capMods>
 			</li>
-			
 		</stages>
 	</HediffDef>
-	
 	<HediffDef>
 		<defName>VRE_ConsumedCorpseHemogen</defName>
 		<label>consumed corpse hemogen</label>
@@ -86,12 +71,10 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>		
-		
+		<isBad>false</isBad>
 		<stages>
 			<li>
 				<minSeverity>0</minSeverity>
-								
 				<capMods>
 					<li>
 						<capacity>BloodFiltration</capacity>
@@ -113,13 +96,10 @@
 						<capacity>Metabolism</capacity>
 						<setMax>0.8</setMax>
 					</li>
-				</capMods>				
-				
+				</capMods>
 			</li>
-			
 		</stages>
 	</HediffDef>
-	
 	<HediffDef>
 		<defName>VRE_ConsumedSanguophageHemogen</defName>
 		<label>consumed sanguophage hemogen</label>
@@ -127,12 +107,11 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>		
-		
+		<isBad>false</isBad>
 		<stages>
 			<li>
 				<minSeverity>0</minSeverity>
-				<painOffset>-0.2</painOffset>				
+				<painOffset>-0.2</painOffset>
 				<capMods>
 					<li>
 						<capacity>BloodFiltration</capacity>
@@ -178,13 +157,10 @@
 						<capacity>Talking</capacity>
 						<offset>0.2</offset>
 					</li>
-				</capMods>				
-				
+				</capMods>
 			</li>
-			
 		</stages>
 	</HediffDef>
-	
 	<HediffDef>
 		<defName>VRE_SharpTalons</defName>
 		<label>sharp talons</label>
@@ -192,7 +168,7 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
-		<isBad>false</isBad>		
+		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
 				<tools>
@@ -203,19 +179,46 @@
 						</capacities>
 						<power>16</power>
 						<cooldownTime>2</cooldownTime>
-
 					</li>
 				</tools>
 			</li>
 		</comps>
 		<addedPartProps>
-     
-      <betterThanNatural>true</betterThanNatural>
-    </addedPartProps>
-
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
 	</HediffDef>
-
-
-
-
+	<HediffDef ParentName="DiseaseBase">
+		<defName>VRE_DraincasketSickness</defName>
+		<label>draincasket sickness</label>
+		<description>After-effects of using a draincasket. Symptoms of draincasket sickness typically include localized pain, swelling, and redness at the site of the draincasket tubes' connection. Victims may experience increasing fatigue, weakness, and a general feeling of malaise.</description>
+		<descriptionShort>After-effects of using a draincasket. Victims may experience increasing fatigue, weakness, and a general feeling of malaise.</descriptionShort>
+		<makesSickThought>true</makesSickThought>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>8000~12000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<vomitMtbDays>0.125</vomitMtbDays>
+				<painOffset>0.4</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.6</postFactor>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

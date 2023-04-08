@@ -28,6 +28,10 @@ namespace VanillaRacesExpandedSanguophage
         public Job queuedEnterJob;
         public Pawn queuedPawn;
 
+        public bool pawnStarving = false;
+        public int starvingCounter = 0;
+        public const int starvingMaxTicks = 175000;
+
         public CompFlickable flickComp;
 
         public ThingOwner innerContainer;
@@ -64,6 +68,29 @@ namespace VanillaRacesExpandedSanguophage
                     }
                 }
             }
+
+
+            if (parent.IsHashIntervalTick(6000))
+            {
+                if (this.Fuel == 0)
+                {
+                    pawnStarving = true;
+                }
+                else
+                {
+                    pawnStarving = false;
+                    starvingCounter = 0;
+                }
+            }
+            if (pawnStarving)
+            {
+                starvingCounter++;
+                if(starvingCounter > starvingMaxTicks)
+                {
+                    EjectAndKillContents();
+                }
+            }
+            
         }
         private float ConsumptionRatePerTick
         {
@@ -205,6 +232,8 @@ namespace VanillaRacesExpandedSanguophage
         {
             base.PostExposeData();
             Scribe_Values.Look(ref contentsKnown, "contentsKnown", defaultValue: false);
+            Scribe_Values.Look(ref pawnStarving, "pawnStarving", defaultValue: false);
+            Scribe_Values.Look(ref starvingCounter, "starvingCounter", defaultValue: 0);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_References.Look(ref queuedEnterJob, "queuedEnterJob");
             Scribe_References.Look(ref queuedPawn, "queuedPawn");
@@ -305,8 +334,26 @@ namespace VanillaRacesExpandedSanguophage
                     pawn.filth.GainFilth(filth_Slime);
                     if (pawn.RaceProps.IsFlesh)
                     {
-                        pawn.health.AddHediff(HediffDefOf.CryptosleepSickness);
+                        pawn.health.AddHediff(InternalDefOf.VRE_DraincasketSickness);
                     }
+                }
+            }
+            innerContainer.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
+            contentsKnown = true;
+
+        }
+
+        public void EjectAndKillContents()
+        {
+            ThingDef filth_Slime = ThingDefOf.Filth_Slime;
+            foreach (Thing item in (IEnumerable<Thing>)innerContainer)
+            {
+                Pawn pawn = item as Pawn;
+                if (pawn != null)
+                {
+                    PawnComponentsUtility.AddComponentsForSpawn(pawn);
+                    pawn.filth.GainFilth(filth_Slime);
+                    pawn.Kill(null);
                 }
             }
             innerContainer.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
@@ -327,7 +374,7 @@ namespace VanillaRacesExpandedSanguophage
 
 
         public bool StorageTabVisible => true;
-        private StorageSettings allowedNutritionSettings;
+        public StorageSettings allowedNutritionSettings;
        
     }
 }
