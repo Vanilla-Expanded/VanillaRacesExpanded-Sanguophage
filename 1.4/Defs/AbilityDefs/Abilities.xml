@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<AbilityDef Abstract="True" Name="VRE_NoTargetAbilities">
-		<jobDef>CastAbilityOnThing</jobDef>
-		<targetRequired>False</targetRequired>
-		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
-		<stunTargetWhileCasting>True</stunTargetWhileCasting>
-		<showPsycastEffects>False</showPsycastEffects>
-		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<hotKey>Misc12</hotKey>
-		<verbProperties>
-			<verbClass>Verb_CastAbility</verbClass>
-			<warmupTime>2</warmupTime>
-			<drawAimPie>False</drawAimPie>
-			<requireLineOfSight>False</requireLineOfSight>
-			<targetParams>
-				<canTargetSelf>true</canTargetSelf>
-				<canTargetPawns>false</canTargetPawns>
-				<canTargetBuildings>false</canTargetBuildings>
-				<canTargetAnimals>false</canTargetAnimals>
-				<canTargetHumans>false</canTargetHumans>
-				<canTargetMechs>false</canTargetMechs>
-			</targetParams>
-		</verbProperties>
-	</AbilityDef>
+
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_AnimalFeed</defName>
 		<label>animalfeed</label>
@@ -168,10 +145,11 @@
 		<label>heart crush</label>
 		<description>Rip out the heart of an enemy in close proximity, instantly killing them and covering the area in blood.</description>
 		<iconPath>UI/Abilities/SanguophageHeartCrush</iconPath>
-		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>		
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
-		<category>Sanguophage</category>		
+		<category>Sanguophage</category>
 		<displayOrder>600</displayOrder>
+		<cooldownTicksRange>3600</cooldownTicksRange>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
@@ -225,30 +203,35 @@
 			</li>
 		</comps>
 	</AbilityDef>
-	<AbilityDef ParentName="VRE_NoTargetAbilities">
+	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_Hemosmosis</defName>
 		<label>hemosmosis</label>
 		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
 		<iconPath>UI/Abilities/SanguophageHemosmosis</iconPath>
 		<cooldownTicksRange>7200</cooldownTicksRange>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
 		<verbProperties>
-			<range>5.9</range>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<soundCast>VRE_Hemosmosis</soundCast>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
 			<targetParams>
-			
-				<canTargetSelf>true</canTargetSelf>
-				
+				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
 		</verbProperties>
-		<statBases>
-			<Ability_EffectRadius>5.9</Ability_EffectRadius>
-		</statBases>
 		<comps>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHemosmosis">
 
 			</li>
-			
 		</comps>
+		<statBases>
+			<Ability_EffectRadius>5.9</Ability_EffectRadius>
+		</statBases>
 	</AbilityDef>
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_Resurrect</defName>
@@ -281,19 +264,18 @@
 			</li>
 		</comps>
 	</AbilityDef>
-
 	<AbilityDef>
 		<defName>VRE_ToxicCloud</defName>
 		<label>toxic cloud</label>
 		<description>Excrete a thick toxic smoke from special organic reservoirs in the lungs. Tox gas is deadly to almost every creature.</description>
 		<iconPath>UI/Abilities/SanguophageToxicCloud</iconPath>
-		<cooldownTicksRange>360</cooldownTicksRange>
+		<cooldownTicksRange>3600</cooldownTicksRange>
 		<targetRequired>false</targetRequired>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<warmupTime>0.5</warmupTime>
 			<range>5.9</range>
-			<drawAimPie>false</drawAimPie>    
+			<drawAimPie>false</drawAimPie>
 			<targetParams>
 				<canTargetSelf>true</canTargetSelf>
 			</targetParams>
@@ -306,7 +288,6 @@
 			</li>
 		</comps>
 	</AbilityDef>
-
 	<AbilityDef>
 		<defName>VRE_ViscuousGoo</defName>
 		<label>viscuous goo</label>

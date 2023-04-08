@@ -12,6 +12,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
+            Log.Message("running");
             base.Apply(target, dest);
             FleckMaker.AttachedOverlay(this.parent.pawn, InternalDefOf.VRE_BloodMist, Vector3.zero, 1f, -1f);
             int num = GenRadial.NumCellsInRadius(5.9f);
@@ -45,6 +46,12 @@ namespace VanillaRacesExpandedSanguophage
 
             
         }
+
+        public override void DrawEffectPreview(LocalTargetInfo target)
+        {
+            GenDraw.DrawRadiusRing(target.Cell, 5.9f);
+        }
+
 
 
 

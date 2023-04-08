@@ -106,7 +106,7 @@
 		<label>toxic cloud</label>
 		<description>Excrete a thick toxic smoke from special organic reservoirs in the lungs. Tox gas is deadly to almost every creature.</description>
 		<iconPath>UI/Abilities/SanguophageToxicCloud</iconPath>
-		<cooldownTicksRange>360</cooldownTicksRange>
+		<cooldownTicksRange>3600</cooldownTicksRange>
 		<targetRequired>false</targetRequired>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
@@ -201,24 +201,28 @@
 		</comps>
 	</AbilityDef>
 	
-	<AbilityDef ParentName="VRE_NoTargetAbilities">
+	
+	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_Hemosmosis_SingleUse</defName>
 		<label>hemosmosis</label>
 		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
 		<iconPath>UI/Abilities/SanguophageHemosmosis</iconPath>
 		<cooldownTicksRange>7200</cooldownTicksRange>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
 		<verbProperties>
-			<range>5.9</range>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<soundCast>VRE_Hemosmosis</soundCast>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
 			<targetParams>
-			
-				<canTargetSelf>true</canTargetSelf>
-				
+				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
 		</verbProperties>
-		<statBases>
-			<Ability_EffectRadius>5.9</Ability_EffectRadius>
-		</statBases>
 		<comps>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHemosmosis">
 
@@ -226,8 +230,10 @@
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilitySingleUse">
 				
 			</li>
-			
 		</comps>
+		<statBases>
+			<Ability_EffectRadius>5.9</Ability_EffectRadius>
+		</statBases>
 	</AbilityDef>
 	<AbilityDef>
 		<defName>VRE_ViscuousGoo_SingleUse</defName>

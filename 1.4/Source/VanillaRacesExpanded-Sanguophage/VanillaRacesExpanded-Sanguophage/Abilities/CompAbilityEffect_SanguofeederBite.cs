@@ -63,7 +63,7 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return false;
             }
-            if (!pawn.IsBloodfeeder())
+            if (pawn.genes?.HasGene(GeneDefOf.Hemogenic)!=true)
             {
                 if (throwMessages)
                 {
