@@ -257,7 +257,7 @@
 		<comps>
 			<li Class="CompProperties_AbilitySprayLiquid">
 				<projectileDef>VRE_Proj_Goo</projectileDef>
-				<numCellsToHit>12</numCellsToHit>
+				<numCellsToHit>16</numCellsToHit>
 				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
 			</li>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilitySingleUse">

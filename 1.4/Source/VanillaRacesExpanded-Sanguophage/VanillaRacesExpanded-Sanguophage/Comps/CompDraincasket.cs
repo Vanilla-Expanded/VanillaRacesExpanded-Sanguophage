@@ -151,6 +151,7 @@ namespace VanillaRacesExpandedSanguophage
             {
                 mapComponent.comps.Remove(this);
             }
+            EjectContents();
             base.PostDeSpawn(map);
         }
 
