@@ -130,8 +130,8 @@ namespace VanillaRacesExpandedSanguophage
 
             if (parent.IsHashIntervalTick(600) && compResourceNutrientPaste != null)
             {
-                Log.Message("Trying to extract");
-                if (compResourceNutrientPaste.PipeNet.Stored>1)
+               
+                if (compResourceNutrientPaste.PipeNet.Stored>1 && this.FuelPercentOfMax<0.5f)
                 {
                     compResourceNutrientPaste.PipeNet.DrawAmongStorage(1, compResourceNutrientPaste.PipeNet.storages);
                     this.Refuel(1);
