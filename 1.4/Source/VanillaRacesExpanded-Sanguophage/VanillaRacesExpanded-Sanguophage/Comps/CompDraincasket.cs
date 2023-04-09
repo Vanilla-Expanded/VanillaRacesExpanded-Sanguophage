@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using HarmonyLib;
+using System.Reflection;
 using PipeSystem;
 using RimWorld;
 using Unity.Jobs;
@@ -18,26 +20,31 @@ namespace VanillaRacesExpandedSanguophage
 
 
         protected bool contentsKnown;
-
+        public Job queuedEnterJob;
+        public Pawn queuedPawn;
+        public bool pawnStarving = false;
+        public int starvingCounter = 0;
+        public const int starvingMaxTicks = 175000;
+        public CompFlickable flickComp;
+        public CompResource compResource;
+        public CompResource compResourceNutrientPaste;
+        public ThingOwner innerContainer;
+        public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
+        public bool IsContentsSuspended => true;
 
         public CompDraincasket()
         {
             innerContainer = new ThingOwner<Thing>(this);
         }
 
-        public Job queuedEnterJob;
-        public Pawn queuedPawn;
-
-        public bool pawnStarving = false;
-        public int starvingCounter = 0;
-        public const int starvingMaxTicks = 175000;
-
-        public CompFlickable flickComp;
-
-        public ThingOwner innerContainer;
-
-        public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
-        public bool IsContentsSuspended => true;
+        public static MethodInfo renderPawnInternal = AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal", new Type[] {
+                typeof(Vector3),
+                typeof(float),
+                typeof(bool),
+                typeof(Rot4),
+                typeof(RotDrawMode),
+                typeof(PawnRenderFlags)
+        });
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -50,6 +57,35 @@ namespace VanillaRacesExpandedSanguophage
         public float HeldPawnBodyAngle => Rot4.North.AsAngle;
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
 
+
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+            flickComp = parent.GetComp<CompFlickable>();
+            foreach (CompResource comp in parent.GetComps<CompResource>())
+            {
+               
+                if (comp?.Props?.pipeNet?.defName == "VRE_HemogenNet")
+                {
+                    compResource = comp;
+                }
+                if (ModLister.HasActiveModWithName("Vanilla Nutrient Paste Expanded"))
+                {
+                    if (comp?.Props?.pipeNet?.defName == "VNPE_NutrientPasteNet")
+                    {
+                        compResourceNutrientPaste = comp;
+                    }
+                }
+            }
+
+            allowedNutritionSettings = new StorageSettings(this);
+            if (parent.def.building.defaultStorageSettings != null)
+            {
+                allowedNutritionSettings.CopyFrom(parent.def.building.defaultStorageSettings);
+            }
+        }
+
+
         public override void CompTick()
         {
             base.CompTick();
@@ -59,12 +95,12 @@ namespace VanillaRacesExpandedSanguophage
             }
             if (parent.IsHashIntervalTick(60000))
             {
-                if(Occupant != null && Fuel>0)  
+                if (Occupant != null && Fuel > 0)
                 {
-                    CompResource comp = this.parent.TryGetComp<CompResource>();
-                    if (comp != null)
+
+                    if (compResource != null)
                     {
-                        comp.PipeNet.DistributeAmongStorage(1);
+                        compResource.PipeNet.DistributeAmongStorage(1);
                     }
                 }
             }
@@ -81,16 +117,29 @@ namespace VanillaRacesExpandedSanguophage
                     pawnStarving = false;
                     starvingCounter = 0;
                 }
+
             }
             if (pawnStarving)
             {
                 starvingCounter++;
-                if(starvingCounter > starvingMaxTicks)
+                if (starvingCounter > starvingMaxTicks)
                 {
-                    EjectAndKillContents();
+                    EjectAndKillContents(parent.Map);
                 }
             }
-            
+
+            if (parent.IsHashIntervalTick(600) && compResourceNutrientPaste != null)
+            {
+                Log.Message("Trying to extract");
+                if (compResourceNutrientPaste.PipeNet.Stored>1)
+                {
+                    compResourceNutrientPaste.PipeNet.DrawAmongStorage(1, compResourceNutrientPaste.PipeNet.storages);
+                    this.Refuel(1);
+                }
+
+
+            }
+
         }
         private float ConsumptionRatePerTick
         {
@@ -108,16 +157,7 @@ namespace VanillaRacesExpandedSanguophage
         }
 
 
-        public override void Initialize(CompProperties props)
-        {
-            base.Initialize(props);
-            flickComp = parent.GetComp<CompFlickable>();
-            allowedNutritionSettings = new StorageSettings(this);
-            if (parent.def.building.defaultStorageSettings != null)
-            {
-                allowedNutritionSettings.CopyFrom(parent.def.building.defaultStorageSettings);
-            }
-        }
+
 
         public StorageSettings GetStoreSettings()
         {
@@ -139,20 +179,31 @@ namespace VanillaRacesExpandedSanguophage
             {
                 mapComponent.comps.Add(this);
             }
-            
+
             base.PostSpawnSetup(respawningAfterLoad);
         }
 
         public override void PostDeSpawn(Map map)
         {
-           
-            Draincaskets_MapComponent mapComponent = parent.Map.GetComponent<Draincaskets_MapComponent>();
+
+            Draincaskets_MapComponent mapComponent = map.GetComponent<Draincaskets_MapComponent>();
             if (mapComponent != null)
             {
                 mapComponent.comps.Remove(this);
             }
-            EjectContents();
+            EjectContents(map);
             base.PostDeSpawn(map);
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            Draincaskets_MapComponent mapComponent = previousMap.GetComponent<Draincaskets_MapComponent>();
+            if (mapComponent != null)
+            {
+                mapComponent.comps.Remove(this);
+            }
+            EjectContents(previousMap);
+            base.PostDestroy(mode, previousMap);
         }
 
 
@@ -173,9 +224,9 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool TryAcceptPawn(Pawn pawn)
         {
-            
+
             innerContainer.ClearAndDestroyContents();
-            
+
             bool num = pawn.DeSpawnOrDeselect();
             if (pawn.holdingOwner != null)
             {
@@ -189,7 +240,7 @@ namespace VanillaRacesExpandedSanguophage
             {
                 Find.Selector.Select(pawn, playSound: false, forceDesignatorDeselect: false);
             }
-            
+
             ClearQueuedInformation();
             return true;
         }
@@ -238,6 +289,7 @@ namespace VanillaRacesExpandedSanguophage
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_References.Look(ref queuedEnterJob, "queuedEnterJob");
             Scribe_References.Look(ref queuedPawn, "queuedPawn");
+
         }
 
         public override string CompInspectStringExtra() => base.CompInspectStringExtra();
@@ -258,8 +310,42 @@ namespace VanillaRacesExpandedSanguophage
             if (Occupant is null) return;
             var drawLoc = parent.DrawPos;
             var drawRot = parent.Rotation;
-            Occupant.Drawer.renderer.RenderPawnAt(drawLoc, drawRot, true);
+
+            PawnRenderFlags drawFlags = PawnRenderFlags.Cache;
+            drawFlags |= PawnRenderFlags.Clothes;
+            drawFlags |= PawnRenderFlags.Headgear;
+            renderPawnInternal.Invoke(Occupant.Drawer.renderer, new object[]
+                   {
+                        drawLoc,
+                        AngleFromBuilding(drawRot),
+                        true,
+                        Rot4.South,
+                        RotDrawMode.Fresh,
+                        drawFlags
+                   });
+
         }
+
+        public float AngleFromBuilding(Rot4 buildingRot)
+        {
+            if (buildingRot == Rot4.North)
+            {
+                return 180;
+            }
+            else if (buildingRot == Rot4.East)
+            {
+                return -90;
+            }
+            else if (buildingRot == Rot4.West)
+            {
+                return 90;
+            }
+
+            return 0;
+
+        }
+
+
 
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
@@ -309,7 +395,10 @@ namespace VanillaRacesExpandedSanguophage
             if (innerContainer.Count > 0)
             {
                 Command_Action command_Action = new Command_Action();
-                command_Action.action = EjectContents;
+                command_Action.action = delegate ()
+                {
+                    EjectContents(parent.Map);
+                };
                 command_Action.defaultLabel = "VRE_CommandDraincasketEject".Translate();
                 command_Action.defaultDesc = "VRE_CommandDraincasketEjectDesc".Translate();
                 if (innerContainer.Count == 0)
@@ -323,7 +412,9 @@ namespace VanillaRacesExpandedSanguophage
 
         }
 
-        public void EjectContents()
+
+
+        public void EjectContents(Map map)
         {
             ThingDef filth_Slime = ThingDefOf.Filth_Slime;
             foreach (Thing item in (IEnumerable<Thing>)innerContainer)
@@ -339,12 +430,12 @@ namespace VanillaRacesExpandedSanguophage
                     }
                 }
             }
-            innerContainer.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
+            innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
             contentsKnown = true;
 
         }
 
-        public void EjectAndKillContents()
+        public void EjectAndKillContents(Map map)
         {
             ThingDef filth_Slime = ThingDefOf.Filth_Slime;
             foreach (Thing item in (IEnumerable<Thing>)innerContainer)
@@ -357,7 +448,7 @@ namespace VanillaRacesExpandedSanguophage
                     pawn.Kill(null);
                 }
             }
-            innerContainer.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
+            innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
             contentsKnown = true;
 
         }
@@ -376,6 +467,6 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool StorageTabVisible => true;
         public StorageSettings allowedNutritionSettings;
-       
+
     }
 }

@@ -22,7 +22,7 @@ namespace VanillaRacesExpandedSanguophage
             return new TargetingParameters
             {
                 canTargetPawns = true,
-                validator = (TargetInfo x) => (x.Thing as Pawn).IsPrisonerOfColony || (x.Thing as Pawn).IsColonist
+                validator = (TargetInfo x) => (x.Thing as Pawn)?.IsPrisonerOfColony==true || (x.Thing as Pawn)?.IsColonist==true
             };
         }
 

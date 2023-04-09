@@ -495,10 +495,7 @@
 			<Gold>30</Gold>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<thingCategories>
-			<li>BuildingsPower</li>
-		</thingCategories>
+		
 		<inspectorTabs>
 			<li>ITab_BiosculpterNutritionStorage</li>
 		</inspectorTabs>
@@ -509,6 +506,9 @@
 		<comps>
 			<li Class="PipeSystem.CompProperties_Resource">
 				<pipeNet>VRE_HemogenNet</pipeNet>
+			</li>
+			<li MayRequire="VanillaExpanded.VNutrientE" Class="PipeSystem.CompProperties_Resource">
+				<pipeNet>VNPE_NutrientPasteNet</pipeNet>
 			</li>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
 				<fuelConsumptionRate>8.0</fuelConsumptionRate>
