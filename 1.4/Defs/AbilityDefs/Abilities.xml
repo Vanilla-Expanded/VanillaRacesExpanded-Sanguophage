@@ -293,7 +293,7 @@
 		<label>viscuous goo</label>
 		<description>Eject a projectile that explodes on impact and creates a large amount of filth that greatly slows down people trying to move through it.</description>
 		<iconPath>UI/Abilities/SanguophageViscousGoo</iconPath>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>6000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>300</displayOrder>
 		<category>Sanguophage</category>
@@ -310,7 +310,7 @@
 		<comps>
 			<li Class="CompProperties_AbilitySprayLiquid">
 				<projectileDef>VRE_Proj_Goo</projectileDef>
-				<numCellsToHit>16</numCellsToHit>
+				<numCellsToHit>9</numCellsToHit>
 				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
 			</li>
 		</comps>

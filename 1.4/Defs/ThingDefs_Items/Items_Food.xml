@@ -50,7 +50,7 @@
 					<offset>0.2</offset>
 				</li>
 
-				<li Class="IngestionOutcomeDoer_GiveHediff">
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
 					<hediffDef>VRE_ConsumedAnimalHemogen</hediffDef>
 				</li>
 				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
@@ -114,7 +114,7 @@
 					<offset>0.2</offset>
 				</li>
 
-				<li Class="IngestionOutcomeDoer_GiveHediff">
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
 					<hediffDef>VRE_ConsumedCorpseHemogen</hediffDef>
 				</li>
 				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
@@ -179,7 +179,7 @@
 					<offset>0.2</offset>
 				</li>
 
-				<li Class="IngestionOutcomeDoer_GiveHediff">
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
 					<hediffDef>VRE_ConsumedSanguophageHemogen</hediffDef>
 				</li>
 				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
