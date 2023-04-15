@@ -220,7 +220,7 @@
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="CompProperties_DeathrestBindable">
-				<stackLimit>1</stackLimit>
+			
 				<hediffToApply>VRE_HemogenAmplifiedWeak</hediffToApply>
 				<soundStart>HemogenAmplifier_Start</soundStart>
 				<soundEnd>HemogenAmplifier_Stop</soundEnd>
@@ -281,8 +281,8 @@
 		<constructionSkillPrerequisite>2</constructionSkillPrerequisite>
 		<comps>
 			<li Class="CompProperties_DeathrestBindable">
-				<stackLimit>1</stackLimit>
-				<hemogenLimitOffset>0.1</hemogenLimitOffset>
+				
+				<hemogenLimitOffset>0.15</hemogenLimitOffset>
 				<soundStart>Hemopump_Start</soundStart>
 				<soundEnd>Hemopump_Stop</soundEnd>
 				<soundWorking>Hemopump_Ambience</soundWorking>

@@ -112,6 +112,8 @@
 			<li>Body_Standard</li>
 			<li>Skin_LightGray</li>
 			<li>Skin_SlateGray</li>
+			<li>VRE_UpperBatEars</li>
+			<li>Hair_BaldOnly</li>
 
 
 
@@ -122,7 +124,7 @@
 	<XenotypeDef>
 		<defName>VRE_Bruxa</defName>
 		<label>bruxa</label>
-		<description>In the complex tapestry of the universe, the Bruxas emerged as a unique and alluring subxenotype of sanguophage. Created by an enigmatic archotech entity seeking to weave together beauty and power, the Bruxas were gifted with unparalleled grace and charm. Designed as the ultimate companions to other sanguophages, the Bruxas were engineered with the unique ability to bond with their brethren and feed on their blood, bestowing mutual benefits upon both parties.\n\nThe Bruxas are ageless and deathless, their bodies imbued with archotech-created archites that grant them extraordinary abilities. Possessing an ethereal beauty, they are irresistibly captivating to those who cross their paths. In addition to their regenerative powers, which allow them to heal any injury and remain immune to disease and poison, Bruxas have the remarkable ability to filter infections from the bloodstream of other humans, purifying their blood and filling them with an overwhelming sense of ecstasy in the process.\n\nThroughout the ages, the Bruxas have been both feared and revered for their beguiling beauty and potent abilities. Often serving as confidants and companions to powerful sanguophage lords, they have been known to wield considerable influence in the shadow societies. Their unique ability to bond with other sanguophages has led to the formation of secret alliances and networks, further solidifying their power and influence.\n\nIn the vast expanse of the Rimworld universe, the Bruxas remain an enigma - seductive and mysterious, their true intentions hidden behind a veil of allure and grace. Those who encounter a Bruxa must tread carefully, for while their touch may bring unimaginable pleasure, it may also lead to a fate more treacherous than one could ever imagine.</description>
+		<description>In the complex tapestry of the universe, the Bruxas emerged as a unique and alluring subxenotype of sanguophage. Created by an enigmatic archotech entity seeking to weave together beauty and power, the Bruxas were gifted with unparalleled grace and charm. Designed as the ultimate companions to other sanguophages, the Bruxas were engineered with the unique ability to bond with their brethren and feed on their blood, bestowing mutual benefits upon both parties.\n\nThe Bruxas are ageless and deathless, their bodies imbued with archotech-created archites that grant them extraordinary abilities. Possessing an ethereal beauty, they are irresistibly captivating to those who cross their paths. In addition to their regenerative powers, which allow them to heal any injury and remain immune to disease and poison, Bruxas have the remarkable ability to filter infections from the bloodstream of other humans, purifying their blood and filling them with an overwhelming sense of ecstasy in the process.\n\nThroughout the ages, the Bruxas have been both feared and revered for their beguiling beauty and potent abilities. Often serving as confidants and companions to powerful individuals, including sanguophage lords, they have been known to wield considerable influence in the shadow societies. Their unique ability to bond with other humans has led to the formation of secret alliances and networks, further solidifying their power and influence.\n\nIn the vast expanse of the universe, the Bruxas remain an enigma - seductive and mysterious, their true intentions hidden behind a veil of allure and grace. Those who encounter a Bruxa must tread carefully, for while their touch may bring unimaginable pleasure, it may also lead to a fate more treacherous than one could ever imagine.</description>
 		<descriptionShort>Bruxas are ageless, deathless super-humans powered by archotech-created archites in the bloodstream. They are extremely beautiful, and almost always bond with other sanguophages. Unlike other subxenotypes of that species, bruxas are capable of feeding on sanguophage blood, providing them with great benefits. They can heal any injury, and never suffer from disease or poison. They can filter infection out of the bloodstream of other humans, as well as fill them with a sense of strong ecstasy. The price is that bruxa must sometimes consume hemogen - either human or sanguophage, and they must periodically deathrest for long periods. They're easily destroyed by fire, and slowed down by UV light.</descriptionShort>
 		<iconPath>UI/XenotypeIcons/Bruxa</iconPath>
 		<soundDefOnImplant>PawnBecameSanguophage</soundDefOnImplant>
@@ -142,8 +144,7 @@
 			<li>Bloodfeeder</li>
 			<li>VRE_SanguoFeeder</li>
 			<li>Coagulate</li>
-			<li>LongjumpLegs</li>
-			<li>PiercingSpine</li>
+			
 			<li>Hemogenic</li>
 			<li>VRE_LowHemogenDrain</li>
 			<li>Deathrest</li>
@@ -152,7 +153,7 @@
 			
 			<li>WoundHealing_SuperFast</li>
 			<li>PsychicAbility_Extreme</li>
-			<li>MoveSpeed_Quick</li>			
+			<li>MeleeDamage_Weak</li>	
 			<li>ToxResist_Total</li>
 			<li>UVSensitivity_Mild</li>
 			<li>FireWeakness</li>
@@ -167,6 +168,10 @@
 			<li>AptitudeStrong_Social</li>
 			<li>AptitudeRemarkable_Intellectual</li>
 			<li>VRE_SanguineHair</li>
+			<li>AptitudeTerrible_Melee</li>
+			<li>AptitudeTerrible_Shooting</li>
+			<li>Skin_SheerWhite</li>
+
 
 
 

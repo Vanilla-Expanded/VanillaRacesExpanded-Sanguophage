@@ -39,6 +39,43 @@
 		
 	</GeneDef>
 	
+	<GeneDef ParentName="GeneEarsBase">
+		<defName>VRE_UpperBatEars</defName>
+		<label>chiropteric ears</label>
+		
+		<description>Carriers of this gene have pointy bat-like ears.</description>
+		<iconPath>UI/Icons/Genes/VRE_UpperBatEarIcon</iconPath>
+		<graphicData>
+			<graphicPath>Pawn/UpperBatEars/VRE_UpperBatEar</graphicPath>
+			<colorType>Skin</colorType>
+		</graphicData>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>membrane</symbol>
+				</li>
+				<li>
+					<symbol>night</symbol>
+				</li>
+				<li>
+					<symbol>chiroptera</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>tragus</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+		
+	</GeneDef>
+	
 	
 	
 	

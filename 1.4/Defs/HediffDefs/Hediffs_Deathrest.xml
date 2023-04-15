@@ -28,7 +28,7 @@
 			<li>
 				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
 				<statOffsets>
-					<HemogenGainFactor>0.1</HemogenGainFactor>
+					<HemogenGainFactor>0.15</HemogenGainFactor>
 				</statOffsets>
 			</li>
 		</stages>
