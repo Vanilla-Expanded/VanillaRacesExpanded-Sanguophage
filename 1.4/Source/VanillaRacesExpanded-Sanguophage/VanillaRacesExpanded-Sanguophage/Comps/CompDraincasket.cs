@@ -88,7 +88,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public override void CompTick()
         {
-            base.CompTick();
+            
             if (!Props.consumeFuelOnlyWhenUsed && (this.flickComp == null || this.flickComp.SwitchIsOn) && (this.Occupant != null))
             {
                 ConsumeFuel(ConsumptionRatePerTick);
