@@ -3,14 +3,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/ThingDef[defName = "DeathrestCasket"]/building/relatedBuildCommands</xpath>
 		<value>
-			<li>VRE_InvocationMatrix</li>
-			<li>VRE_HemodynamicAccelerator</li>
-			<li>VRE_HemogenSolidifier</li>
-			<li>VRE_SmallHemogenAmplifier</li>
-			<li>VRE_SmallHemopump</li>
+			<li>VRE_PsychofluidWell</li>
 		</value>
 	</Operation>
-	
-	
-	
 </Patch>
