@@ -54,6 +54,11 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return null;
             }
+            if (pawn.genes?.HasGene(InternalDefOf.VRE_CorpseFeeder)!=true)
+            {
+                return null;
+            }
+
             if (!gene_Hemogen.ShouldConsumeHemogenNow())
             {
                 return null;
