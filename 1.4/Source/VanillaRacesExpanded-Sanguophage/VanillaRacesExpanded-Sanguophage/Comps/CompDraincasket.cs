@@ -100,7 +100,7 @@ namespace VanillaRacesExpandedSanguophage
 
                     if (compResource != null)
                     {
-                        compResource.PipeNet.DistributeAmongStorage(1);
+                        compResource.PipeNet.DistributeAmongStorage(VanillaRacesExpandedSanguophage_Settings.drainCasketAmount);
                     }
                 }
             }

@@ -7,6 +7,7 @@
 	<VRE_ExtractHemogenCorpse>Extract hemogen (corpse) from {0}</VRE_ExtractHemogenCorpse>
 	<VRE_ExtractHemogenSanguophage>Extract hemogen (sanguophage) from {0}</VRE_ExtractHemogenSanguophage>
 	<VRE_MessageCantUseOnNonSanguophage>The sanguofeed ability can only be used on hemogenic people</VRE_MessageCantUseOnNonSanguophage>
+	<VRE_MessageCantUseOnDrainedSanguophage>The sanguofeed ability can't be used on Sanguophages completely drained of hemogen</VRE_MessageCantUseOnDrainedSanguophage>
 	<VRE_NoHeart>Can only be used on targets with a heart</VRE_NoHeart>
 	<VRE_HemogenValve>Switches hemogen flow on/off.</VRE_HemogenValve>
 	<VRE_HemogenValveDesc>Switches hemogen flow on/off. A pawn will come open/close the valve.</VRE_HemogenValveDesc>
@@ -17,4 +18,7 @@
 	<VRE_CommandDraincasketEject>Eject occupant</VRE_CommandDraincasketEject>
 	<VRE_CommandDraincasketEjectDesc>Eject occupant from this draincasket. This will interrupt the hemogen extraction and leave the occupant dizzy due to the bloodloss.</VRE_CommandDraincasketEjectDesc>
 	<VRE_CommandDraincasketEjectFailEmpty>Can't eject occupant, since draincasket is empty</VRE_CommandDraincasketEjectFailEmpty>
+	<VRE_DraincasketAmount>Draincasket hemogen production (per day)</VRE_DraincasketAmount>
+	<VRE_DraincasketAmountTooltip>Sets the amount of hemogen packs the draincaskets will produce per day. By default it is 2 hemogen packs per day.</VRE_DraincasketAmountTooltip>
+	<VRE_Reset>Reset</VRE_Reset>
 </LanguageData>

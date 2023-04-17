@@ -71,6 +71,25 @@ namespace VanillaRacesExpandedSanguophage
                 }
                 return false;
             }
+            else
+            {
+                Gene_HemogenDrain gene_HemogenDrain = pawn.genes?.GetFirstGeneOfType<Gene_HemogenDrain>();
+                if (gene_HemogenDrain != null)
+                {
+                    if (gene_HemogenDrain.Resource.Value < 0.1f)
+                    {
+                        if (throwMessages)
+                        {
+                            Messages.Message("VRE_MessageCantUseOnDrainedSanguophage".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                        }
+                        return false;
+                    }
+
+
+                }
+
+
+            }
             if (pawn.Faction != null && !pawn.IsSlaveOfColony && !pawn.IsPrisonerOfColony)
             {
                 if (pawn.Faction.HostileTo(parent.pawn.Faction))

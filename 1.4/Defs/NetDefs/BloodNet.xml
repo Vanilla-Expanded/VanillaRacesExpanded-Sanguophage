@@ -428,7 +428,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VRE_Draincasket</defName>
 		<label>draincasket</label>
-		<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.\n\nProduces 1 hemogen pack a day as long as the occupant has food and the casket is connected to a hemogen nerwork. If deprived of food, the casket will kill its occupant in around 2 days.\n\nIf you have Vanilla Nutrient Paste Expanded it will draw nutrients from that network, as long as there is more than 1 meal unit available.</description>
+		<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.\n\nProduces 2 hemogen packs a day as long as the occupant has food and the casket is connected to a hemogen network. If deprived of food, the casket will kill its occupant in around 2 days.\n\nIf you have Vanilla Nutrient Paste Expanded it will draw nutrients from that network, as long as there is more than 1 meal unit available.</description>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>

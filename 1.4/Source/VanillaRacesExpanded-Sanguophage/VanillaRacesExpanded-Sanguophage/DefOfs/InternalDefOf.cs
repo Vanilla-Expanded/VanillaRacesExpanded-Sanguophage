@@ -30,6 +30,7 @@ namespace VanillaRacesExpandedSanguophage
         public static JobDef VRE_EnterDraincasket;
         public static JobDef VRE_RefuelDraincasket;
         public static JobDef VRE_RefuelDraincasket_Atomic;
+        public static JobDef VRE_DrinkHemogenCorpse;
 
         public static ThingDef VRE_HemogenPack_Animal;
         public static ThingDef VRE_HemogenPack_Corpse;

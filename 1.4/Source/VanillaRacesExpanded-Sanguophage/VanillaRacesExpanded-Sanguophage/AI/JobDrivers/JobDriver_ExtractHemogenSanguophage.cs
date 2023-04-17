@@ -38,12 +38,30 @@ namespace VanillaRacesExpandedSanguophage
 			use.initAction = delegate
 			{
 				Pawn pawn = job.targetA.Pawn;
-				Thing newThing = ThingMaker.MakeThing(InternalDefOf.VRE_HemogenPack_Sanguophage);
-				GenPlace.TryPlaceThing(newThing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-				GeneUtility.OffsetHemogen(pawn, -1f);
-				Hediff hediff = HediffMaker.MakeHediff(HediffDefOf.BloodLoss, pawn);
-				hediff.Severity = .99f;
-				pawn.health.AddHediff(hediff);
+				Gene_HemogenDrain gene_HemogenDrain = pawn.genes?.GetFirstGeneOfType<Gene_HemogenDrain>();
+				if (gene_HemogenDrain != null)
+				{
+					if (gene_HemogenDrain.Resource.Value < 0.1f)
+					{
+						Messages.Message("VRE_MessageCantUseOnDrainedSanguophage".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
+
+                    }
+                    else
+                    {
+						Thing newThing = ThingMaker.MakeThing(InternalDefOf.VRE_HemogenPack_Sanguophage);
+						GenPlace.TryPlaceThing(newThing, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+						GeneUtility.OffsetHemogen(pawn, -1f);
+						Hediff hediff = HediffMaker.MakeHediff(HediffDefOf.BloodLoss, pawn);
+						hediff.Severity = .99f;
+						pawn.health.AddHediff(hediff);
+
+					}
+
+
+				}
+
+				
+				
 
 
 			};

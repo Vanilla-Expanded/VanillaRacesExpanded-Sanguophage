@@ -16,4 +16,15 @@
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
+	
+	<ThinkTreeDef>
+		<defName>VRE_GetCorpseHemogenThinkTree</defName>
+		<insertTag>Humanlike_PostDuty</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				 <li Class="VanillaRacesExpandedSanguophage.JobGiver_GetCorpseHemogen" />
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
 </Defs>

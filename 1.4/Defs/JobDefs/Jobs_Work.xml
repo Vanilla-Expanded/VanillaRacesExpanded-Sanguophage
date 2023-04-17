@@ -13,6 +13,12 @@
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
 	<JobDef>
+		<defName>VRE_DrinkHemogenCorpse</defName>
+		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_DrinkCorpseHemogen</driverClass>
+		<reportString>drinking hemogen (corpse) from TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	<JobDef>
 		<defName>VRE_ExtractHemogenSanguophage</defName>
 		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_ExtractHemogenSanguophage</driverClass>
 		<reportString>extracting hemogen (sanguophage) from TargetA.</reportString>
