@@ -49,17 +49,17 @@ namespace VanillaRacesExpandedSanguophage
     {
 
         [HarmonyPostfix]
-        public static void DeathRestExtensions(CompDeathrestBindable __instance)
+        public static void DeathRestExtensions(CompDeathrestBindable __instance, Pawn ___boundPawn)
         {
 
-            if (__instance.parent.IsHashIntervalTick(2500))
+            if (__instance.parent.IsHashIntervalTick(2500) && ___boundPawn.Deathresting)
             {
                 DeathrestExtension extension = __instance.parent.def.GetModExtension<DeathrestExtension>();
                 if (extension != null)
                 {
                     if (extension.psyfocusPercentPerHour != 0f)
                     {
-                        if (__instance.BoundPawn?.HasPsylink==true)
+                        if (__instance.BoundPawn?.HasPsylink==true && __instance.BoundPawn?.psychicEntropy?.CurrentPsyfocus<1)
                         {
                             __instance.BoundPawn?.psychicEntropy.OffsetPsyfocusDirectly(extension.psyfocusPercentPerHour);
                         }
