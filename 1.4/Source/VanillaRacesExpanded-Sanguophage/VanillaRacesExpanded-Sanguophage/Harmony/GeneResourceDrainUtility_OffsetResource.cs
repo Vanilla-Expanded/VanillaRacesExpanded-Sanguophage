@@ -19,23 +19,15 @@ namespace VanillaRacesExpandedSanguophage
 
     static class VanillaRacesExpandedSanguophage_GeneResourceDrainUtility_OffsetResource_Apply_Patch
     {
-       
-        [HarmonyPostfix]
-        public static void DoubleHemogenLoss(IGeneResourceDrain drain, float amnt)
+
+        [HarmonyPrefix]
+        public static void DoubleHemogenLoss(IGeneResourceDrain drain, ref float amnt)
         {
-            if (Current.Game?.CurrentMap?.GameConditionManager?.ConditionIsActive(InternalDefOf.VRE_BloodMoonCondition)==true) {
+            if (drain.Pawn?.Map?.GameConditionManager?.ConditionIsActive(InternalDefOf.VRE_BloodMoonCondition) == true) {
                 if (amnt < 0) {
-                    float value = drain.Resource.Value;
-                    drain.Resource.Value += amnt;
-                    GeneResourceDrainUtility.PostResourceOffset(drain, value);
+                    amnt *= 2;
                 }
-                    
-                
-
             }
-            
-            
-
         }
 
 
