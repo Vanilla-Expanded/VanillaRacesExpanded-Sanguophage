@@ -340,6 +340,7 @@
     <Compile Include="Harmony\CompAbilityEffect_BloodfeederBite_Apply.cs" />
     <Compile Include="Harmony\CompDeathrestBindable_Apply.cs" />
     <Compile Include="Harmony\FloatMenuMakerMap_AddHumanlikeOrders.cs" />
+    <Compile Include="Harmony\GeneGizmo_ResourceHemogen_GetTooltip.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
     <Compile Include="Harmony\GeneResourceDrainUtility_OffsetResource.cs" />
