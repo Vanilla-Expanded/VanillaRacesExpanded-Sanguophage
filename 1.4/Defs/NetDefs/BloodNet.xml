@@ -531,5 +531,6 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructEffect>ConstructMetal</constructEffect>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
 	</ThingDef>
 </Defs>
