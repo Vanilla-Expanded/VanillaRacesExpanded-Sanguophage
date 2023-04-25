@@ -46,5 +46,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public static AbilityDef VRE_Coagulate_SingleUse;
 
+        public static XenotypeDef VRE_Ekkimian;
+
     }
 }

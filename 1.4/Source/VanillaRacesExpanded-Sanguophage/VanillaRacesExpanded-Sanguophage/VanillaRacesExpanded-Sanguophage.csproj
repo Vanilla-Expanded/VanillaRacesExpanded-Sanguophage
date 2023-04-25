@@ -343,6 +343,7 @@
     <Compile Include="Harmony\GeneGizmo_Resource_DrawLabel.cs" />
     <Compile Include="Harmony\GeneGizmo_Resource_GizmoOnGUI.cs" />
     <Compile Include="Harmony\GeneResourceDrainUtility_OffsetResource.cs" />
+    <Compile Include="Harmony\GeneUtility_IsBloodFeeder.cs" />
     <Compile Include="Harmony\HarmonyInstance.cs" />
     <Compile Include="Harmony\Thing_GetFloatmenuOptions.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveHediffToHemogenic.cs" />
