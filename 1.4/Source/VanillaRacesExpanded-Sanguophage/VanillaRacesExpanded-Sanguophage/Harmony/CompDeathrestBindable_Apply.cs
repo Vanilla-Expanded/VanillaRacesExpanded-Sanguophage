@@ -52,7 +52,7 @@ namespace VanillaRacesExpandedSanguophage
         public static void DeathRestExtensions(CompDeathrestBindable __instance, Pawn ___boundPawn)
         {
 
-            if (__instance.parent.IsHashIntervalTick(2500) && ___boundPawn.Deathresting)
+            if (__instance.parent.IsHashIntervalTick(2500)&& ___boundPawn!=null && ___boundPawn.Deathresting)
             {
                 DeathrestExtension extension = __instance.parent.def.GetModExtension<DeathrestExtension>();
                 if (extension != null)
