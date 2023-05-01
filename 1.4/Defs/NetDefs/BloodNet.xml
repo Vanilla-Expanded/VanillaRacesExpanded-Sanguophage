@@ -477,12 +477,10 @@
 					</categories>
 					<disallowedCategories>
 						<li>EggsFertilized</li>
+						<li>FoodMeals</li>
 					</disallowedCategories>
 					<disallowedThingDefs>
 						<li>InsectJelly</li>
-						<li>MealLavish</li>
-						<li>MealLavish_Veg</li>
-						<li>MealLavish_Meat</li>
 						<li>Chocolate</li>
 						<li>HemogenPack</li>
 						<li>VRE_HemogenPack_Animal</li>
@@ -513,7 +511,7 @@
 				<pipeNet>VNPE_NutrientPasteNet</pipeNet>
 			</li>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
-				<fuelConsumptionRate>8.0</fuelConsumptionRate>
+				<fuelConsumptionRate>18.0</fuelConsumptionRate>
 				<fuelCapacity>50.0</fuelCapacity>
 				<fuelFilter>
 					<categories>

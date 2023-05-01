@@ -67,7 +67,7 @@
 	<HediffDef>
 		<defName>VRE_ConsumedCorpseHemogen</defName>
 		<label>consumed corpse hemogen</label>
-		<description>Corpse hemogen greatly weakens the carrier of this hemogen type, but increases the blood filtration significantly.</description>
+		<description>Corpse hemogen greatly weakens the carrier of this hemogen type, but increases consciousness and blood filtration significantly.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -79,6 +79,10 @@
 					<li>
 						<capacity>BloodFiltration</capacity>
 						<offset>0.4</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.2</offset>
 					</li>
 					<li>
 						<capacity>Manipulation</capacity>

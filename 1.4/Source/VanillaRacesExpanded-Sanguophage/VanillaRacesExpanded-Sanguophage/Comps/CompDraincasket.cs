@@ -134,7 +134,7 @@ namespace VanillaRacesExpandedSanguophage
                 if (compResourceNutrientPaste.PipeNet.Stored>1 && this.FuelPercentOfMax<0.5f)
                 {
                     compResourceNutrientPaste.PipeNet.DrawAmongStorage(1, compResourceNutrientPaste.PipeNet.storages);
-                    this.Refuel(1);
+                    this.Refuel(18);
                 }
 
 
