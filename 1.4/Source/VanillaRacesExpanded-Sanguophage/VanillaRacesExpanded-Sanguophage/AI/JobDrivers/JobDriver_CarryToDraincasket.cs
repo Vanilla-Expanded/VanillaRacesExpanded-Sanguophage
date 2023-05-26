@@ -45,7 +45,8 @@ namespace VanillaRacesExpandedSanguophage
             yield return PrepareToEnterToil(CasketInd);
             yield return new Toil
             {
-                initAction = delegate { Pod.InsertPawn(Takee); },
+                
+                initAction = delegate { if (Pod.Occupant == null) { Pod.InsertPawn(Takee);}  },
                 defaultCompleteMode = ToilCompleteMode.Instant
             };
         }

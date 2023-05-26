@@ -28,7 +28,10 @@ namespace VanillaRacesExpandedSanguophage
             foreach (var info in GenUI.TargetsAt(clickPos, Utils.ForColonistAndPrisoner()))
             {
                 var target = info.Pawn;
-                CompDraincasket.AddCarryToBatteryJobs(opts, pawn, target);
+                if (target != pawn) {
+                    CompDraincasket.AddCarryToBatteryJobs(opts, pawn, target);
+                }
+                
             }
 
         }

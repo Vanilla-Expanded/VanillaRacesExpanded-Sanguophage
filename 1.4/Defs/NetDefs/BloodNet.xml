@@ -239,6 +239,7 @@
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 		</graphicData>
+		<uiIconScale>0.8</uiIconScale>
 		<castEdgeShadows>true</castEdgeShadows>
 		<staticSunShadowHeight>0.2</staticSunShadowHeight>
 		<altitudeLayer>Building</altitudeLayer>
@@ -343,7 +344,7 @@
 			<li Class="PipeSystem.CompProperties_ConvertResourceToThing">
 				<pipeNet>VRE_HemogenNet</pipeNet>
 				<thing>HemogenPack</thing>
-				<maxOutputStackSize>1</maxOutputStackSize>
+				
 			</li>
 		</comps>
 		<researchPrerequisites>
@@ -448,6 +449,7 @@
 			<Flammability>1.0</Flammability>
 			<Mass>50</Mass>
 		</statBases>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
 		<size>(2,2)</size>
@@ -477,12 +479,10 @@
 					</categories>
 					<disallowedCategories>
 						<li>EggsFertilized</li>
+						<li>FoodMeals</li>
 					</disallowedCategories>
 					<disallowedThingDefs>
 						<li>InsectJelly</li>
-						<li>MealLavish</li>
-						<li>MealLavish_Veg</li>
-						<li>MealLavish_Meat</li>
 						<li>Chocolate</li>
 						<li>HemogenPack</li>
 						<li>VRE_HemogenPack_Animal</li>
@@ -513,7 +513,7 @@
 				<pipeNet>VNPE_NutrientPasteNet</pipeNet>
 			</li>
 			<li Class="VanillaRacesExpandedSanguophage.CompProperties_Draincasket">
-				<fuelConsumptionRate>8.0</fuelConsumptionRate>
+				<fuelConsumptionRate>18.0</fuelConsumptionRate>
 				<fuelCapacity>50.0</fuelCapacity>
 				<fuelFilter>
 					<categories>
