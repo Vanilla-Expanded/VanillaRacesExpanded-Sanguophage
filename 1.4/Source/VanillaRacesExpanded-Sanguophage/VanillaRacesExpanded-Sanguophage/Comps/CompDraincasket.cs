@@ -31,6 +31,8 @@ namespace VanillaRacesExpandedSanguophage
         public ThingOwner innerContainer;
         public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
         public bool IsContentsSuspended => true;
+        public bool StorageTabVisible => true;
+        public StorageSettings allowedNutritionSettings;
 
         public CompDraincasket()
         {
@@ -289,7 +291,7 @@ namespace VanillaRacesExpandedSanguophage
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_References.Look(ref queuedEnterJob, "queuedEnterJob");
             Scribe_References.Look(ref queuedPawn, "queuedPawn");
-
+            Scribe_Deep.Look(ref allowedNutritionSettings, "allowedNutritionSettings");
         }
 
         public override string CompInspectStringExtra() => base.CompInspectStringExtra();
@@ -465,8 +467,6 @@ namespace VanillaRacesExpandedSanguophage
         }
 
 
-        public bool StorageTabVisible => true;
-        public StorageSettings allowedNutritionSettings;
 
     }
 }

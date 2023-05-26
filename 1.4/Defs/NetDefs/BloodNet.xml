@@ -344,7 +344,7 @@
 			<li Class="PipeSystem.CompProperties_ConvertResourceToThing">
 				<pipeNet>VRE_HemogenNet</pipeNet>
 				<thing>HemogenPack</thing>
-				<maxOutputStackSize>1</maxOutputStackSize>
+				
 			</li>
 		</comps>
 		<researchPrerequisites>
@@ -449,6 +449,7 @@
 			<Flammability>1.0</Flammability>
 			<Mass>50</Mass>
 		</statBases>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
 		<size>(2,2)</size>
