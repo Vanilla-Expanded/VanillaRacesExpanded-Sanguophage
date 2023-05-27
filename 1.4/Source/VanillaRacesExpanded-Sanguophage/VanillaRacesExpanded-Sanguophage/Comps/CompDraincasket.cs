@@ -396,6 +396,15 @@ namespace VanillaRacesExpandedSanguophage
 
             if (innerContainer.Count > 0)
             {
+                foreach (var thing in innerContainer)
+                {
+                    Gizmo gizmo = Building.SelectContainedItemGizmo(parent, thing);
+                    if (gizmo != null)
+                    {
+                        yield return gizmo;
+                    }
+                }
+                
                 Command_Action command_Action = new Command_Action();
                 command_Action.action = delegate ()
                 {
