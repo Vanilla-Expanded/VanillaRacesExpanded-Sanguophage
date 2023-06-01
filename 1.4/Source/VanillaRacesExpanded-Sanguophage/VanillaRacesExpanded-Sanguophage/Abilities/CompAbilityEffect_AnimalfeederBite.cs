@@ -19,7 +19,7 @@ namespace VanillaRacesExpandedSanguophage
             Pawn pawn = target.Pawn;
             if (pawn != null)
             {
-                SanguophageUtility.DoBite(parent.pawn, pawn, Props.hemogenGain, Props.nutritionGain, Props.targetBloodLoss, Props.resistanceGain, Props.bloodFilthToSpawnRange);
+                SanguophageUtility.DoBite(parent.pawn, pawn, Props.hemogenGain, Props.nutritionGain, BiteAmount(pawn), Props.resistanceGain, Props.bloodFilthToSpawnRange);
                 foreach (HediffDef hediff in hediffList)
                 {
                     if (parent.pawn.health.hediffSet?.HasHediff(hediff) == true)
@@ -117,13 +117,29 @@ namespace VanillaRacesExpandedSanguophage
             return null;
         }
 
+        private float BiteAmount(Pawn target)
+        {
+            float targetSize = target.RaceProps.baseBodySize;
+            if (targetSize < 0.2)
+            {
+                targetSize = 0.2f;
+            }
+            if (targetSize > 2)
+            {
+                targetSize = 2;
+            }
+            return -0.5f * (targetSize - 0.2f) + 1;
+
+        }
+
         private float BloodlossAfterBite(Pawn target)
         {
             if (target.Dead || !target.RaceProps.IsFlesh)
             {
                 return 0f;
             }
-            float num = Props.targetBloodLoss;
+            float num = BiteAmount(target);
+
             Hediff firstHediffOfDef = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
             if (firstHediffOfDef != null)
             {
@@ -141,10 +157,9 @@ namespace VanillaRacesExpandedSanguophage
             string text = letterTextKey.Translate(pawn.Label, pawn.Named("PAWN")).AdjustedFor(pawn);
             GlobalTargetInfo target = pawn;
             float num = 0.5f;
-            if (causedByDamage)
-            {
+            
                 num *= PawnUtility.GetManhunterChanceFactorForInstigator(instigator);
-            }
+            
             int num2 = 1;
             if (Find.Storyteller.difficulty.allowBigThreats && Rand.Value < num)
             {
