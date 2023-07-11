@@ -16,6 +16,12 @@ namespace VanillaRacesExpandedSanguophage
         public AbilityDef abilitySelected = InternalDefOf.VRE_Coagulate_SingleUse;
 
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Defs.Look(ref abilitySelected, "abilitySelected");
+        }
+
         [DebuggerHidden]
         public override IEnumerable<Gizmo> GetGizmos()
         {
@@ -29,7 +35,7 @@ namespace VanillaRacesExpandedSanguophage
             yield return new Command_SingleUseAbilities(this)
             {
                 icon = ContentFinder<Texture2D>.Get(abilitySelected.iconPath, false),
-                defaultDesc="VRE_DefaultAbility",
+                defaultDesc="VRE_DefaultAbility".Translate(),
                 hotKey = KeyBindingDefOf.Misc1,
                 building = this
 
