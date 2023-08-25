@@ -172,11 +172,13 @@
 		<defName>VRE_HeartCrush</defName>
 		<label>heart crush</label>
 		<labelShortAdj>heartcrusher</labelShortAdj>
-		<description>Carriers of this gene have special adrenaline glands that allow them to find the beating heart of the opponent and rip it out in a mad fury.</description>
+		<description>Carriers of this gene have special adrenaline glands that allow them to find the beating heart of the opponent and rip it out in a mad fury. </description>
 		<iconPath>UI/Icons/Genes/Gene_SanguophageHeartCrush</iconPath>
 		<prerequisite>Hemogenic</prerequisite>
 		<displayCategory>Ability</displayCategory>
-
+		<customEffectDescriptions>
+			<li>Will only work on creatures with body size of 2 or lower. Bigger creatures will still be heavily damaged.</li>
+		</customEffectDescriptions>
 		<abilities>
 			<li>VRE_HeartCrush</li>
 		</abilities>

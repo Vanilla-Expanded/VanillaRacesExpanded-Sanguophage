@@ -37,7 +37,17 @@ namespace VanillaRacesExpandedSanguophage
                         FilthMaker.TryMakeFilth(c, pawn.Map, blood);
 
                     }
-                    int num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) + 1000;
+
+                    int num;
+                    if (pawn.BodySize>2)
+                    {
+                        num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) -5;
+                        
+                    }
+                    else {
+                        num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) + 1000;
+                       
+                    }
                     DamageInfo damageInfo = new DamageInfo(DamageDefOf.Cut, (float)num, 999f, -1f, this.parent.pawn, bodyPartRecord, null, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true);
                     damageInfo.SetAllowDamagePropagation(false);
                     pawn.TakeDamage(damageInfo);

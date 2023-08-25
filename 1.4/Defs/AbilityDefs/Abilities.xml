@@ -143,7 +143,7 @@
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>VRE_HeartCrush</defName>
 		<label>heart crush</label>
-		<description>Rip out the heart of an enemy in close proximity, instantly killing them and covering the area in blood.</description>
+		<description>Rip out the heart of an enemy in close proximity, instantly killing them and covering the area in blood. Will only work on creatures with body size of 2 or lower. Bigger creatures will still be heavily damaged.</description>
 		<iconPath>UI/Abilities/SanguophageHeartCrush</iconPath>
 		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
