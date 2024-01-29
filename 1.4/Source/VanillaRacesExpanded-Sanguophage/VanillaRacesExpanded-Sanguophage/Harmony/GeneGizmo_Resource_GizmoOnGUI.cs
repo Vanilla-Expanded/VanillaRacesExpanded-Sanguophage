@@ -26,24 +26,24 @@ namespace VanillaRacesExpandedSanguophage
         {
 
             if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedAnimalHemogen) != null) {
-                ___barTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(166, 90, 82).ToColor);
-                ___barHighlightTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(186, 117, 109).ToColor);
+                ___barTex = GraphicsCache.AnimalHemogenBarTex;
+                ___barHighlightTex = GraphicsCache.AnimalHemogenBarTexHighlight;
                 return;
             }else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedCorpseHemogen) != null)
             {
-                ___barTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(51, 47, 47).ToColor);
-                ___barHighlightTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(81, 75, 172).ToColor);
+                ___barTex = GraphicsCache.CorpseHemogenBarTex;
+                ___barHighlightTex = GraphicsCache.CorpseHemogenBarTexHighlight;
                 return;
             }
             else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedSanguophageHemogen) != null)
             {
-                ___barTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(124, 61, 91).ToColor);
-                ___barHighlightTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(218, 151, 211).ToColor);
+                ___barTex = GraphicsCache.SanguophageHemogenBarTex;
+                ___barHighlightTex = GraphicsCache.SanguophageHemogenBarTexHighlight;
                 return;
             }
 
-            ___barTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(138, 3, 3).ToColor);
-            ___barHighlightTex = SolidColorMaterials.NewSolidColorTexture(new ColorInt(145, 42, 42).ToColor);
+            ___barTex = GraphicsCache.DefaultHemogenBarTex;
+            ___barHighlightTex = GraphicsCache.DefaultHemogenBarTexHighlight;
 
 
 
