@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+
+	<GeneDef ParentName="UVSensitivityBase">
+		<defName>VRE_Sensitivity_Dangerous</defName>
+		<label>dangerous UV sensitivity</label>
+		<labelShortAdj>UV-hypersensitive</labelShortAdj>
+		<description>Carriers of this gene have biological compounds in their skin that react dangerously to UV radiation. They are extremely sensitive to sunlight.</description>
+		<iconPath>UI/Icons/Genes/VRE_DangerousUVSensitivity</iconPath>
+		<displayOrderInCategory>59</displayOrderInCategory>
+		<customEffectDescriptions><li>Sight capacity capped at 50% during sunlight hours</li></customEffectDescriptions>
+	
+		<conditionalStatAffecters>
+			<li Class="ConditionalStatAffecter_InSunlight">
+				<statFactors>
+					<MoveSpeed>0.7</MoveSpeed>
+				</statFactors>
+			</li>
+		</conditionalStatAffecters>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>5</biostatMet>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>dark</symbol>
+				</li>
+				<li>
+					<symbol>tunnel</symbol>
+				</li>
+				<li>
+					<symbol>under</symbol>
+				</li>
+				<li>
+					<symbol>cave</symbol>
+				</li>
+				<li>
+					<symbol>crypt</symbol>
+				</li>
+				<li>
+					<symbol>dim</symbol>
+				</li>
+				<li>
+					<symbol>night</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+
+				<hediffToWholeBody>VRE_Sensitivity_Dangerous_Hediff</hediffToWholeBody>
+			</li>
+		</modExtensions>
+	</GeneDef>
+
+
+
+
+</Defs>

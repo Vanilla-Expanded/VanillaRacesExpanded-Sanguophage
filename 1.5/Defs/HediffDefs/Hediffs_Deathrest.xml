@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef ParentName="DeathrestHediffBase">
+		<defName>VRE_SolidifiedHemogen</defName>
+		<label>solidified hemogen</label>
+		<description>Armor is enhanced because this person used a hemogen solidifier while deathresting. This effect lasts until the next deathrest.</description>
+		<descriptionHyperlinks>
+			<ThingDef>VRE_HemogenSolidifier</ThingDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+				<statOffsets>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef ParentName="DeathrestHediffBase">
+		<defName>VRE_HemogenAmplifiedWeak</defName>
+		<label>hemogen amplified, weak</label>
+		<description>All hemogen gains are multiplied up because this person used a small hemogen amplifier while deathresting. This effect lasts until the next deathrest.</description>
+		<descriptionHyperlinks>
+			<ThingDef>VRE_SmallHemogenAmplifier</ThingDef>
+		</descriptionHyperlinks>
+		<stages>
+			<li>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+				<statOffsets>
+					<HemogenGainFactor>0.15</HemogenGainFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

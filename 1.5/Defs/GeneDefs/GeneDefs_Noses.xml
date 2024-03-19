@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- Noses -->
+	 <GeneDef ParentName="GeneNoseBase">
+    <defName>VRE_BatNose</defName>
+    <label>bat nose</label>
+    <description>Carriers of this gene have bat-like leaf nose.</description>
+    <iconPath>UI/Icons/Genes/VRE_BatNose</iconPath>
+   
+	
+	 <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Pawn/BatNose/BatNose</texPath>
+        <narrowCrownHorizontalOffset>0.03</narrowCrownHorizontalOffset>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <visibleFacing>
+          <li>East</li>
+          <li>South</li>
+          <li>West</li>
+        </visibleFacing>
+        <drawData>
+          <defaultData>
+            <layer>66</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+   
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>410</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+
+        <li><symbol>bat</symbol></li>
+        <li><symbol>trident</symbol></li>
+        <li><symbol>leaf</symbol></li>
+        <li><symbol>night</symbol></li>
+      
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>bat</symbol></li>
+        <li><symbol>night</symbol></li>
+       
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+	
+	
+	
+	
+</Defs>

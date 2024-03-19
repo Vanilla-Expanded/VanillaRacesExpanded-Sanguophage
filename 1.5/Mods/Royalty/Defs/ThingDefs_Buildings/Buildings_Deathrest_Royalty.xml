@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="DeathrestBuildingBase">
+		<defName>VRE_PsychofluidWell</defName>
+		<label>psychofluid well</label>
+		<description>A specialized apparatus designed to rejuvenate the psyfocus of deathresting psycasters by delicately nurturing their psychic centers. Employing a meticulous balance of sanguine infusions and harmonic neural stimulation, the well works in concert with the psycaster's innate psychic energies. As the individual rests within the deathrest casket, the Psychofluid Well revitalizes their psychic reservoirs, preparing them for future psychic exertions. To operate effectively, the device must be connected to a deathrest casket and requires a steady supply of hemogen to fuel its subtle yet powerful restorative functions.\n\nContrary to other deathrest machines, the psychofluid well regenerates 5% of total Psyfocus to the deathresting occupant every 1 hour, instead of acting all at once when the deathrest ends.</description>
+		<graphicData>
+			<texPath>Building/PsychofluidWell/PsychofluidWell</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(0.6, 0.6, 1.8)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0.3,0.7,1.8)</rect>
+			</damageData>
+		</graphicData>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>4000</WorkToBuild>
+			<Mass>50</Mass>
+			<Flammability>0.4</Flammability>
+		</statBases>
+		<size>(2,2)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>12</ComponentIndustrial>
+			<HemogenPack>5</HemogenPack>
+			<Plasteel>200</Plasteel>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>250</basePowerConsumption>
+				<idlePowerDraw>0</idlePowerDraw>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_DeathrestBindable">
+				<stackLimit>2</stackLimit>
+				<soundStart>PsychofluidPump_Start</soundStart>
+				<soundEnd>PsychofluidPump_Stop</soundEnd>
+				<soundWorking>PsychofluidPump_Ambience</soundWorking>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="VanillaRacesExpandedSanguophage.DeathrestExtension">
+				<psyfocusPercentPerHour>0.05</psyfocusPercentPerHour>
+			</li>
+		</modExtensions>
+	</ThingDef>
+</Defs>

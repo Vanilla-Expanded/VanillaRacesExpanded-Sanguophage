@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<GeneDef>
+		<defName>VRE_LowHemogenDrain</defName>
+		<label>low hemogen drain</label>
+		<labelShortAdj>draining</labelShortAdj>
+		<description>Carriers lose an additional 4 hemogen per day from biological entropy.</description>
+		<resourceLabel>hemogen</resourceLabel>
+		<geneClass>Gene_HemogenDrain</geneClass>
+		<iconPath>UI/Icons/Genes/VRE_LowHemogenDrain</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<resourceLossPerDay>0.04</resourceLossPerDay>
+		<displayCategory>Hemogen</displayCategory>
+		<displayOrderInCategory>-2</displayOrderInCategory>
+		<minAgeActive>3</minAgeActive>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>3</biostatMet>
+		<exclusionTags>
+			<li>HemogenDrain</li>
+		</exclusionTags>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>VRE_ExtremeHemogenDrain</defName>
+		<label>extreme hemogen drain</label>
+		<labelShortAdj>very draining</labelShortAdj>
+		<description>Carriers lose an additional 12 hemogen per day from biological entropy.</description>
+		<resourceLabel>hemogen</resourceLabel>
+		<geneClass>Gene_HemogenDrain</geneClass>
+		<iconPath>UI/Icons/Genes/VRE_ExtremeHemogenDrain</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<resourceLossPerDay>0.12</resourceLossPerDay>
+		<displayCategory>Hemogen</displayCategory>
+		<displayOrderInCategory>-0.5</displayOrderInCategory>
+		<minAgeActive>3</minAgeActive>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>8</biostatMet>
+		<exclusionTags>
+			<li>HemogenDrain</li>
+		</exclusionTags>
+	</GeneDef>
+
+
+</Defs>

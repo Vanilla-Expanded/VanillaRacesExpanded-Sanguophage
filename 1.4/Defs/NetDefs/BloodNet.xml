@@ -243,7 +243,7 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<staticSunShadowHeight>0.2</staticSunShadowHeight>
 		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
+		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<blockWind>true</blockWind>
 		<fillPercent>0.40</fillPercent>

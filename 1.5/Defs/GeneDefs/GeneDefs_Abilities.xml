@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GeneDef>
+		<defName>VRE_Ecstasy</defName>
+		<label>ecstasy</label>
+		<labelShortAdj>ecstator</labelShortAdj>
+		<description>Carriers of this gene can psychically connect with the target briefly, granting them a sense of ecstasy and making them fall in love with the caster.</description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageEcstasy</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+
+		<abilities>
+			<li>VRE_Ecstasy</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_Ecstasy</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>ecsta</symbol>
+				</li>
+				<li>
+					<symbol>sedu</symbol>
+				</li>
+				<li>
+					<symbol>sexy</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>seducer</symbol>
+				</li>
+				<li>
+					<symbol>ecstator</symbol>
+				</li>
+				<li>
+					<symbol>pleasurer</symbol>
+				</li>
+
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>VRE_FilterInfection</defName>
+		<label>filter infection</label>
+		<labelShortAdj>filtrator</labelShortAdj>
+		<description>Carriers of this gene have special glands in their mouths that allow them to filter infected blood from the clean blood.</description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageFilterInfection</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+
+		<abilities>
+			<li>VRE_FilterInfection</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_FilterInfection</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>clean</symbol>
+				</li>
+				<li>
+					<symbol>sterile</symbol>
+				</li>
+				<li>
+					<symbol>dialys</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>filtrator</symbol>
+				</li>
+				<li>
+					<symbol>cleaner</symbol>
+				</li>
+				
+
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>VRE_Hemosmosis</defName>
+		<label>hemosmosis</label>
+		<labelShortAdj>hemosmoser</labelShortAdj>
+		<description>Carriers of this gene are able to drain blood from their environment, provided there is blood to be drained there.</description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageHemosmosis</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+
+		<abilities>
+			<li>VRE_Hemosmosis</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_Hemosmosis</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-2</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>sucker</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>sucker</symbol>
+				</li>
+				<li>
+					<symbol>drainer</symbol>
+				</li>
+				<li>
+					<symbol>osmoser</symbol>
+				</li>
+
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>VRE_ToxicCloud</defName>
+		<label>toxic cloud</label>
+		<labelShortAdj>toxspewer</labelShortAdj>
+		<description>Carriers of this gene are able to excrete a thick toxic smoke from special organic reservoirs in their lungs. Tox gas is deadly to almost every creature.</description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageToxicCloud</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+
+		<abilities>
+			<li>VRE_ToxicCloud</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_ToxicCloud</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>gasser</symbol>
+				</li>
+				<li>
+					<symbol>tox</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>spewer</symbol>
+				</li>
+				<li>
+					<symbol>excretor</symbol>
+				</li>
+				
+
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>VRE_HeartCrush</defName>
+		<label>heart crush</label>
+		<labelShortAdj>heartcrusher</labelShortAdj>
+		<description>Carriers of this gene have special adrenaline glands that allow them to find the beating heart of the opponent and rip it out in a mad fury. </description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageHeartCrush</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+		<customEffectDescriptions>
+			<li>Will only work on creatures with body size of 2 or lower. Bigger creatures will still be heavily damaged.</li>
+		</customEffectDescriptions>
+		<abilities>
+			<li>VRE_HeartCrush</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_HeartCrush</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-4</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>ripper</symbol>
+				</li>
+				<li>
+					<symbol>heart</symbol>
+				</li>
+				<li>
+					<symbol>bane</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>ripper</symbol>
+				</li>
+				<li>
+					<symbol>crusher</symbol>
+				</li>
+				
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>VRE_ViscuousGoo</defName>
+		<label>viscuous goo</label>
+		<labelShortAdj>goospitter</labelShortAdj>
+		<description>Carriers grow glands in the neck that generate and store a thick goo. They can spit it over long distances and cover several people in a viscous goo that will slow them down.</description>
+		<iconPath>UI/Icons/Genes/Gene_SanguophageViscousGoo</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Ability</displayCategory>
+
+		<abilities>
+			<li>VRE_ViscuousGoo</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_ViscuousGoo</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatMet>-1</biostatMet>
+		<symbolPack>
+
+			<prefixSymbols>
+				<li>
+					<symbol>spit</symbol>
+				</li>
+				<li>
+					<symbol>goo</symbol>
+				</li>
+
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>spitter</symbol>
+				</li>
+				
+
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+
+	<GeneDef>
+		<defName>VRE_Resurrect</defName>
+		<label>resurrect</label>
+		<description>Carriers have a reserve of unique resurrector archites which can infuse a corpse, rebuild degenerated tissue and kickstart the vital processes. This brings the dead back to life - though possibly with health issues. This can only be done very rarely, and comes at a steep hemogen cost.</description>
+		<iconPath>UI/Icons/Genes/Gene_Resurrect</iconPath>
+		<prerequisite>Hemogenic</prerequisite>
+		<displayCategory>Archite</displayCategory>
+		<marketValueFactor>1.5</marketValueFactor>
+		<abilities>
+			<li>VRE_Resurrect</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>VRE_Resurrect</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>1</biostatArc>
+		<minAgeActive>3</minAgeActive>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>resurrector</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>life</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+	</GeneDef>
+
+
+</Defs>

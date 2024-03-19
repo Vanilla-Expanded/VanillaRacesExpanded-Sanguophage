@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<WorkGiverDef>
+		<defName>VRE_RefuelDraincaskets</defName>
+		<label>refueling draincaskets</label>
+		<giverClass>VanillaRacesExpandedSanguophage.WorkGiver_DraincasketRefuel</giverClass>
+		<workType>Hauling</workType>
+		<verb>refuel</verb>
+		<gerund>refueling</gerund>
+		<priorityInType>140</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		 <prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+</Defs>

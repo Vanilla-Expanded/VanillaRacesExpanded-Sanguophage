@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThingDef>
+		<defName>VRE_HemogenPack_Animal</defName>
+		<label>hemogen pack (animal)</label>
+		<description>Animal hemogen. Increases regeneration and combat capabilities of the user, but greatly decreases the capability to communicate with others.</description>
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<drawerType>MapMeshOnly</drawerType>
+		<useHitPoints>true</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<selectable>true</selectable>
+		<stackLimit>10</stackLimit>
+		<tickerType>Rare</tickerType>
+		<possessionCount>5</possessionCount>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<alwaysHaulable>true</alwaysHaulable>
+		<pathCost>14</pathCost>
+		<allowedArchonexusCount>-1</allowedArchonexusCount>
+		<resourceReadoutPriority>Last</resourceReadoutPriority>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<graphicData>
+			<texPath>Item/HemogenPacks/HemogenAnimalPack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>5</DeteriorationRate>
+			<Mass>0.50</Mass>
+			<Flammability>0.7</Flammability>
+			<Nutrition>0.1</Nutrition>
+			<Beauty>0</Beauty>
+			<MarketValue>5</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>Foods</li>
+		</thingCategories>
+		<ingestible>
+			<foodType>Fluid</foodType>
+			<preferability>DesperateOnly</preferability>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
+			<ingestSound>HemogenPack_Consume</ingestSound>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_OffsetHemogen">
+					<offset>0.2</offset>
+				</li>
+
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
+					<hediffDef>VRE_ConsumedAnimalHemogen</hediffDef>
+				</li>
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
+					<hediffList>
+						<li>VRE_ConsumedCorpseHemogen</li>
+						<li>VRE_ConsumedSanguophageHemogen</li>
+					</hediffList>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>VRE_HemogenPack_Corpse</defName>
+		<label>hemogen pack (corpse)</label>
+		<description>Tainted, rotting hemogen from a cadaver. Greatly weakens the carrier of this hemogen type, but increases the blood filtration significantly.</description>
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<drawerType>MapMeshOnly</drawerType>
+		<useHitPoints>true</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<selectable>true</selectable>
+		<stackLimit>10</stackLimit>
+		<tickerType>Rare</tickerType>
+		<possessionCount>5</possessionCount>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<alwaysHaulable>true</alwaysHaulable>
+		<pathCost>14</pathCost>
+		<allowedArchonexusCount>-1</allowedArchonexusCount>
+		<resourceReadoutPriority>Last</resourceReadoutPriority>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<graphicData>
+			<texPath>Item/HemogenPacks/HemogenCorpsePack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>5</DeteriorationRate>
+			<Mass>0.50</Mass>
+			<Flammability>0.7</Flammability>
+			<Nutrition>0.1</Nutrition>
+			<Beauty>0</Beauty>
+			<MarketValue>5</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>Foods</li>
+		</thingCategories>
+		<ingestible>
+			<foodType>Fluid</foodType>
+			<preferability>DesperateOnly</preferability>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
+			<ingestSound>HemogenPack_Consume</ingestSound>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_OffsetHemogen">
+					<offset>0.2</offset>
+				</li>
+
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
+					<hediffDef>VRE_ConsumedCorpseHemogen</hediffDef>
+				</li>
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
+					<hediffList>
+						<li>VRE_ConsumedAnimalHemogen</li>
+						<li>VRE_ConsumedSanguophageHemogen</li>
+
+					</hediffList>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>VRE_HemogenPack_Sanguophage</defName>
+		<label>hemogen pack (sanguophage)</label>
+		<description>Pure, thick hemogen of another bloodfeeder. The most rare of all hemogens, it gives the carrier a powerful boost to all capacities.</description>
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<drawerType>MapMeshOnly</drawerType>
+		<useHitPoints>true</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<selectable>true</selectable>
+		<stackLimit>10</stackLimit>
+		<tickerType>Rare</tickerType>
+		<possessionCount>5</possessionCount>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<alwaysHaulable>true</alwaysHaulable>
+		<pathCost>14</pathCost>
+		<allowedArchonexusCount>-1</allowedArchonexusCount>
+		<resourceReadoutPriority>Last</resourceReadoutPriority>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<graphicData>
+			<texPath>Item/HemogenPacks/HemogenSanguophagePack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<DeteriorationRate>5</DeteriorationRate>
+			<Mass>0.50</Mass>
+			<Flammability>0.7</Flammability>
+			<Nutrition>0.1</Nutrition>
+			<Beauty>0</Beauty>
+			<MarketValue>5</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>Foods</li>
+		</thingCategories>
+		<ingestible>
+			<foodType>Fluid</foodType>
+			<preferability>DesperateOnly</preferability>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+			<specialThoughtDirect>IngestedHemogenPack</specialThoughtDirect>
+			<ingestSound>HemogenPack_Consume</ingestSound>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_OffsetHemogen">
+					<offset>0.2</offset>
+				</li>
+
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_GiveHediffToHemogenic">
+					<hediffDef>VRE_ConsumedSanguophageHemogen</hediffDef>
+				</li>
+				<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
+					<hediffList>
+						<li>VRE_ConsumedAnimalHemogen</li>
+						<li>VRE_ConsumedCorpseHemogen</li>
+
+					</hediffList>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+</Defs>
