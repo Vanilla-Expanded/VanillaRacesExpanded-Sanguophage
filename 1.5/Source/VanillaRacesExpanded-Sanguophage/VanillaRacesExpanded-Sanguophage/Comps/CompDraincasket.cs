@@ -11,6 +11,9 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.Sound;
+using static UnityEngine.Random;
+using static Verse.HediffCompProperties_RandomizeSeverityPhases;
+using System.Security.Cryptography;
 
 namespace VanillaRacesExpandedSanguophage
 {
@@ -39,14 +42,7 @@ namespace VanillaRacesExpandedSanguophage
             innerContainer = new ThingOwner<Thing>(this);
         }
 
-        public static MethodInfo renderPawnInternal = AccessTools.Method(typeof(PawnRenderer), "RenderPawnInternal", new Type[] {
-                typeof(Vector3),
-                typeof(float),
-                typeof(bool),
-                typeof(Rot4),
-                typeof(RotDrawMode),
-                typeof(PawnRenderFlags)
-        });
+        public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -56,8 +52,8 @@ namespace VanillaRacesExpandedSanguophage
         public ThingOwner GetDirectlyHeldThings() => innerContainer;
 
         public float HeldPawnDrawPos_Y => parent.def.altitudeLayer.AltitudeFor(Altitudes.AltInc);
-        public float HeldPawnBodyAngle => Rot4.North.AsAngle;
-        public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
+      
+        public float HeldPawnBodyAngle => this.parent.Rotation.Opposite.AsAngle;
 
 
         public override void Initialize(CompProperties props)
@@ -305,26 +301,16 @@ namespace VanillaRacesExpandedSanguophage
         public override void PostDraw()
         {
             base.PostDraw();
-            var s = new Vector3(parent.def.graphicData.drawSize.x, 1f, parent.def.graphicData.drawSize.y);
-            var drawPos = parent.DrawPos;
-            drawPos.y += Altitudes.AltInc * 2;
-
+           
             if (Occupant is null) return;
             var drawLoc = parent.DrawPos;
-            var drawRot = parent.Rotation;
 
-            PawnRenderFlags drawFlags = PawnRenderFlags.Cache;
-            drawFlags |= PawnRenderFlags.Clothes;
-            drawFlags |= PawnRenderFlags.Headgear;
-            renderPawnInternal.Invoke(Occupant.Drawer.renderer, new object[]
-                   {
-                        drawLoc,
-                        AngleFromBuilding(drawRot),
-                        true,
-                        Rot4.South,
-                        RotDrawMode.Fresh,
-                        drawFlags
-                   });
+          
+            Occupant.Drawer.renderer.DynamicDrawPhaseAt(DrawPhase.Draw, drawLoc, null, neverAimWeapon: true);
+
+
+
+
 
         }
 
