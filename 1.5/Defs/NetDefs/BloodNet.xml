@@ -142,8 +142,8 @@
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<costList>
-			<Steel>5</Steel>
-			<Gold>1</Gold>
+			<Steel>6</Steel>
+			<Gold>2</Gold>
 		</costList>
 		<comps>
 			<li Class="PipeSystem.CompProperties_Resource">
