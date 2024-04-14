@@ -11,6 +11,7 @@
 		<warmupMote>Mote_CoagulateStencil</warmupMote>
 		<warmupEffecter>Coagulate</warmupEffecter>
 		<warmupStartSound>Coagulate_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<displayOrder>400</displayOrder>
@@ -136,6 +137,7 @@
 		<iconPath>UI/Abilities/SanguophageFilterInfection</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<displayOrder>600</displayOrder>
@@ -171,6 +173,7 @@
 		<iconPath>UI/Abilities/SanguophageEcstasy</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<warmupEffecter>VRE_Ecstasy</warmupEffecter>
@@ -210,6 +213,7 @@
 		<cooldownTicksRange>7200</cooldownTicksRange>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<displayOrder>600</displayOrder>

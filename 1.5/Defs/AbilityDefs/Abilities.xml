@@ -10,6 +10,7 @@
 		<displayOrder>100</displayOrder>
 		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
 		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
@@ -45,6 +46,7 @@
 		<displayOrder>110</displayOrder>
 		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
 		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
@@ -78,6 +80,7 @@
 		<displayOrder>110</displayOrder>
 		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
 		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
@@ -114,11 +117,13 @@
 		<iconPath>UI/Abilities/SanguophageEcstasy</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<warmupEffecter>VRE_Ecstasy</warmupEffecter>
 		<displayOrder>600</displayOrder>
 		<verbProperties>
+			<violent>false</violent>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
@@ -179,6 +184,7 @@
 		<iconPath>UI/Abilities/SanguophageFilterInfection</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<category>Sanguophage</category>
 		<displayOrder>600</displayOrder>
@@ -187,6 +193,7 @@
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
 			<warmupTime>2</warmupTime>
+			<violent>false</violent>
 			<targetParams>
 				<canTargetAnimals>true</canTargetAnimals>
 				<canTargetSelf>false</canTargetSelf>
@@ -209,6 +216,7 @@
 		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
 		<iconPath>UI/Abilities/SanguophageHemosmosis</iconPath>
 		<cooldownTicksRange>7200</cooldownTicksRange>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
@@ -218,6 +226,7 @@
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<soundCast>VRE_Hemosmosis</soundCast>
 			<drawAimPie>false</drawAimPie>
+			<violent>false</violent>
 			<range>-1</range>
 			<warmupTime>2</warmupTime>
 			<targetParams>
@@ -242,12 +251,14 @@
 		<!-- 1.9~2.1 years -->
 		<warmupMote>Mote_ResurrectAbility</warmupMote>
 		<warmupStartSound>Resurrect_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<category>Sanguophage</category>
 		<displayOrder>600</displayOrder>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
+			<violent>false</violent>
 			<warmupTime>2</warmupTime>
 			<soundCast>Resurrect_Resolve</soundCast>
 			<targetParams>
