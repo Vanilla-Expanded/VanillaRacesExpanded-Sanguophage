@@ -21,7 +21,7 @@
 		<label>blood moon</label>
 		<description>One of the moons of this planet has orbited into the rimworld’s umbra, making sanguophages go mad with hunger.</description>
 		<endMessage>The blood moon has ended.</endMessage>
-		<letterText>One of the moons of this planet has orbited into the rimworld’s umbra, blocking all direct sunlight from illuminating the moon’s surface. This resulted in the moon taking on a crimson color - a phenomena known as the blood moon.\n\nDuring this time, sanguophage mechanites will go into overdrive, driving hemogen-starved bloodfeeders out of their caves. Any bloodfeeder sanguophage with more than half hemogen supply gone will enter the hemohunter mental state. Hemogen will drain significantly quicker during blood moon.</letterText>
+		<letterText>One of the moons of this planet has orbited into the rimworld’s umbra, blocking all direct sunlight from illuminating the moon’s surface. This resulted in the moon taking on a crimson color - a phenomena known as the blood moon.\n\nDuring this time, sanguophage mechanites will go into overdrive, driving hemogen-starved bloodfeeders out of their caves. Any bloodfeeder sanguophage with less than half hemogen supply gone will enter the hemohunter mental state. Hemogen will drain significantly quicker during blood moon.</letterText>
 		<letterDef>NegativeEvent</letterDef>
 		<canBePermanent>true</canBePermanent>
 	</GameConditionDef>
