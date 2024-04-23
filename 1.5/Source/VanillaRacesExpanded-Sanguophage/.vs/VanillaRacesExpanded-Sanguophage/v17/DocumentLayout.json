@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillaracesexpanded-sanguophage\\1.5\\source\\vanillaracesexpanded-sanguophage\\vanillaracesexpanded-sanguophage\\gameconditions\\gamecondition_bloodmoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|solutionrelative:vanillaracesexpanded-sanguophage\\gameconditions\\gamecondition_bloodmoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillaracesexpanded-sanguophage\\1.5\\source\\vanillaracesexpanded-sanguophage\\vanillaracesexpanded-sanguophage\\ai\\jobgivers\\jobgiver_hemohunter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|solutionrelative:vanillaracesexpanded-sanguophage\\ai\\jobgivers\\jobgiver_hemohunter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillaracesexpanded-sanguophage\\1.5\\source\\vanillaracesexpanded-sanguophage\\vanillaracesexpanded-sanguophage\\mentalstateworkers\\mentalstate_hemohunter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|solutionrelative:vanillaracesexpanded-sanguophage\\mentalstateworkers\\mentalstate_hemohunter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\vanillaracesexpanded-sanguophage\\1.5\\source\\vanillaracesexpanded-sanguophage\\vanillaracesexpanded-sanguophage\\comps\\compdraincasket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|solutionrelative:vanillaracesexpanded-sanguophage\\comps\\compdraincasket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|VanillaRacesExpanded-Sanguophage||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\vanillaracesexpanded-sanguophage\\harmony\\genegizmo_resource_title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8281E4EE-FE39-4FAD-BA55-326503AE9284}|VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj|solutionrelative:vanillaracesexpanded-sanguophage\\harmony\\genegizmo_resource_title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameCondition_BloodMoon.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\GameConditions\\GameCondition_BloodMoon.cs",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\GameConditions\\GameCondition_BloodMoon.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\GameConditions\\GameCondition_BloodMoon.cs",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\GameConditions\\GameCondition_BloodMoon.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAB4AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T17:18:44.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JobGiver_Hemohunter.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\AI\\JobGivers\\JobGiver_Hemohunter.cs",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\AI\\JobGivers\\JobGiver_Hemohunter.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\AI\\JobGivers\\JobGiver_Hemohunter.cs",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\AI\\JobGivers\\JobGiver_Hemohunter.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAmwCAAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T17:14:58.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MentalState_Hemohunter.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\MentalStateWorkers\\MentalState_Hemohunter.cs",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\MentalStateWorkers\\MentalState_Hemohunter.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\MentalStateWorkers\\MentalState_Hemohunter.cs",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\MentalStateWorkers\\MentalState_Hemohunter.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T17:14:34.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompDraincasket.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\Comps\\CompDraincasket.cs",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\Comps\\CompDraincasket.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\Comps\\CompDraincasket.cs",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\Comps\\CompDraincasket.cs",
+              "ViewState": "AQIAAB8BAAAAAAAAAAAAACsBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T08:05:28.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VanillaRacesExpanded-Sanguophage",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-19T08:59:06.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GeneGizmo_Resource_Title.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\Harmony\\GeneGizmo_Resource_Title.cs",
+              "RelativeDocumentMoniker": "VanillaRacesExpanded-Sanguophage\\Harmony\\GeneGizmo_Resource_Title.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\VanillaRacesExpanded-Sanguophage\\1.5\\Source\\VanillaRacesExpanded-Sanguophage\\VanillaRacesExpanded-Sanguophage\\Harmony\\GeneGizmo_Resource_Title.cs",
+              "RelativeToolTip": "VanillaRacesExpanded-Sanguophage\\Harmony\\GeneGizmo_Resource_Title.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAABBwEUAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T08:02:36.489Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

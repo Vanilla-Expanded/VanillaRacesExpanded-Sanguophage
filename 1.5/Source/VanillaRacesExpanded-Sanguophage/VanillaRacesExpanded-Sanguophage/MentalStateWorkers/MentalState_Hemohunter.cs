@@ -15,9 +15,8 @@ namespace VanillaRacesExpandedSanguophage
         {
             if (pawn.IsHashIntervalTick(300))
             {
-
                 Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
-                if (gene_Hemogen.Value >= 0.45f)
+                if (gene_Hemogen is null || gene_Hemogen.Value >= 0.45f)
                 {
                     RecoverFromState();
                 }

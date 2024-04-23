@@ -17,7 +17,12 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return null;
             }
-          
+            Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
+            if (gene_Hemogen == null)
+            {
+                return null;
+            }
+
             Pawn pawn2 = FindPawnToSuck(pawn);
             if (pawn2 == null || !pawn.CanReserveAndReach(pawn2, PathEndMode.Touch, Danger.Deadly))
             {
