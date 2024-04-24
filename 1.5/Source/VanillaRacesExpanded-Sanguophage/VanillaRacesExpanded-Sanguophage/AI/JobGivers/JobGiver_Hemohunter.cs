@@ -42,7 +42,7 @@ namespace VanillaRacesExpandedSanguophage
             for (int i = 0; i < allPawnsSpawned.Count; i++)
             {
                 Pawn pawn2 = allPawnsSpawned[i];
-                if (pawn2 != pawn&&pawn2.RaceProps.Humanlike && pawn2.genes?.HasGene(GeneDefOf.Hemogenic) == false && pawn.CanReach(pawn2, PathEndMode.Touch, Danger.Deadly))
+                if (pawn2 != pawn && !pawn2.IsGhoul&&pawn2.RaceProps.Humanlike && pawn2.genes?.HasGene(GeneDefOf.Hemogenic) == false && pawn.CanReach(pawn2, PathEndMode.Touch, Danger.Deadly))
                 {
                     tmpTargets.Add(pawn2);
                 }
