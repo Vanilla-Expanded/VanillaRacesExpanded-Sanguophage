@@ -37,6 +37,8 @@ namespace VanillaRacesExpandedSanguophage
         public bool StorageTabVisible => true;
         public StorageSettings allowedNutritionSettings;
 
+        private static List<ThingDef> cachedCaskets;
+
         public CompDraincasket()
         {
             innerContainer = new ThingOwner<Thing>(this);
@@ -294,8 +296,33 @@ namespace VanillaRacesExpandedSanguophage
 
         public static IEnumerable<Thing> CasketsFor(Pawn pawn, Pawn target)
         {
-            return DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompDraincasket))).SelectMany(batteryDef =>
-                pawn.Map.listerThings.ThingsOfDef(batteryDef)).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some));
+            if (cachedCaskets == null)
+            {
+                cachedCaskets = DefDatabase<ThingDef>.AllDefs.Where(def => def.comps.Any(comp => comp.compClass == typeof(CompDraincasket))).ToList();
+            }
+            List<Thing> availableCaskets = new List<Thing>();
+            for (int i = 0; i < cachedCaskets.Count; i++)
+            {
+                ThingDef def = cachedCaskets[i];
+
+                var caskets = pawn.Map.listerThings.ThingsOfDef(def);
+                int casketsCount = caskets.Count;
+                if (casketsCount == 0)
+                    continue;
+
+                Thing casket = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).FirstOrFallback();
+                if (casket != null)
+                {
+                    availableCaskets.Add(casket);
+                }
+
+            }
+
+            return availableCaskets;
+
+
+
+          
         }
 
         public override void PostDraw()
