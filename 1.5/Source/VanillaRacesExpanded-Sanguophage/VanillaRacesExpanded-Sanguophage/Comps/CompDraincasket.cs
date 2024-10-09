@@ -310,10 +310,10 @@ namespace VanillaRacesExpandedSanguophage
                 if (casketsCount == 0)
                     continue;
 
-                Thing casket = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).FirstOrFallback();
+                List<Thing> casket = pawn.Map.listerThings.ThingsOfDef(def).Where(thing => thing is not null && pawn.CanReach(thing, PathEndMode.InteractionCell, Danger.Some)).ToList();
                 if (casket != null)
                 {
-                    availableCaskets.Add(casket);
+                    availableCaskets.AddRange(casket);
                 }
 
             }
