@@ -54,7 +54,11 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return false;
             }
-            
+            if (pawn.IsGhoul)
+            {
+                return false;
+            }
+
             if (pawn.Faction != null && !pawn.IsSlaveOfColony && !pawn.IsPrisonerOfColony)
             {
                 if (pawn.Faction.HostileTo(parent.pawn.Faction))

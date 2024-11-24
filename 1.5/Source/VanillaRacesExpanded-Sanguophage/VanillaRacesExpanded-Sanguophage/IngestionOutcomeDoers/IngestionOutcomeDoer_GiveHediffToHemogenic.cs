@@ -19,7 +19,7 @@ namespace VanillaRacesExpandedSanguophage
 
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestCount)
         {
-            if (pawn.genes?.HasGene(GeneDefOf.Hemogenic) == true) {
+            if (pawn.genes?.HasActiveGene(GeneDefOf.Hemogenic) == true) {
 
                 Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
                 float effect = ((!(severity > 0f)) ? hediffDef.initialSeverity : severity);

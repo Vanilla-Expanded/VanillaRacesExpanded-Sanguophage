@@ -33,7 +33,7 @@ namespace VanillaRacesExpandedSanguophage
                 IReadOnlyList<Pawn> listPawns = this.SingleMap.mapPawns.AllPawnsSpawned;
 				foreach(Pawn pawn in listPawns)
                 {
-					if(pawn != null && pawn.RaceProps.Humanlike && pawn.genes?.HasGene(GeneDefOf.Hemogenic) == true)
+					if(pawn != null && pawn.RaceProps.Humanlike && pawn.genes?.HasActiveGene(GeneDefOf.Hemogenic) == true)
                     {
 						Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
 						if(gene_Hemogen.Value < 0.45f)

@@ -64,7 +64,7 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return false;
             }
-            if (pawn.genes?.HasGene(GeneDefOf.Hemogenic)!=true)
+            if (pawn.genes?.HasActiveGene(GeneDefOf.Hemogenic)!=true)
             {
                 if (throwMessages)
                 {

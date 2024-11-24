@@ -6,6 +6,7 @@
 		<description>This is a hidden hediff that modifies the pawn's Sight depending on sunlight.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<comps>
@@ -36,6 +37,7 @@
 		<description>Animal hemogen increases regeneration and combat capabilities of the user, but greatly decreases the capability to communicate with others.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<stages>
@@ -70,6 +72,7 @@
 		<description>Corpse hemogen greatly weakens the carrier of this hemogen type, but increases consciousness and blood filtration significantly.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<stages>
@@ -110,6 +113,7 @@
 		<description>Sanguophage hemogen gives the carrier a powerful boost to all capacities.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<stages>
@@ -171,6 +175,7 @@
 		<description>Sharp talons which can be used in melee combat.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<comps>
@@ -197,6 +202,7 @@
 		<description>After-effects of using a draincasket. Symptoms of draincasket sickness typically include localized pain, swelling, and redness at the site of the draincasket tubes' connection. Victims may experience increasing fatigue, weakness, and a general feeling of malaise.</description>
 		<descriptionShort>After-effects of using a draincasket. Victims may experience increasing fatigue, weakness, and a general feeling of malaise.</descriptionShort>
 		<makesSickThought>true</makesSickThought>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">

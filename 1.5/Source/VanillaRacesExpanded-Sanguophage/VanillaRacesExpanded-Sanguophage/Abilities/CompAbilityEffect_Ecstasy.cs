@@ -31,6 +31,10 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return false;
             }
+            if (pawn.IsGhoul)
+            {
+                return false;
+            }
             if (!AbilityUtility.ValidateMustBeHumanOrWildMan(pawn, throwMessages, parent))
             {
                 return false;

@@ -54,7 +54,7 @@ namespace VanillaRacesExpandedSanguophage
             {
                 return null;
             }
-            if (pawn.genes?.HasGene(InternalDefOf.VRE_CorpseFeeder)!=true)
+            if (pawn.genes?.HasActiveGene(InternalDefOf.VRE_CorpseFeeder)!=true)
             {
                 return null;
             }
@@ -128,7 +128,7 @@ namespace VanillaRacesExpandedSanguophage
             return (Corpse)GenClosest.ClosestThing_Global_Reachable(pawn.Position, pawn.Map, pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Corpse), PathEndMode.OnCell, TraverseParms.For(pawn), 9999f, delegate (Thing t)
             {
                 Corpse corpse = t as Corpse;
-                return corpse != null && !corpse.IsForbidden(pawn) && ValidateMustBeHumanOrWildMan(corpse.InnerPawn, true);
+                return corpse != null && !corpse.IsForbidden(pawn) && pawn.CanReserve(corpse) && ValidateMustBeHumanOrWildMan(corpse.InnerPawn, true);
             });
         }
     }

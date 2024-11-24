@@ -331,6 +331,7 @@ namespace VanillaRacesExpandedSanguophage
            
             if (Occupant is null) return;
             var drawLoc = parent.DrawPos;
+            drawLoc.y += 10;
 
           
             Occupant.Drawer.renderer.DynamicDrawPhaseAt(DrawPhase.Draw, drawLoc, null, neverAimWeapon: true);

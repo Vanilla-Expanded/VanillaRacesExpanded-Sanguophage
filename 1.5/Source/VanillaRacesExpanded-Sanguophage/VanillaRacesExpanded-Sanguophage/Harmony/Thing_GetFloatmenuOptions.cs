@@ -26,9 +26,9 @@ namespace VanillaRacesExpandedSanguophage
 
             Pawn pawn = __instance as Pawn;
 
-            if (pawn !=null && pawn.Downed && pawn.RaceProps.Animal && selPawn.genes?.HasGene(InternalDefOf.VRE_AnimalFeeder) ==true  )
+            if (pawn !=null && pawn.Downed && pawn.RaceProps.Animal && selPawn.genes?.HasActiveGene(InternalDefOf.VRE_AnimalFeeder) ==true  )
             {
-                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenAnimal".Translate(pawn.Name),  () =>
+                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenAnimal".Translate(pawn.Name.ToStringSafe()),  () =>
                 {
 
                     if (selPawn.CanReserveAndReach(pawn, PathEndMode.OnCell, Danger.Deadly))
@@ -43,9 +43,9 @@ namespace VanillaRacesExpandedSanguophage
                 }));
             }
 
-            if (pawn != null && pawn.Downed && pawn.RaceProps.Humanlike && pawn.IsBloodfeeder() && selPawn.genes?.HasGene(InternalDefOf.VRE_SanguoFeeder) == true  )
+            if (pawn != null && pawn.Downed && pawn.RaceProps.Humanlike && pawn.IsBloodfeeder() && selPawn.genes?.HasActiveGene(InternalDefOf.VRE_SanguoFeeder) == true  )
             {
-                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenSanguophage".Translate(pawn.Name), () =>
+                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenSanguophage".Translate(pawn.Name.ToStringSafe()), () =>
                 {
 
                     if (selPawn.CanReserveAndReach(pawn, PathEndMode.OnCell, Danger.Deadly))
@@ -62,9 +62,9 @@ namespace VanillaRacesExpandedSanguophage
 
             Corpse corpse = __instance as Corpse;
 
-            if (corpse != null && corpse.InnerPawn.RaceProps.Humanlike && selPawn.genes?.HasGene(InternalDefOf.VRE_CorpseFeeder) == true )
+            if (corpse != null && corpse.InnerPawn.RaceProps.Humanlike && selPawn.genes?.HasActiveGene(InternalDefOf.VRE_CorpseFeeder) == true )
             {
-                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenCorpse".Translate(corpse.InnerPawn.Name), () =>
+                resultingList.Add(new FloatMenuOption("VRE_ExtractHemogenCorpse".Translate(corpse.InnerPawn.Name.ToStringSafe()), () =>
                 {
 
                     if (selPawn.CanReserveAndReach(corpse, PathEndMode.OnCell, Danger.Deadly))

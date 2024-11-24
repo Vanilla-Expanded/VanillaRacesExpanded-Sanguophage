@@ -24,52 +24,56 @@ namespace VanillaRacesExpandedSanguophage
         [HarmonyPrefix]
         public static bool ChangeLabel(Gene_Resource ___gene, ref string __result,ref Texture2D ___barTex, ref Texture2D ___barHighlightTex)
         {
+            if (___gene.def == GeneDefOf.Hemogenic) {
 
-            if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedAnimalHemogen) != null)
-            {
-                ___barTex = GraphicsCache.AnimalHemogenBarTex;
-                ___barHighlightTex = GraphicsCache.AnimalHemogenBarTexHighlight;
-                string text = ___gene.ResourceLabel.CapitalizeFirst();
-                text += " ("+"VRE_Animal".Translate() + ")";
-                if (Find.Selector.SelectedPawns.Count != 1)
+                if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedAnimalHemogen) != null)
                 {
-                    text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    ___barTex = GraphicsCache.AnimalHemogenBarTex;
+                    ___barHighlightTex = GraphicsCache.AnimalHemogenBarTexHighlight;
+                    string text = ___gene.ResourceLabel.CapitalizeFirst();
+                    text += " (" + "VRE_Animal".Translate() + ")";
+                    if (Find.Selector.SelectedPawns.Count != 1)
+                    {
+                        text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    }
+                    __result = text;
+
+                    return false;
                 }
-                __result = text;
-               
-                return false;
-            } else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedCorpseHemogen) != null)
-            {
-                ___barTex = GraphicsCache.CorpseHemogenBarTex;
-                ___barHighlightTex = GraphicsCache.CorpseHemogenBarTexHighlight;
-                string text = ___gene.ResourceLabel.CapitalizeFirst();
-                text += " (" + "VRE_Corpse".Translate() + ")";
-                if (Find.Selector.SelectedPawns.Count != 1)
+                else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedCorpseHemogen) != null)
                 {
-                    text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    ___barTex = GraphicsCache.CorpseHemogenBarTex;
+                    ___barHighlightTex = GraphicsCache.CorpseHemogenBarTexHighlight;
+                    string text = ___gene.ResourceLabel.CapitalizeFirst();
+                    text += " (" + "VRE_Corpse".Translate() + ")";
+                    if (Find.Selector.SelectedPawns.Count != 1)
+                    {
+                        text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    }
+                    __result = text;
+                    return false;
                 }
-                __result = text;
-                return false;
-            }
-            else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedSanguophageHemogen) != null)
-            {
-                ___barTex = GraphicsCache.SanguophageHemogenBarTex;
-                ___barHighlightTex = GraphicsCache.SanguophageHemogenBarTexHighlight;
-                string text = ___gene.ResourceLabel.CapitalizeFirst();
-                text += " (" + "VRE_Sanguophage".Translate() + ")";
-                if (Find.Selector.SelectedPawns.Count != 1)
+                else if (___gene.pawn.health.hediffSet.GetFirstHediffOfDef(InternalDefOf.VRE_ConsumedSanguophageHemogen) != null)
                 {
-                    text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    ___barTex = GraphicsCache.SanguophageHemogenBarTex;
+                    ___barHighlightTex = GraphicsCache.SanguophageHemogenBarTexHighlight;
+                    string text = ___gene.ResourceLabel.CapitalizeFirst();
+                    text += " (" + "VRE_Sanguophage".Translate() + ")";
+                    if (Find.Selector.SelectedPawns.Count != 1)
+                    {
+                        text = text + " (" + ___gene.pawn.LabelShort + ")";
+                    }
+                    __result = text;
+                    return false;
                 }
-                __result = text;
-                return false;
+                else
+                {
+                    ___barTex = GraphicsCache.DefaultHemogenBarTex;
+                    ___barHighlightTex = GraphicsCache.DefaultHemogenBarTexHighlight;
+                    return true;
+                }
             }
-            else
-            {
-                ___barTex = GraphicsCache.DefaultHemogenBarTex;
-                ___barHighlightTex = GraphicsCache.DefaultHemogenBarTexHighlight;
-                return true;
-            }
+            return true;
 
 
 

@@ -7,6 +7,7 @@
 		<descriptionHyperlinks>
 			<ThingDef>VRE_HemogenSolidifier</ThingDef>
 		</descriptionHyperlinks>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<stages>
 			<li>
 				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
@@ -24,6 +25,7 @@
 		<descriptionHyperlinks>
 			<ThingDef>VRE_SmallHemogenAmplifier</ThingDef>
 		</descriptionHyperlinks>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
 		<stages>
 			<li>
 				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
