@@ -36,6 +36,10 @@ namespace VanillaRacesExpandedSanguophage
         public static ThingDef VRE_HemogenPack_Corpse;
         public static ThingDef VRE_HemogenPack_Sanguophage;
         public static ThingDef Filth_BloodInsect;
+        [MayRequireAnomaly]
+        public static ThingDef Revenant;
+        [MayRequireAnomaly]
+        public static ThingDef Nociosphere;
 
         public static FleckDef VRE_BloodMist;
 

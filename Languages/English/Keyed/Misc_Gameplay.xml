@@ -21,4 +21,5 @@
 	<VRE_DraincasketAmount>Draincasket hemogen production (per day)</VRE_DraincasketAmount>
 	<VRE_DraincasketAmountTooltip>Sets the amount of hemogen packs the draincaskets will produce per day. By default it is 2 hemogen packs per day.</VRE_DraincasketAmountTooltip>
 	<VRE_Reset>Reset</VRE_Reset>
+	<VRE_NoAnomalies>Cannot be used on Revenant or Nociospheres</VRE_NoAnomalies>
 </LanguageData>

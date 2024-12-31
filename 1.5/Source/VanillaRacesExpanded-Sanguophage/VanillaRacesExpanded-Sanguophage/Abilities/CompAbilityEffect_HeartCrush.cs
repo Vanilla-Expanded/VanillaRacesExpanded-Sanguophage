@@ -39,14 +39,15 @@ namespace VanillaRacesExpandedSanguophage
                     }
 
                     int num;
-                    if (pawn.BodySize>2)
+                    if (pawn.BodySize > 2)
                     {
-                        num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) -5;
-                        
+                        num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) - 5;
+
                     }
-                    else {
+                    else
+                    {
                         num = (int)pawn.health?.hediffSet?.GetPartHealth(bodyPartRecord) + 1000;
-                       
+
                     }
                     DamageInfo damageInfo = new DamageInfo(DamageDefOf.Cut, (float)num, 999f, -1f, this.parent.pawn, bodyPartRecord, null, DamageInfo.SourceCategory.ThingOrUnknown, null, true, true);
                     damageInfo.SetAllowDamagePropagation(false);
@@ -59,37 +60,45 @@ namespace VanillaRacesExpandedSanguophage
             }
         }
 
-    
 
-    public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
-    {
-        return Valid(target);
-    }
 
-    public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
-    {
-        Pawn pawn = target.Pawn;
-        if (pawn == null)
+        public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            return false;
+            return Valid(target);
         }
 
-        BodyPartRecord bodyPartRecord = pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).
+        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
+        {
+            Pawn pawn = target.Pawn;
+            if (pawn == null)
+            {
+                return false;
+            }
+            if (pawn.def == InternalDefOf.Revenant || pawn.def == InternalDefOf.Nociosphere)
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("VRE_NoAnomalies".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+
+            BodyPartRecord bodyPartRecord = pawn.health.hediffSet.GetNotMissingParts(BodyPartHeight.Undefined, BodyPartDepth.Undefined, null, null).
                                FirstOrDefault((BodyPartRecord x) => x.def == InternalDefOf.Heart);
 
-        if (bodyPartRecord == null)
-        {
-            if (throwMessages)
+            if (bodyPartRecord == null)
             {
-                Messages.Message("VRE_NoHeart".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
-            }
-            return false;
+                if (throwMessages)
+                {
+                    Messages.Message("VRE_NoHeart".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
 
+            }
+
+            return true;
         }
 
-        return true;
+
     }
-
-
-}
 }
