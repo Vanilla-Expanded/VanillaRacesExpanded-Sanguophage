@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ 
+
+  <ThoughtDef>
+    <defName>VRE_SunlightSensitivity_Dangerous</defName>
+    <workerClass>ThoughtWorker_InSunlight</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <requiredGenes>
+      <li>VRE_Sensitivity_Dangerous</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>sunlight sensitivity</label>
+        <description>I can't even see anything in the light. My whole skin feels like it's going to burst into flames!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  
+  
+</Defs>

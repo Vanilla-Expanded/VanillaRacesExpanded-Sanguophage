@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Ears -->
+	<GeneDef ParentName="GeneEarsBase">
+		<defName>VRE_BatEars</defName>
+		<label>bat ears</label>
+		<description>Carriers of this gene have bat-like ears.</description>
+		<iconPath>UI/Icons/Genes/VRE_BatEars</iconPath>
+		<renderNodeProperties Inherit="False">
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Pawn/BatEars/BatEars</texPath>
+				<useSkinShader>true</useSkinShader>
+				<colorType>Skin</colorType>
+				<drawData>
+					<defaultData>
+						<layer>70</layer>
+					</defaultData>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>membrane</symbol>
+				</li>
+				<li>
+					<symbol>night</symbol>
+				</li>
+				<li>
+					<symbol>chiroptera</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>tragus</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<GeneDef ParentName="GeneEarsBase">
+		<defName>VRE_UpperBatEars</defName>
+		<label>chiropteric ears</label>
+		<description>Carriers of this gene have pointy bat-like ears.</description>
+		<iconPath>UI/Icons/Genes/VRE_UpperBatEarIcon</iconPath>
+		
+		<renderNodeProperties Inherit="False">
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Pawn/UpperBatEars/VRE_UpperBatEar</texPath>
+				<useSkinShader>true</useSkinShader>
+				<colorType>Skin</colorType>
+				<drawData>
+					<defaultData>
+						<layer>70</layer>
+					</defaultData>
+				</drawData>
+				<parentTagDef>Head</parentTagDef>
+			</li>
+		</renderNodeProperties>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>membrane</symbol>
+				</li>
+				<li>
+					<symbol>night</symbol>
+				</li>
+				<li>
+					<symbol>chiroptera</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>bat</symbol>
+				</li>
+				<li>
+					<symbol>tragus</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+</Defs>

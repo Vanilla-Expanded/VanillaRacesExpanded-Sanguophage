@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>VRE_BloodMoon</defName>
+		<label>blood moon</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>IncidentWorker_MakeGameCondition</workerClass>
+		<gameCondition>VRE_BloodMoonCondition</gameCondition>
+		<letterLabel>Blood Moon</letterLabel>
+		<letterDef>NegativeEvent</letterDef>
+		<baseChance>0</baseChance>
+	
+	</IncidentDef>
+	<GameConditionDef>
+		<defName>VRE_BloodMoonCondition</defName>
+		<conditionClass>VanillaRacesExpandedSanguophage.GameCondition_BloodMoon</conditionClass>
+		<label>blood moon</label>
+		<description>One of the moons of this planet has orbited into the rimworld’s umbra, making sanguophages go mad with hunger.</description>
+		<endMessage>The blood moon has ended.</endMessage>
+		<letterText>One of the moons of this planet has orbited into the rimworld’s umbra, blocking all direct sunlight from illuminating the moon’s surface. This resulted in the moon taking on a crimson color - a phenomena known as the blood moon.\n\nDuring this time, sanguophage mechanites will go into overdrive, driving hemogen-starved bloodfeeders out of their caves. Any bloodfeeder sanguophage with less than half hemogen supply gone will enter the hemohunter mental state. Hemogen will drain significantly quicker during blood moon.</letterText>
+		<letterDef>NegativeEvent</letterDef>
+		<canBePermanent>true</canBePermanent>
+	</GameConditionDef>
+</Defs>

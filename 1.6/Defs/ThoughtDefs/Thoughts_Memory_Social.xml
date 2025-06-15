@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>VRE_FedOnDiablerie_Social</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>60</durationDays>
+    <stackLimit>50</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>fed on by other sanguophage</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

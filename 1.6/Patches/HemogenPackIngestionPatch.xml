@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+		<xpath>/Defs/ThingDef[defName = "HemogenPack"]/ingestible/outcomeDoers</xpath>
+		<value>
+			<li Class="VanillaRacesExpandedSanguophage.IngestionOutcomeDoer_RemoveHediffs">
+				<hediffList>
+					<li>VRE_ConsumedAnimalHemogen</li>
+					<li>VRE_ConsumedCorpseHemogen</li>
+					<li>VRE_ConsumedSanguophageHemogen</li>
+				</hediffList>
+			</li>
+
+		</value>
+
+	</Operation>
+
+
+
+
+
+</Patch>

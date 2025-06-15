@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_AnimalFeed</defName>
+		<label>animalfeed</label>
+		<description>Bite the target animal and extract hemogen directly from their blood. The animal will lose blood and will be horrified by the interaction, which can result in it lashing out. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target animals.</description>
+		<iconPath>UI/Icons/Genes/VRE_AnimalFeeder</iconPath>
+		<category>Sanguophage</category>
+		<displayOrder>100</displayOrder>
+		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBloodfeeders>false</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityAnimalfeederBite">
+				<hemogenGain>0.2</hemogenGain>
+				<bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+				<resistanceGain>1</resistanceGain>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BloodSplash</fleckDef>
+			</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+				<capacity>Eating</capacity>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_CorpseFeed</defName>
+		<label>corpsefeed</label>
+		<description>Bite the target corpse and extract hemogen directly from their blood. The corpse will lose any remaining blood.\n\nCan only target human corpses.</description>
+		<iconPath>UI/Icons/Genes/VRE_CorpseFeeder</iconPath>
+		<category>Sanguophage</category>
+		<displayOrder>110</displayOrder>
+		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetCorpses>true</canTargetCorpses>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityCorpsefeederBite">
+				<hemogenGain>0.2</hemogenGain>
+				<bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+				<resistanceGain>1</resistanceGain>
+			</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+				<capacity>Eating</capacity>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_SanguoFeed</defName>
+		<label>sanguofeed</label>
+		<description>Bite the target and extract hemogen directly from their blood. The target will lose blood and will be insulted by the interaction, but will be otherwise unharmed. A fast-acting coagulant will seal the wound to prevent bleeding.\n\nCan only target hemogenic humans.</description>
+		<iconPath>UI/Icons/Genes/VRE_SanguoFeeder</iconPath>
+		<category>Sanguophage</category>
+		<displayOrder>110</displayOrder>
+		<warmupEffecter>Bloodfeed_Warmup</warmupEffecter>
+		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBloodfeeders>true</canTargetBloodfeeders>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilitySanguofeederBite">
+				<hemogenGain>0.2</hemogenGain>
+				<bloodFilthToSpawnRange>1</bloodFilthToSpawnRange>
+				<resistanceGain>1</resistanceGain>
+				<thoughtDefToGiveTarget>VRE_FedOn</thoughtDefToGiveTarget>
+				<opinionThoughtDefToGiveTarget>VRE_FedOnDiablerie_Social</opinionThoughtDefToGiveTarget>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BloodSplash</fleckDef>
+			</li>
+			<li Class="CompProperties_AbilityRequiresCapacity">
+				<capacity>Eating</capacity>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Ecstasy</defName>
+		<label>ecstasy</label>
+		<description>Grant a target a feeling of extreme ecstasy for a brief duration, which makes them fall head over heels with the caster.</description>
+		<iconPath>UI/Abilities/SanguophageEcstasy</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<warmupEffecter>VRE_Ecstasy</warmupEffecter>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<violent>false</violent>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>VRE_Ecstasy</soundCast>
+			<targetParams>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.1</hemogenCost>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityEcstasy">
+
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_HeartCrush</defName>
+		<label>heart crush</label>
+		<description>Rip out the heart of an enemy in close proximity, instantly killing them and covering the area in blood. Will only work on creatures with body size of 2 or lower. Bigger creatures will still be heavily damaged.</description>
+		<iconPath>UI/Abilities/SanguophageHeartCrush</iconPath>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<cooldownTicksRange>3600</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>VRE_Meat</soundCast>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>BloodSplash</fleckDef>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHeartCrush">
+
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_FilterInfection</defName>
+		<label>filter infection</label>
+		<description>Lay hands on a target and help the target battle their infections. Works on animals or humans.</description>
+		<iconPath>UI/Abilities/SanguophageFilterInfection</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<violent>false</violent>
+			<targetParams>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.2</hemogenCost>
+			</li>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityFilterInfection">
+
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Hemosmosis</defName>
+		<label>hemosmosis</label>
+		<description>Suck blood filth from the area around the sanguophage and turn it into hemogen.</description>
+		<iconPath>UI/Abilities/SanguophageHemosmosis</iconPath>
+		<cooldownTicksRange>7200</cooldownTicksRange>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<soundCast>VRE_Hemosmosis</soundCast>
+			<drawAimPie>false</drawAimPie>
+			<violent>false</violent>
+			<range>-1</range>
+			<warmupTime>2</warmupTime>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityHemosmosis">
+
+			</li>
+		</comps>
+		<statBases>
+			<Ability_EffectRadius>5.9</Ability_EffectRadius>
+		</statBases>
+	</AbilityDef>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>VRE_Resurrect</defName>
+		<label>resurrect</label>
+		<description>Use archites in the bloodstream to infuse a corpse's body with new life, repairing degenerated cell structures and kickstarting vital functions. The older and worse-preserved the corpse is, the more likely it is that they will come back with memory loss or health conditions. This ability seems to exhaust the archites somehow, so it can only be used very rarely.</description>
+		<iconPath>UI/Abilities/Resurrect</iconPath>
+		<cooldownTicksRange>6840000~7560000</cooldownTicksRange>
+		<!-- 1.9~2.1 years -->
+		<warmupMote>Mote_ResurrectAbility</warmupMote>
+		<warmupStartSound>Resurrect_Cast</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<category>Sanguophage</category>
+		<displayOrder>600</displayOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<violent>false</violent>
+			<warmupTime>2</warmupTime>
+			<soundCast>Resurrect_Resolve</soundCast>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetCorpses>true</canTargetCorpses>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_Resurrect"/>
+			<li Class="CompProperties_AbilityHemogenCost">
+				<hemogenCost>0.90</hemogenCost>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>VRE_ToxicCloud</defName>
+		<label>toxic cloud</label>
+		<description>Excrete a thick toxic smoke from special organic reservoirs in the lungs. Tox gas is deadly to almost every creature.</description>
+		<iconPath>UI/Abilities/SanguophageToxicCloud</iconPath>
+		<cooldownTicksRange>3600</cooldownTicksRange>
+		<targetRequired>false</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<range>5.9</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="VanillaRacesExpandedSanguophage.CompProperties_AbilityToxicCloud">
+				<cloudRadius>5.9</cloudRadius>
+				<clamorType>Ability</clamorType>
+				<clamorRadius>15</clamorRadius>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>VRE_ViscuousGoo</defName>
+		<label>viscuous goo</label>
+		<description>Eject a projectile that explodes on impact and creates a large amount of filth that greatly slows down people trying to move through it.</description>
+		<iconPath>UI/Abilities/SanguophageViscousGoo</iconPath>
+		<cooldownTicksRange>6000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>300</displayOrder>
+		<category>Sanguophage</category>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>9.9</range>
+			<warmupTime>1.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilitySprayLiquid">
+				<projectileDef>VRE_Proj_Goo</projectileDef>
+				<numCellsToHit>9</numCellsToHit>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+</Defs>
