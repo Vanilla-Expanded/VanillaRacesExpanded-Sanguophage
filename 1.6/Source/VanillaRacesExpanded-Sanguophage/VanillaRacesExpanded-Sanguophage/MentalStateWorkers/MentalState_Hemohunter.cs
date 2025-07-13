@@ -13,7 +13,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public override void MentalStateTick(int delta)
         {
-            if (pawn.IsHashIntervalTick(300*delta))
+            if (pawn.IsHashIntervalTick(300, delta))
             {
 
                 Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();

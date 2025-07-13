@@ -18,7 +18,7 @@ using System.Security.Cryptography;
 namespace VanillaRacesExpandedSanguophage
 {
     [StaticConstructorOnStartup]
-    public class CompDraincasket : CompRefuelable, IThingHolderWithDrawnPawn, ISuspendableThingHolder, IStoreSettingsParent
+    public class CompDraincasket : CompRefuelable, IThingHolderWithDrawnPawn, ISuspendableThingHolder, IStoreSettingsParent, ISearchableContents
     {
 
 
@@ -34,6 +34,7 @@ namespace VanillaRacesExpandedSanguophage
         public ThingOwner innerContainer;
         public Pawn Occupant => innerContainer.OfType<Pawn>().FirstOrDefault();
         public bool IsContentsSuspended => true;
+        public ThingOwner SearchableContents => innerContainer;
         public bool StorageTabVisible => true;
         public StorageSettings allowedNutritionSettings;
 
@@ -86,14 +87,13 @@ namespace VanillaRacesExpandedSanguophage
         }
 
 
-        public override void CompTick()
+        public override void CompTickInterval(int delta)
         {
-            
             if (!Props.consumeFuelOnlyWhenUsed && (this.flickComp == null || this.flickComp.SwitchIsOn) && (this.Occupant != null))
             {
-                ConsumeFuel(ConsumptionRatePerTick);
+                ConsumeFuel(ConsumptionRatePerTick * delta);
             }
-            if (parent.IsHashIntervalTick(60000))
+            if (parent.IsHashIntervalTick(60000, delta))
             {
                 if (Occupant != null && Fuel > 0)
                 {
@@ -106,7 +106,7 @@ namespace VanillaRacesExpandedSanguophage
             }
 
 
-            if (parent.IsHashIntervalTick(6000))
+            if (parent.IsHashIntervalTick(6000, delta))
             {
                 if (this.Fuel == 0)
                 {
@@ -121,14 +121,14 @@ namespace VanillaRacesExpandedSanguophage
             }
             if (pawnStarving)
             {
-                starvingCounter++;
+                starvingCounter += delta;
                 if (starvingCounter > starvingMaxTicks)
                 {
                     EjectAndKillContents(parent.Map);
                 }
             }
 
-            if (parent.IsHashIntervalTick(600) && compResourceNutrientPaste != null)
+            if (parent.IsHashIntervalTick(600, delta) && compResourceNutrientPaste != null)
             {
                
                 if (compResourceNutrientPaste.PipeNet.Stored>1 && this.FuelPercentOfMax<0.5f)
@@ -191,7 +191,10 @@ namespace VanillaRacesExpandedSanguophage
             {
                 mapComponent.comps.Remove(this);
             }
-            EjectContents(map);
+            if (mode != DestroyMode.WillReplace)
+            {
+                EjectContents(map);
+            }
             base.PostDeSpawn(map,mode);
         }
 
@@ -489,8 +492,5 @@ namespace VanillaRacesExpandedSanguophage
             queuedEnterJob = job;
             queuedPawn = pawn;
         }
-
-
-
     }
 }
