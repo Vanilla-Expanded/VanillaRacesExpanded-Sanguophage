@@ -1,6 +1,5 @@
 ﻿using RimWorld;
-using UnityEngine;
-using Verse;
+
 namespace VanillaRacesExpandedSanguophage
 {
     public class CompProperties_Draincasket : CompProperties_Refuelable

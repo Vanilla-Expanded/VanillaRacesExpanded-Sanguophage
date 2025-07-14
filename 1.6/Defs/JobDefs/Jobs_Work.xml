@@ -49,11 +49,4 @@
 		<suspendable>false</suspendable>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
-	<JobDef>
-		<defName>VRE_RefuelDraincasket_Atomic</defName>
-		<driverClass>VanillaRacesExpandedSanguophage.JobDriver_RefuelDraincasketAtomic</driverClass>
-		<reportString>refueling TargetA.</reportString>
-		<suspendable>false</suspendable>
-		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-	</JobDef>
 </Defs>

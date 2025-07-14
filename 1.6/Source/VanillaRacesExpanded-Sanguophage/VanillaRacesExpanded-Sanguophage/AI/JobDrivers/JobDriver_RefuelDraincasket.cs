@@ -1,53 +1,65 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 namespace VanillaRacesExpandedSanguophage
 {
     public class JobDriver_RefuelDraincasket : JobDriver
     {
-        private const TargetIndex RefuelableInd = TargetIndex.A;
+        private const TargetIndex DraincasketInd = TargetIndex.A;
 
         private const TargetIndex FuelInd = TargetIndex.B;
 
         public const int RefuelingDuration = 240;
 
-        protected Thing Refuelable => job.GetTarget(TargetIndex.A).Thing;
+        protected Thing Draincasket => job.GetTarget(DraincasketInd).Thing;
 
-        protected CompDraincasket RefuelableComp => Refuelable.TryGetComp<CompDraincasket>();
+        protected CompDraincasket DraincasketComp => Draincasket.TryGetComp<CompDraincasket>();
 
-        protected Thing Fuel => job.GetTarget(TargetIndex.B).Thing;
+        protected Thing Fuel => job.GetTarget(FuelInd).Thing;
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (pawn.Reserve(Refuelable, job, 1, -1, null, errorOnFailed))
+            if (pawn.Reserve(Draincasket, job, errorOnFailed: errorOnFailed))
             {
-                return pawn.Reserve(Fuel, job, 1, -1, null, errorOnFailed);
+                return pawn.Reserve(Fuel, job, errorOnFailed: errorOnFailed);
             }
             return false;
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-            AddEndCondition(() => (!RefuelableComp.IsFull) ? JobCondition.Ongoing : JobCondition.Succeeded);
-            AddFailCondition(() => !job.playerForced && !RefuelableComp.ShouldAutoRefuelNowIgnoringFuelPct);
-            AddFailCondition(() => !RefuelableComp.allowAutoRefuel && !job.playerForced);
-            yield return Toils_General.DoAtomic(delegate
-            {
-                job.count = RefuelableComp.GetFuelCountToFullyRefuel();
-            });
-            Toil reserveFuel = Toils_Reserve.Reserve(TargetIndex.B);
+            this.FailOnDespawnedNullOrForbidden(DraincasketInd);
+            AddEndCondition(() => !DraincasketComp.NutritionLoaded ? JobCondition.Ongoing : JobCondition.Succeeded);
+            // AddFailCondition(() => !job.playerForced && !DraincasketComp.ShouldAutoRefuelNowIgnoringFuelPct); // TODO: look into adding
+            AddFailCondition(() => !DraincasketComp.allowAutoRefuel && !job.playerForced);
+            yield return Toils_General.DoAtomic(() => job.count = Mathf.Clamp(Mathf.FloorToInt(DraincasketComp.RequiredNutritionRemaining / Fuel.GetStatValue(StatDefOf.Nutrition)), 1, Fuel.stackCount));
+            var reserveFuel = Toils_Reserve.Reserve(FuelInd);
             yield return reserveFuel;
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
-            yield return Toils_Haul.StartCarryThing(TargetIndex.B, putRemainderInQueue: false, subtractNumTakenFromJobCount: true).FailOnDestroyedNullOrForbidden(TargetIndex.B);
-            yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveFuel, TargetIndex.B, TargetIndex.None, takeFromValidStorage: true);
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
-            yield return Toils_General.Wait(240).FailOnDestroyedNullOrForbidden(TargetIndex.B).FailOnDestroyedNullOrForbidden(TargetIndex.A)
-                .FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch)
-                .WithProgressBarToilDelay(TargetIndex.A);
-            yield return Toils_Refuel.FinalizeRefueling(TargetIndex.A, TargetIndex.B);
+            yield return Toils_Goto.GotoThing(FuelInd, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(FuelInd).FailOnSomeonePhysicallyInteracting(FuelInd);
+            yield return Toils_Haul.StartCarryThing(FuelInd, putRemainderInQueue: false, subtractNumTakenFromJobCount: true).FailOnDestroyedNullOrForbidden(FuelInd);
+            yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveFuel, FuelInd, TargetIndex.None, takeFromValidStorage: true);
+            yield return Toils_Goto.GotoThing(DraincasketInd, PathEndMode.Touch);
+            yield return Toils_General.Wait(RefuelingDuration).FailOnDestroyedNullOrForbidden(FuelInd).FailOnDestroyedNullOrForbidden(DraincasketInd)
+                .FailOnCannotTouch(DraincasketInd, PathEndMode.Touch)
+                .WithProgressBarToilDelay(DraincasketInd);
+
+            yield return FinalizeRefuelingDraincasketToil();
+        }
+
+        private Toil FinalizeRefuelingDraincasketToil()
+        {
+            var toil = ToilMaker.MakeToil();
+
+            toil.initAction = () =>
+            {
+                var curJob = toil.actor.CurJob;
+                DraincasketComp.AddNutrition(curJob.GetTarget(FuelInd).Thing);
+            };
+            toil.defaultCompleteMode = ToilCompleteMode.Instant;
+
+            return toil;
         }
     }
 }

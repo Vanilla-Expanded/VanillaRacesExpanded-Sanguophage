@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Nutrient Paste Expanded</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VRE_Draincasket"]/description</xpath>
+			<value>
+				<description>A sinister contraption designed to extract hemogen from an individual while maintaining their life force at the barest minimum. This dark and foreboding casket houses its occupant in a twilight state of existence with their body slowly drained of precious hemogen. Bound to their Draincasket, the occupant's survival depends on being fed regularly, as they can still starve to death.\n\nProduces hemogen packs a day as long as the occupant has food and the casket is connected to a hemogen network. The amount of hemogen packs depends on the occupant's hunger rate - someone with a worse metabolic efficiency will produce more hemogen packs while using proportionally more nutrition to do so. If deprived of food, the casket will eventually kill its occupant.\n\nIf connected to a nutrient paste network it will feed its occupant using its stored nutrients.</description>
+			</value>
+		</match>
+
+	</Operation>
+
+
+
+
+
+</Patch>
