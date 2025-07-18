@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using PipeSystem;
 using RimWorld;
 using UnityEngine;
@@ -15,6 +16,9 @@ namespace VanillaRacesExpandedSanguophage
 
         public const int starvingMaxTicks = 175000;
         private static List<ThingDef> cachedCaskets;
+        // Same values as in HediffGiver_VacuumBurn, but those are private so it's just copy-pasted.
+        private static readonly IntRange BurnDamageRange = new(1, 2);
+        private static readonly SimpleCurve VacuumSecondsBurnRate = new() { new CurvePoint(0.5f, 20f), new CurvePoint(1f, 5f) };
 
         public Job queuedEnterJob;
         public Pawn queuedPawn;
@@ -26,6 +30,7 @@ namespace VanillaRacesExpandedSanguophage
         public ThingOwner innerContainer;
         public StorageSettings allowedNutritionSettings;
         public float nutritionConsumptionRate = 1f;
+        public bool harmedByVacuum = false;
 
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
         public float HeldPawnDrawPos_Y => parent.def.altitudeLayer.AltitudeFor(Altitudes.AltInc);
@@ -127,7 +132,7 @@ namespace VanillaRacesExpandedSanguophage
                 }
             }
 
-            if (parent.IsHashIntervalTick(600, delta) && occupant != null && compResourceNutrientPaste != null)
+            if (parent.IsHashIntervalTick(600, delta) && (occupant != null || queuedPawn != null) && compResourceNutrientPaste != null)
             {
 
                 if (compResourceNutrientPaste.PipeNet.Stored >= 1 && this.RequiredNutritionRemaining >= 1)
@@ -137,6 +142,33 @@ namespace VanillaRacesExpandedSanguophage
                 }
 
 
+            }
+
+            // Damage a pawn if draincasket is exposed to enough vacuum to deal damage
+            if (harmedByVacuum && parent.IsHashIntervalTick(60, delta) && occupant != null && parent.Map.Biome.inVacuum)
+            {
+                var vacuum = parent.PositionHeld.GetVacuum(this.parent.MapHeld);
+                if (vacuum >= 0.5f)
+                {
+                    // Vacuum exposure
+                    var exposure = 0.02f * vacuum * Mathf.Max(1f - occupant.GetStatValue(StatDefOf.VacuumResistance), 0f);
+                    if (exposure > 0)
+                        HealthUtility.AdjustSeverity(occupant, HediffDefOf.VacuumExposure, exposure);
+
+                    // Vacuum burn
+                    var lastBurnTick = GenTicks.TicksGame - occupant.lastVacuumBurntTick;
+                    if (lastBurnTick >= VacuumSecondsBurnRate.Evaluate(vacuum).SecondsToTicks())
+                    {
+                        occupant.lastVacuumBurntTick = GenTicks.TicksGame;
+                        if (VacuumUtility.TryGetVacuumBurnablePart(occupant, out var part))
+                        {
+                            occupant.TakeDamage(new DamageInfo(DamageDefOf.VacuumBurn, BurnDamageRange.RandomInRange, 999f, hitPart: part));
+                        }
+                    }
+
+                    if (occupant.Dead)
+                        EjectContents(parent.Map);
+                }
             }
 
         }
@@ -176,7 +208,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool InsertPawn(Pawn pawn)
         {
-            SetFoodConsumptionRate(pawn);
+            RecachePawnData(pawn);
             return innerContainer.TryAddOrTransfer(pawn, false);
         }
 
@@ -190,7 +222,7 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool TryAcceptPawn(Pawn pawn)
         {
-            SetFoodConsumptionRate(pawn);
+            RecachePawnData(pawn);
             innerContainer.ClearAndDestroyContents();
 
             var num = pawn.DeSpawnOrDeselect();
@@ -266,32 +298,37 @@ namespace VanillaRacesExpandedSanguophage
             Scribe_Deep.Look(ref allowedNutritionSettings, "allowedNutritionSettings");
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
-                SetFoodConsumptionRate(Occupant);
+                RecachePawnData(Occupant);
         }
 
         public override string CompInspectStringExtra()
         {
             // Base InspectString does not consider our variable consumption rate, so we need to do it ourselves
-            var text = $"{Props.FuelLabel}: {Fuel.ToStringDecimalIfSmall()} / {Props.fuelCapacity.ToStringDecimalIfSmall()}";
+            var text = new StringBuilder($"{Props.FuelLabel}: {Fuel.ToStringDecimalIfSmall()} / {Props.fuelCapacity.ToStringDecimalIfSmall()}");
 
             if (Occupant != null)
             {
                 if (HasFuel)
                 {
                     var rate = (int)(Fuel / Props.fuelConsumptionRate / nutritionConsumptionRate * 60000f);
-                    text += $" ({rate.ToStringTicksToPeriod()})";
+                    text.Append($" ({rate.ToStringTicksToPeriod()})");
                 }
 
-                text += $"\n{"VRE_DraincasketAmountFromMetabolism".Translate((VanillaRacesExpandedSanguophage_Settings.drainCasketAmount * nutritionConsumptionRate).ToStringDecimalIfSmall())}";
+                text.Append($"\n{"VRE_DraincasketAmountFromMetabolism".Translate((VanillaRacesExpandedSanguophage_Settings.drainCasketAmount * nutritionConsumptionRate).ToStringDecimalIfSmall())}");
 
                 if (pawnStarving)
                 {
-                    var rate = (int)(starvingMaxTicks / nutritionConsumptionRate);
-                    text += $"\n{"VRE_DraincasketOccupantDying".Translate(rate.ToStringTicksToPeriod())}";
+                    var rate = (int)((starvingMaxTicks - starvingCounter) / nutritionConsumptionRate);
+                    text.Append($"\n{"VRE_DraincasketOccupantDying".Translate(rate.ToStringTicksToPeriod())}");
+                }
+
+                if (harmedByVacuum && InVacuum)
+                {
+                    text.Append($"\n{"VRE_DraincasketInVacuum_OccupantDying".Translate()}");
                 }
             }
 
-            return text;
+            return text.ToString();
         }
 
         public static IEnumerable<Thing> CasketsFor(Pawn pawn, Pawn target)
@@ -438,7 +475,7 @@ namespace VanillaRacesExpandedSanguophage
                 }
             }
             innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
-            SetFoodConsumptionRate(Occupant);
+            RecachePawnData(Occupant);
         }
 
         public void EjectAndKillContents(Map map)
@@ -481,12 +518,18 @@ namespace VanillaRacesExpandedSanguophage
             thing.SplitOff(num).Destroy();
         }
 
-        private void SetFoodConsumptionRate(Pawn pawn)
+        private void RecachePawnData(Pawn pawn)
         {
-            if (pawn?.needs?.food == null)
+            if (pawn == null)
+            {
                 nutritionConsumptionRate = 1f;
+                harmedByVacuum = false;
+            }
             else
-                nutritionConsumptionRate = pawn.needs.food.FoodFallPerTickAssumingCategory(HungerCategory.Fed) * 60000f / 1.6f;
+            {
+                harmedByVacuum = pawn.HarmedByVacuum;
+                nutritionConsumptionRate = pawn.needs?.food?.FoodFallPerTickAssumingCategory(HungerCategory.Fed) * (GenDate.TicksPerDay / 1.6f) ?? 1f;
+            }
         }
     }
 }

@@ -24,4 +24,5 @@
 	<VRE_NoAnomalies>Cannot be used on Revenant or Nociospheres</VRE_NoAnomalies>
 	<VRE_DraincasketAmountFromMetabolism>Daily hemogen production: {0} packs</VRE_DraincasketAmountFromMetabolism>
 	<VRE_DraincasketOccupantDying>Occupant dying from starvation in {0}</VRE_DraincasketOccupantDying>
+	<VRE_DraincasketInVacuum_OccupantDying>Occupant dying from vacuum exposure</VRE_DraincasketInVacuum_OccupantDying>
 </LanguageData>
