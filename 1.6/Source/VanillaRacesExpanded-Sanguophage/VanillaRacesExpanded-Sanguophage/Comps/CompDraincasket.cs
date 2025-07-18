@@ -148,7 +148,7 @@ namespace VanillaRacesExpandedSanguophage
             if (harmedByVacuum && parent.IsHashIntervalTick(60, delta) && occupant != null && parent.Map.Biome.inVacuum)
             {
                 var vacuum = parent.PositionHeld.GetVacuum(this.parent.MapHeld);
-                if (vacuum >= 0.5f)
+                if (vacuum >= VacuumUtility.MinVacuumForDamage)
                 {
                     // Vacuum exposure
                     var exposure = 0.02f * vacuum * Mathf.Max(1f - occupant.GetStatValue(StatDefOf.VacuumResistance), 0f);
