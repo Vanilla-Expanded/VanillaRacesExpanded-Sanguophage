@@ -208,6 +208,9 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool InsertPawn(Pawn pawn)
         {
+            pawnStarving = false;
+            starvingCounter = 0;
+
             RecachePawnData(pawn);
             return innerContainer.TryAddOrTransfer(pawn, false);
         }
@@ -222,6 +225,9 @@ namespace VanillaRacesExpandedSanguophage
 
         public bool TryAcceptPawn(Pawn pawn)
         {
+            pawnStarving = false;
+            starvingCounter = 0;
+
             RecachePawnData(pawn);
             innerContainer.ClearAndDestroyContents();
 
