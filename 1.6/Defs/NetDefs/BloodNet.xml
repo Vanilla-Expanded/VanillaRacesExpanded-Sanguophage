@@ -493,6 +493,11 @@
 					<disallowedThingDefs>
 						<li>InsectJelly</li>
 						<li>Chocolate</li>
+						<li>Hay</li>
+						<li>HemogenPack</li>
+						<li>VRE_HemogenPack_Animal</li>
+						<li>VRE_HemogenPack_Corpse</li>
+						<li>VRE_HemogenPack_Sanguophage</li>
 					</disallowedThingDefs>
 				</filter>
 			</defaultStorageSettings>
