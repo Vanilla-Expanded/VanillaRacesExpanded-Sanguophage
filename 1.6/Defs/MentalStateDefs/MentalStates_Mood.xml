@@ -22,6 +22,7 @@
     <beginLetter>{0} has become a hemohunter! \n\n[PAWN_pronoun] will drain hemogen off of anyone [PAWN_pronoun] sees, until their hemogen rises to a safe level.</beginLetter>
     <beginLetterDef>ThreatSmall</beginLetterDef>
     
+    <maxTicksBeforeRecovery>30000</maxTicksBeforeRecovery>
     <recoveryMtbDays>50</recoveryMtbDays>
     <recoveryMessage>{0}'s hemohunter state has come to an end.</recoveryMessage>
     <baseInspectLine>Mental state: Hemohunter</baseInspectLine>

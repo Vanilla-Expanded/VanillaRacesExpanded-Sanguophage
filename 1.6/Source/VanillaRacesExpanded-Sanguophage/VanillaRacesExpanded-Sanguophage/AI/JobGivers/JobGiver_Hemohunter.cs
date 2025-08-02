@@ -11,13 +11,16 @@ namespace VanillaRacesExpandedSanguophage
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-          
-            MentalState_Hemohunter mentalState_Hemohunter = pawn.MentalState as MentalState_Hemohunter;
-            if (mentalState_Hemohunter == null)
+            if (pawn.MentalState is not MentalState_Hemohunter)
             {
                 return null;
             }
-          
+
+            if (pawn.genes?.HasActiveGene(GeneDefOf.Hemogenic) != true)
+            {
+                return null;
+            }
+
             Pawn pawn2 = FindPawnToSuck(pawn);
             if (pawn2 == null || !pawn.CanReserveAndReach(pawn2, PathEndMode.Touch, Danger.Deadly))
             {
