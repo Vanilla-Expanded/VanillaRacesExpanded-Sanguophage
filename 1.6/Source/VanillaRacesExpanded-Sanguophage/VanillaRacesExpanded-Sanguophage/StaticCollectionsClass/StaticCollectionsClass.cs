@@ -4,6 +4,7 @@ using System;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using VEF.CacheClearing;
 
 
 namespace VanillaRacesExpandedSanguophage
@@ -17,7 +18,7 @@ namespace VanillaRacesExpandedSanguophage
 
         static StaticCollectionsClass()
         {
-
+            ClearCaches.clearCacheTypes.Add(typeof(StaticCollectionsClass));
             HashSet<SingleUseAbilityDef> allLists = DefDatabase<SingleUseAbilityDef>.AllDefsListForReading.ToHashSet();
             foreach (SingleUseAbilityDef individualList in allLists)
             {
