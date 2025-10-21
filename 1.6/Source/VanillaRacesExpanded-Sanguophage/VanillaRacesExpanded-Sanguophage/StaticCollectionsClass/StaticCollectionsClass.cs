@@ -18,10 +18,12 @@ namespace VanillaRacesExpandedSanguophage
 
         static StaticCollectionsClass()
         {
-            ClearCaches.clearCacheTypes.Add(typeof(StaticCollectionsClass));
-            HashSet<SingleUseAbilityDef> allLists = DefDatabase<SingleUseAbilityDef>.AllDefsListForReading.ToHashSet();
+          
+            List<SingleUseAbilityDef> allLists = DefDatabase<SingleUseAbilityDef>.AllDefsListForReading;
+        
             foreach (SingleUseAbilityDef individualList in allLists)
             {
+             
                 allowedSingleUseAbilities.AddRange(individualList.singleUseAbilities);
             }
 
