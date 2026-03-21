@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using PipeSystem;
 using RimWorld;
@@ -30,11 +31,12 @@ namespace VanillaRacesExpandedSanguophage
         public ThingOwner innerContainer;
         public StorageSettings allowedNutritionSettings;
         public float nutritionConsumptionRate = 1f;
-        public bool harmedByVacuum = false;
+        public bool harmedByVacuum = false; 
 
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
-        public float HeldPawnDrawPos_Y => parent.def.altitudeLayer.AltitudeFor(Altitudes.AltInc);
+        public float HeldPawnDrawPos_Y => parent.DrawPos.y + 0.03658537f;
         public float HeldPawnBodyAngle => parent.Rotation.Opposite.AsAngle;
+        public Vector3 PawnDrawOffset => IntVec3.West.RotatedBy(parent.Rotation).ToVector3();
 
         public float RequiredNutritionRemaining => Mathf.Max(Props.fuelCapacity - Fuel, 0);
         public bool NutritionLoaded => RequiredNutritionRemaining <= 0;
@@ -205,7 +207,6 @@ namespace VanillaRacesExpandedSanguophage
             base.PostDestroy(mode, previousMap);
         }
 
-
         public bool InsertPawn(Pawn pawn)
         {
             pawnStarving = false;
@@ -219,9 +220,6 @@ namespace VanillaRacesExpandedSanguophage
         {
             return FuelFilter.Allows(thing);
         }
-
-
-
 
         public bool TryAcceptPawn(Pawn pawn)
         {
@@ -365,32 +363,11 @@ namespace VanillaRacesExpandedSanguophage
             base.PostDraw();
            
             if (Occupant is null) return;
-            var drawLoc = parent.DrawPos;
-            drawLoc.y += 10;
-
-            Occupant.Drawer.renderer.DynamicDrawPhaseAt(DrawPhase.Draw, drawLoc, null, neverAimWeapon: true);
+          
+            Occupant.Drawer.renderer.DynamicDrawPhaseAt(DrawPhase.Draw, parent.DrawPos, null, neverAimWeapon: true);
         }
 
-        public float AngleFromBuilding(Rot4 buildingRot)
-        {
-            if (buildingRot == Rot4.North)
-            {
-                return 180;
-            }
-            else if (buildingRot == Rot4.East)
-            {
-                return -90;
-            }
-            else if (buildingRot == Rot4.West)
-            {
-                return 90;
-            }
-
-            return 0;
-
-        }
-
-
+       
 
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
