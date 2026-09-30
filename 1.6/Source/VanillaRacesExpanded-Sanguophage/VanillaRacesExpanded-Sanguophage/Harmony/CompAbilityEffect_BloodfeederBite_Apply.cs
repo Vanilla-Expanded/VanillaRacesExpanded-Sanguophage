@@ -23,7 +23,7 @@ namespace VanillaRacesExpandedSanguophage
         InternalDefOf.VRE_ConsumedSanguophageHemogen};
 
         [HarmonyPostfix]
-        public static void DeleteAllHediffs(CompAbilityEffect_SanguofeederBite __instance)
+        public static void DeleteAllHediffs(CompAbilityEffect_BloodfeederBite __instance)
         {
            
 
