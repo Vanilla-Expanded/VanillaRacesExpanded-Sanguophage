@@ -37,7 +37,10 @@ namespace VanillaRacesExpandedSanguophage
         {
             base.MapComponentTick();
 
-
+            if (map == null || map.PocketMapParent != null)
+            {
+                return;
+            }
 
             if (!waitingForNight && tickCounter > ticksToNextEvent)
             {
